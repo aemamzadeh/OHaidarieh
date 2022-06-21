@@ -10,3 +10,15 @@ C:\Users\USER\Downloads\65e9150c-d1c2-47c4-b270-33f2dd043879_OHaidarieh\OHaidari
 C:\Users\USER\Downloads\65e9150c-d1c2-47c4-b270-33f2dd043879_OHaidarieh\OHaidarieh\0_Framework\obj\Debug\net5.0\ref\0_Framework.dll
 C:\Users\USER\Downloads\65e9150c-d1c2-47c4-b270-33f2dd043879_OHaidarieh\OHaidarieh\0_Framework\obj\Debug\net5.0\0_Framework.pdb
 C:\Users\USER\Downloads\65e9150c-d1c2-47c4-b270-33f2dd043879_OHaidarieh\OHaidarieh\0_Framework\obj\Debug\net5.0\0_Framework.csproj.AssemblyReference.cache
+D:\NetCoreProjects\repos\OHaidariehProject\0_Framework\bin\Debug\net5.0\0_Framework.deps.json
+D:\NetCoreProjects\repos\OHaidariehProject\0_Framework\bin\Debug\net5.0\0_Framework.dll
+D:\NetCoreProjects\repos\OHaidariehProject\0_Framework\bin\Debug\net5.0\ref\0_Framework.dll
+D:\NetCoreProjects\repos\OHaidariehProject\0_Framework\bin\Debug\net5.0\0_Framework.pdb
+D:\NetCoreProjects\repos\OHaidariehProject\0_Framework\obj\Debug\net5.0\0_Framework.csproj.AssemblyReference.cache
+D:\NetCoreProjects\repos\OHaidariehProject\0_Framework\obj\Debug\net5.0\0_Framework.GeneratedMSBuildEditorConfig.editorconfig
+D:\NetCoreProjects\repos\OHaidariehProject\0_Framework\obj\Debug\net5.0\0_Framework.AssemblyInfoInputs.cache
+D:\NetCoreProjects\repos\OHaidariehProject\0_Framework\obj\Debug\net5.0\0_Framework.AssemblyInfo.cs
+D:\NetCoreProjects\repos\OHaidariehProject\0_Framework\obj\Debug\net5.0\0_Framework.csproj.CoreCompileInputs.cache
+D:\NetCoreProjects\repos\OHaidariehProject\0_Framework\obj\Debug\net5.0\0_Framework.dll
+D:\NetCoreProjects\repos\OHaidariehProject\0_Framework\obj\Debug\net5.0\ref\0_Framework.dll
+D:\NetCoreProjects\repos\OHaidariehProject\0_Framework\obj\Debug\net5.0\0_Framework.pdb

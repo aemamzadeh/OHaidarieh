@@ -34,12 +34,13 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
             return RedirectToPage("./EditAlbum");
         }
         [NeedPermission(HPermissions.EditMultimedia)]
-        public IActionResult OnPostDelete(long Id)
+        public IActionResult OnGetRemove(long id,long ceremonyId)
         {
-            var result = _multimediaApplication.Delete(Id);
+            _multimediaApplication.Delete(id);
             //var showList=OnGetShow(command);
             //return Partial("Show", showList);
-            return new JsonResult(result);
+            //return new JsonResult(result);
+            return RedirectToPage("./EditAlbum", new { id = ceremonyId });
         }
     }
 }
