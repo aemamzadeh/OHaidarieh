@@ -1,0 +1,74 @@
+﻿@model Haidarieh.Application.Contracts.CeremonyGuest.CreateCeremonyGuest
+@{
+}
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title">ایجاد مراسم جدید</h4>
+</div>
+
+<form asp-page="./Index" asp-page-handler="Create"
+      method="post"
+      data-ajax="true"
+      data-callback=""
+      data-action="Refresh"
+      enctype="multipart/form-data">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="CeremonyId" class="control-label">مراسم</label>
+                    <select class="form-control" asp-for="CeremonyId" asp-items='new SelectList(Model.Ceremonies,"Id","Title")'>
+                        <option value="0">انتخاب مراسم</option>
+                    </select>
+                    <span asp-validation-for="CeremonyId" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="GuestId" class="control-label">میهمان</label>
+                    <select class="form-control" asp-for="GuestId" asp-items='new SelectList(Model.Guests,"Id","FullName")'>
+                        <option value="0">انتخاب میهمان</option>
+                    </select>
+                    <span asp-validation-for="GuestId" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Satisfication" class="control-label">میزان رضایتمندی</label>
+                    <input type="text" class="form-control" asp-for="Satisfication">
+                    <span asp-validation-for="Satisfication" class="error"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+        <button type="submit" class="btn btn-info waves-effect waves-light">ایجاد</button>
+    </div>
+</form>
+
+<script type="text/javascript">
+    //Insert default item "Select" in dropdownlist on load
+    $(document).ready(function () {
+        var items = "<option value='0'>Select</option>";
+        $("#guest").html(items);
+    });
+
+    //Bind City dropdownlist
+    $("#ceremony").change(function () {
+        var ceremonyId = $("#ceremony").val();
+        var url = "/Countries/GetCityList";
+
+        $.getJSON(url, { CeremonyId: ceremonyId }, function (data) {
+            var item = "";
+            $("#guest").empty();
+            $.each(data, function (i, guest) {
+                item += '<option value="' + guest.value + '">' + guest.text + '</option>'
+            });
+            $("#guest").html(item);
+        });
+    });
+</script>
+
+

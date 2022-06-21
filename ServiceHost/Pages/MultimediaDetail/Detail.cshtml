@@ -1,0 +1,72 @@
+﻿@page "{id}"
+@model MultimediaDetail.DetailModel
+@{
+    Layout = "_Layout2";
+    ViewData["title"] = Model.ceremony.Title;
+    ViewData["Keywords"] = Model.ceremony.Keywords;
+    ViewData["MetaDescription"] = Model.ceremony.MetaDescription;
+
+    <link rel="canonical" href="www.haidarieh.com/ceremonies">
+
+}
+<div class="gap remove-gap">
+    <div class="page-title-wrap">
+        <h2>فایلهای چندرسانه ای </h2>
+    </div>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-12">
+                <div class="sec-title">
+                    <div class="sec-title2 text-center">
+                        <h1>مراسم<span> @Model.ceremony.Title</span></h1>
+                        <h3><span>@Model.ceremony.CeremonyDateFa </span></h3>
+                        @foreach (var itm in Model.ceremony.CeremonyGuests)
+                        {
+                            @if (itm.GuestType == "1")
+                            {
+                                <h3>قاری:<span> @itm.Guest </span></h3>
+
+                            }
+                            else if (itm.GuestType == "2")
+                            {
+                                <h3>خطیب:<span> @itm.Guest </span></h3>
+
+                            }
+                            else if (itm.GuestType == "3")
+                            {
+                                <h3>مداح:<span> @itm.Guest </span></h3>
+
+                            }
+                            else if (itm.GuestType == "4")
+                            {
+                                <h3>مجری:<span> @itm.Guest </span></h3>
+
+                            }
+                        }
+
+
+
+                    </div>
+                </div>
+                <div class="evnt-wrap remove-ext5">
+                    <div class="row mrg20">
+                        @foreach (var item in Model.ceremony.Multimedias)
+                        {
+                            <div class="col-md-4 col-sm-4 col-lg-4">
+                                <div class="evnt-box">
+                                    <img src="~/@item.FileAddress" title="@item.FileTitle" alt="@item.FileAlt">
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
