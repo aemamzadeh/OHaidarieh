@@ -133,7 +133,7 @@ namespace _01_HaidariehQuery.Query
             private static List<MultimediaQueryModel> MapMultimedias(List<Multimedia> multimedias)
             {
 
-                return multimedias.Select(x => new MultimediaQueryModel
+                return multimedias.Where(x => x.Status == true).Select(x => new MultimediaQueryModel
                 {
                     Id = x.Id,
                     Title = x.Title,
