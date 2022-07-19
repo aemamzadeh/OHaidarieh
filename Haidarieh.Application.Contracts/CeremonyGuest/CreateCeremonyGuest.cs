@@ -20,7 +20,8 @@ namespace Haidarieh.Application.Contracts.CeremonyGuest
         public string Title { get; set; }
         public int Satisfication { get; set; }
         public List<CeremonyViewModel> Ceremonies { get; set; }
-        public List<CeremonyGuestViewModel> Guests { get; set; }
+        public List<GuestViewModel> Guests { get; set; }
+        //public List<CeremonyGuestViewModel> Guests { get; set; }
 
     }
 }

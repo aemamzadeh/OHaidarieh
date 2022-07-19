@@ -40,5 +40,9 @@ namespace _0_Framework.Infrastructure
         {
             _context.SaveChanges();
         }
+        public void Delete(T entity)
+        {
+            _context.Remove(entity);
+        }
     }
 }

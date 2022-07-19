@@ -13,5 +13,7 @@ namespace Haidarieh.Domain.CeremonyAgg
         EditCeremony GetDetail(long id);
         List<CeremonyViewModel> Search(CeremonySearchModel searchModel);
         List<CeremonyOperationViewModel> GetCeremonyWithOperationsLog();
+        List<CeremonyViewModel> GetUpcommingCeremonies();
+
     }
 }

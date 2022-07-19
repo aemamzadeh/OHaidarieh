@@ -119,7 +119,7 @@ namespace AccountManagement.Application
 
             var permissions = _roleRepository.Get(account.RoleId).Permissions.Select(x => x.Code).ToList();
 
-            var authViewModel = new AuthViewModel(account.Id, account.Fname, account.Lname, account.Username, account.RoleId,permissions);
+            var authViewModel = new AuthViewModel(account.Id, account.Fname, account.Lname, account.Username, account.ProfilePhoto, account.RoleId,permissions);
             _authHelper.SignIn(authViewModel);
 
             return operation.Succedded();

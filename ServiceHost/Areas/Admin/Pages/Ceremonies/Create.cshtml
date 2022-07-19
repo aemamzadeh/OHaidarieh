@@ -1,5 +1,7 @@
 ﻿@model Haidarieh.Application.Contracts.Ceremony.CreateCeremony
 @{
+    <script src="~/AdminTheme/assets/js/jalaali.js"></script>
+    <link rel="stylesheet" href="~/AdminTheme/assets/css/jquery.Bootstrap-PersianDateTimePicker.css">
 }
 
 <div class="modal-header">
@@ -17,23 +19,23 @@
     <div class="modal-body">
         <div class="row">
             @*<div class="col-md-12">
-            <div class="form-group">
-                <label asp-for="Title" class="control-label">مراسم</label>
-                <select type="text" class="form-control" asp-for="Title" asp-items='new SelectList(Model.Ceremonies,"Id","Title")'>
-                    <option value="0">انتخاب مراسم</option>
-                </select>
-                <span asp-validation-for="CeremonyId" class="error"></span>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div class="form-group">
-                <label asp-for="GuestId" class="control-label">میهمان</label>
-                <select type="text" class="form-control" asp-for="GuestId" asp-items='new SelectList(Model.Guests,"Id","FullName")'>
-                    <option value="0">انتخاب میهمان</option>
-                </select>
-                <span asp-validation-for="GuestId" class="error"></span>
-            </div>
-        </div>*@
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label">مراسم</label>
+                        <select type="text" class="form-control" asp-for="Title" asp-items='new SelectList(Model.Ceremonies,"Id","Title")'>
+                            <option value="0">انتخاب مراسم</option>
+                        </select>
+                        <span asp-validation-for="CeremonyId" class="error"></span>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label asp-for="GuestId" class="control-label">میهمان</label>
+                        <select type="text" class="form-control" asp-for="GuestId" asp-items='new SelectList(Model.Guests,"Id","FullName")'>
+                            <option value="0">انتخاب میهمان</option>
+                        </select>
+                        <span asp-validation-for="GuestId" class="error"></span>
+                    </div>
+                </div>*@
 
             <div class="col-md-12">
                 <div class="form-group">
@@ -42,11 +44,21 @@
                     <span asp-validation-for="Title" class="error"></span>
                 </div>
             </div>
+            @*<div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="CeremonyDate" class="control-label">تاریخ برگزاری</label>
+                        <input type="text" class="form-control persianDateTimeInput" asp-for="CeremonyDate">
+                        <span asp-validation-for="CeremonyDate" class="error"></span>
+                    </div>
+                </div>*@
+
             <div class="col-md-6">
                 <div class="form-group">
                     <label asp-for="CeremonyDate" class="control-label">تاریخ برگزاری</label>
-                    <input type="text" class="form-control persianDateInput" asp-for="CeremonyDate">
-                    <span asp-validation-for="CeremonyDate" class="error"></span>
+                    <div class="input-group">
+                        <input type="text" class="form-control" asp-for="CeremonyDate" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#CeremonyDate" data-enabletimepicker="true" data-isgregorian="false" data-englishnumber="false">
+                        <span class="input-group-addon datepicker"><i class="glyphicon glyphicon-calendar"></i></span>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">
@@ -116,11 +128,15 @@
         <button type="submit" class="btn btn-info waves-effect waves-light">ایجاد</button>
     </div>
 </form>
+
+<script src="~/AdminTheme/assets/js/jquery.Bootstrap-PersianDateTimePicker.js"></script>
+
 <script>
     $('.persianDateInput').persianDatepicker({
-        format: 'YYYY/MM/DD',
+        format: 'YYYY/MM/DD hh:mm:ss',
         autoClose: true,
         initialValueType: "persian",
+
         initialValue: true
     });
 </script>

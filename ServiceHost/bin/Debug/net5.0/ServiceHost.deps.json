@@ -36,6 +36,7 @@
           "AccountManagement.Configuration": "1.0.0",
           "Haidarieh.Configuration": "1.0.0",
           "Kendo.for.AspNet.Core": "2019.1.115",
+          "MD.BootstrapPersianDateTimePicker": "2.3.0",
           "Microsoft.CodeAnalysis": "3.8.0",
           "Microsoft.CodeAnalysis.CSharp": "3.8.0",
           "Microsoft.EntityFrameworkCore.Design": "5.0.1",
@@ -333,6 +334,11 @@
           "ServiceHost.dll": {}
         }
       },
+      "bootstrap/3.3.1": {
+        "dependencies": {
+          "jQuery": "1.9.0"
+        }
+      },
       "Elasticsearch.Net/7.10.1": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
@@ -380,6 +386,7 @@
           }
         }
       },
+      "jQuery/1.9.0": {},
       "Kavenegar/1.2.4": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.3"
@@ -422,6 +429,12 @@
         },
         "compile": {
           "lib/netstandard2.0/MailKit.dll": {}
+        }
+      },
+      "MD.BootstrapPersianDateTimePicker/2.3.0": {
+        "dependencies": {
+          "bootstrap": "3.3.1",
+          "jQuery": "1.9.0"
         }
       },
       "Microsoft.AspNetCore.Antiforgery/2.2.0": {
@@ -3382,6 +3395,8 @@
       },
       "Haidarieh.Infrastructure.EFCore/1.0.0": {
         "dependencies": {
+          "AccountManagement.Domain": "1.0.0",
+          "AccountManagement.Infrastructure.EFCore": "1.0.0",
           "EntityFramework": "6.4.4",
           "Haidarieh.Domain": "1.0.0",
           "Kavenegar": "1.2.4",
@@ -5108,6 +5123,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "bootstrap/3.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+OganGYT1i1uIwZPa+AQUT3F3XxWUgFpFoYj+ujM4U5ZJYywW+nEl3v+A5BElLZNbk0FkFFZV4JixIfL6Q4xfg==",
+      "path": "bootstrap/3.3.1",
+      "hashPath": "bootstrap.3.3.1.nupkg.sha512"
+    },
     "Elasticsearch.Net/7.10.1": {
       "type": "package",
       "serviceable": true,
@@ -5129,6 +5151,13 @@
       "path": "humanizer.core/2.8.26",
       "hashPath": "humanizer.core.2.8.26.nupkg.sha512"
     },
+    "jQuery/1.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bS6OGSd/QL39vKKhATpeehgZDCzV6foRJ52EocEGAB29VetwXkQHN6KQIBlBbW9VJzuHr+rQxHYZ13MnPGQ/vw==",
+      "path": "jquery/1.9.0",
+      "hashPath": "jquery.1.9.0.nupkg.sha512"
+    },
     "Kavenegar/1.2.4": {
       "type": "package",
       "serviceable": true,
@@ -5149,6 +5178,13 @@
       "sha512": "sha512-fY2ulWfn5xzulQfqTW66pLOrL26Puzmhl+VsXuqrVBhv5dWFwwKerxQM4HmMwr5Pd/ak9/5xSiFhIeXeD+HC2w==",
       "path": "mailkit/2.6.0",
       "hashPath": "mailkit.2.6.0.nupkg.sha512"
+    },
+    "MD.BootstrapPersianDateTimePicker/2.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PkC/9S/qBG9jmc8gQJ2mjN3+DPdXf4bI5pDsCxMaNs0RFUPlHHYpYPqq274qoYemFg/jEI98GZqZ7DL7xz4OQw==",
+      "path": "md.bootstrappersiandatetimepicker/2.3.0",
+      "hashPath": "md.bootstrappersiandatetimepicker.2.3.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Antiforgery/2.2.0": {
       "type": "package",

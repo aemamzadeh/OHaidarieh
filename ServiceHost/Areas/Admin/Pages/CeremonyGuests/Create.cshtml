@@ -1,74 +1,151 @@
-﻿@model Haidarieh.Application.Contracts.CeremonyGuest.CreateCeremonyGuest
-@{
-}
+﻿@page
+@model ServiceHost.Areas.Admin.Pages.CeremonyGuests.CreateModel
+@{ ViewData["title"] = "اضافه کردن میهمان به مراسم "; }
 
-<div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h4 class="modal-title">ایجاد مراسم جدید</h4>
-</div>
 
-<form asp-page="./Index" asp-page-handler="Create"
-      method="post"
-      data-ajax="true"
-      data-callback=""
-      data-action="Refresh"
-      enctype="multipart/form-data">
-    <div class="modal-body">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label asp-for="CeremonyId" class="control-label">مراسم</label>
-                    <select class="form-control" asp-for="CeremonyId" asp-items='new SelectList(Model.Ceremonies,"Id","Title")'>
-                        <option value="0">انتخاب مراسم</option>
-                    </select>
-                    <span asp-validation-for="CeremonyId" class="error"></span>
-                </div>
+@*<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label asp-for="CeremonyGuest.CeremonyId" class="control-label">مراسم</label>
+            <select class="form-control" asp-for="ceremonyGuest.CeremonyId" asp-items='new SelectList(Model.ceremonyGuest.Ceremonies,"Id","Title")'>
+                <option value="0">انتخاب مراسم</option>
+            </select>
+            <span asp-validation-for="CeremonyGuest.CeremonyId" class="error"></span>
+        </div>
+    </div>*@
+
+<div class="row" id="CeremonyGuestsDiv">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">لیست مراسمات</h3>
             </div>
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label asp-for="GuestId" class="control-label">میهمان</label>
-                    <select class="form-control" asp-for="GuestId" asp-items='new SelectList(Model.Guests,"Id","FullName")'>
-                        <option value="0">انتخاب میهمان</option>
-                    </select>
-                    <span asp-validation-for="GuestId" class="error"></span>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label asp-for="Satisfication" class="control-label">میزان رضایتمندی</label>
-                    <input type="text" class="form-control" asp-for="Satisfication">
-                    <span asp-validation-for="Satisfication" class="error"></span>
-                </div>
+
+            <div class="panel-body">
+                <form method="post" asp-page-handler="Create" asp-route-CeremonyId="@Model.ceremonyGuest.CeremonyId" enctype="multipart/form-data">
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="@Model.ceremonyGuest.Title" class="control-label">مراسم</label>
+                                    <input readonly type="text" class="form-control" asp-for="@Model.ceremonyGuest.Title">
+                                    <span asp-validation-for="@Model.ceremonyGuest.Title" class="error"></span>
+                                </div>
+                                <input type="hidden" asp-for="ceremonyGuest.CeremonyId" value="@Model.ceremonyGuest.CeremonyId">
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="@Model.ceremonyGuest.CeremonyDate" class="control-label">تاریخ برگزاری</label>
+                                    <input readonly type="text" class="form-control" asp-for="@Model.ceremonyGuest.CeremonyDate">
+                                    <span asp-validation-for="@Model.ceremonyGuest.CeremonyDate" class="error"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <table id="datatable" class="table table-striped table-bordered">
+                                @*table view*@
+
+
+                                <thead>
+                                    <tr>
+                                        <th>عکس</th>
+                                        <th>نام میهمان</th>
+                                        <th>نوع میهمان</th>
+                                        @*<th>میزان رضایتمندی</th>*@
+                                        <th>انتخاب</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var item in Model.ceremonyGuest.Guests)@*for (int i = 0; i < Model.Guests.Count(); i++)*@ {
+                        <tr>
+                            <td>
+                                <img class="img-circle img-responsive" src="~/@item.GuestPic" style="width: 70px; height: 70px" />
+                            </td>
+                            <td>
+                                @item.Guest
+                            </td>
+                            <td>
+                                @item.GuestType
+                            </td>
+                            @*<td>
+                    @item.Satisfication
+                </td>*@
+                            <td>
+                                <div class="form-group" style="padding:20px">
+                                    @*<div class="checkbox">*@
+                                    <input class="checkbox" type="checkbox" id="chk[@item.GuestId]" name="chk" value="@item.GuestId" />
+                                    <label for="chk"></label>
+                                    @*</div>*@
+                                </div>
+                            </td>
+
+                            @*<td class="text-center">
+                    <a class="btn btn-outline-danger" asp-page="./Index" asp-page-handler="Add">
+                        <i class="fa fa-edit"></i>اضافه
+                    </a>
+                </td>
+                <td class="text-center">
+                    <a class="btn btn-outline-danger" asp-page="./Index" asp-page-handler="Delete" asp-route-Id="@item.Id">
+                        <i class="fa fa-edit"></i>حذف
+                    </a>
+                </td>*@
+                        </tr>}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        @*End of table view*@
+
+                    </div>
+                    <div class="text-center">
+                        @*<a class="btn btn-success" asp-page="Create" asp-page-handler="Create">
+                            <i class="fa fa-edit"></i>اضافه
+                        </a>*@
+                        <button type="submit" class="btn btn-success waves-effect waves-light">اضافه</button>
+
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
-        <button type="submit" class="btn btn-info waves-effect waves-light">ایجاد</button>
-    </div>
-</form>
+</div>
 
-<script type="text/javascript">
-    //Insert default item "Select" in dropdownlist on load
-    $(document).ready(function () {
-        var items = "<option value='0'>Select</option>";
-        $("#guest").html(items);
-    });
 
-    //Bind City dropdownlist
-    $("#ceremony").change(function () {
-        var ceremonyId = $("#ceremony").val();
-        var url = "/Countries/GetCityList";
+@*fa fa-edit*@
 
-        $.getJSON(url, { CeremonyId: ceremonyId }, function (data) {
-            var item = "";
-            $("#guest").empty();
-            $.each(data, function (i, guest) {
-                item += '<option value="' + guest.value + '">' + guest.text + '</option>'
-            });
-            $("#guest").html(item);
+
+@section Scripts {
+    <script src="~/adminTheme/assets/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/adminTheme/assets/datatables/dataTables.bootstrap.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#datatable').dataTable();
         });
-    });
-</script>
+    </script>
+}
+
+
+
+
+
+
+
+
+
+
+
 
 

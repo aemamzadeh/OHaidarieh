@@ -13,5 +13,7 @@ namespace Haidarieh.Application.Contracts.Ceremony
         public string Description { get;  set; }
         public long CeremonyId { get;  set; }
         public string Ceremony { get;  set; }
+        public string OperatorName { get; set; }
+
     }
 }

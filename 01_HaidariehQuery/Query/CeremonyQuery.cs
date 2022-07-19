@@ -38,8 +38,8 @@ namespace _01_HaidariehQuery.Query
 
             public List<CeremonyQueryModel> GetComing()
             {
-                return _hContext.CeremonyGuests.Include(x => x.Ceremony).
-                                                    Where(x=>x.Ceremony.Status==true && 
+                return _hContext.CeremonyGuests.Include(x => x.Ceremony)
+                                                    .Where(x=>x.Ceremony.Status==true && 
                                                     DateTime.Now.Date <= x.Ceremony.CeremonyDate.Date &&
                                                     DateTime.Compare(x.Ceremony.CeremonyDate.AddHours(4), DateTime.Now) > 0) 
                                                     .Select(x => new CeremonyQueryModel
@@ -57,11 +57,11 @@ namespace _01_HaidariehQuery.Query
                                                         Slug = x.Ceremony.Slug,
                                                         Keywords=x.Ceremony.Keywords,
                                                         MetaDescription=x.Ceremony.MetaDescription
-                                                    }).AsNoTracking().Take(3).ToList();
-                //query = query.Include(x => x.CeremonyGuests.Where(z => z.CeremonyId == x.Id));
-                //return query.ToList();
+                                                    }).AsNoTracking().Take(3).Distinct().ToList();
+            //query = query.Include(x => x.CeremonyGuests.Where(z => z.CeremonyId == x.Id));
+            //return query.ToList();
 
-            }
+        }
             public List<CeremonyQueryModel> GetPast()
             {
                 var pastlist = _hContext.CeremonyGuests.Include(x => x.Ceremony).

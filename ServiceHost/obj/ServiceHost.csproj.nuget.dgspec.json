@@ -859,6 +859,12 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "D:\\NetCoreProjects\\repos\\OHaidariehProject\\AccountManagement.Domain\\AccountManagement.Domain.csproj": {
+                "projectPath": "D:\\NetCoreProjects\\repos\\OHaidariehProject\\AccountManagement.Domain\\AccountManagement.Domain.csproj"
+              },
+              "D:\\NetCoreProjects\\repos\\OHaidariehProject\\AccountManagement.Infrastructure.EFCore\\AccountManagement.Infrastructure.EFCore.csproj": {
+                "projectPath": "D:\\NetCoreProjects\\repos\\OHaidariehProject\\AccountManagement.Infrastructure.EFCore\\AccountManagement.Infrastructure.EFCore.csproj"
+              },
               "D:\\NetCoreProjects\\repos\\OHaidariehProject\\Haidarieh.Domain\\Haidarieh.Domain.csproj": {
                 "projectPath": "D:\\NetCoreProjects\\repos\\OHaidariehProject\\Haidarieh.Domain\\Haidarieh.Domain.csproj"
               }
@@ -974,6 +980,10 @@
             "Kendo.for.AspNet.Core": {
               "target": "Package",
               "version": "[2019.1.115, )"
+            },
+            "MD.BootstrapPersianDateTimePicker": {
+              "target": "Package",
+              "version": "[2.3.0, )"
             },
             "Microsoft.CodeAnalysis": {
               "target": "Package",

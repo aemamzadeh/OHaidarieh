@@ -14,5 +14,8 @@ namespace Haidarieh.Application.Contracts.Guest
         EditGuest GetDetail(long Id);
         List<GuestViewModel> GetGuests(long id=0);
         List<EditGuest> GetGuestsInfo(List<CeremonyGuestViewModel> guests = null);
+
+
+
     }
 }

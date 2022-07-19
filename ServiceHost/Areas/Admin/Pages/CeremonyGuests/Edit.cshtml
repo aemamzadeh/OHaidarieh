@@ -1,12 +1,9 @@
 ﻿@model Haidarieh.Application.Contracts.CeremonyGuest.EditCeremonyGuest
-@using Kendo.Mvc.UI
-
-@{
-}
+@{ }
 
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h4 class="modal-title">@Model.Title ویرایش مراسم</h4>
+    <h4 class="modal-title">ویرایش مراسم @Model.Title</h4>
 </div>
 
 <form asp-page="./Index" asp-page-handler="Edit"
@@ -24,6 +21,8 @@
                         <input readonly type="text" class="form-control" asp-for="Title">
                         <span asp-validation-for="Title" class="error"></span>
                     </div>
+                    <input type="hidden" asp-for="CeremonyId" value="@Model.CeremonyId">
+
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
@@ -34,80 +33,177 @@
                 </div>
             </div>
         </div>
+
+
+        @*table view*@
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>عکس</th>
+                        <th>نام میهمان</th>
+                        <th>نوع میهمان</th>
+                        <th>میزان رضایتمندی</th>
+                        <th>انتخاب</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model.Guests)
+                    @*for (int i = 0; i < Model.Guests.Count(); i++)*@
+                    {
+                    <tr>
+                        <td>
+                            <img class="rounded-circle" src="~/@item.GuestPic" style="width: 70px; height: 70px" />
+                        </td>
+                        <td>
+                            @item.Guest
+                        </td>
+                        <td>
+                            @item.GuestType
+                        </td>
+                        <td>
+                            @item.Satisfication
+                        </td>
+                        <td>
+                            <div class="form-group" style="padding:20px">
+                                @*<div class="checkbox">*@
+                                    <input class="checkbox" type="checkbox" id="chk[@item.GuestId]" name="chk" value="@item.GuestId" />
+                                    <label for="chk"></label>
+                                @*</div>*@
+                            </div>
+                        </td>
+
+                        @*<td class="text-center">
+                <a class="btn btn-outline-danger" asp-page="./Index" asp-page-handler="Add">
+                    <i class="fa fa-edit"></i>اضافه
+                </a>
+            </td>
+            <td class="text-center">
+                <a class="btn btn-outline-danger" asp-page="./Index" asp-page-handler="Delete" asp-route-Id="@item.Id">
+                    <i class="fa fa-edit"></i>حذف
+                </a>
+            </td>*@
+                    </tr>}
+                </tbody>
+            </table>
+        </div>
+
+        @*End of table view*@
+
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-info waves-effect waves-light">ایجاد</button>
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
     </div>
 </form>
 
-<script>
-    function onDataBound(e) {
-        var grid = this;
-        grid.table.find("tr").each(function () {
-            var dataItem = grid.dataItem(this);
-            var themeColor = dataItem.Discontinued ? 'success' : 'error';
-            var text = dataItem.Discontinued ? 'available' : 'not available';
+@*<script>
+        function onDataBound(e) {
+            var grid = this;
+            grid.table.find("tr").each(function () {
+                var dataItem = grid.dataItem(this);
+                var themeColor = dataItem.Discontinued ? 'success' : 'error';
+                var text = dataItem.Discontinued ? 'available' : 'not available';
 
-            $(this).find('script').each(function () {
-                eval($(this).html());
+                $(this).find('script').each(function () {
+                    eval($(this).html());
+                });
+
+                $(this).find(".badgeTemplate").kendoBadge({
+                    themeColor: themeColor,
+                    text: text,
+                });
+                kendo.bind($(this), dataItem);
             });
-
-            $(this).find(".badgeTemplate").kendoBadge({
-                themeColor: themeColor,
-                text: text,
-            });
-            kendo.bind($(this), dataItem);
-        });
-    }
-
-    function returnFalse() {
-        return false;
-    }
-
-
-    function error_handler(e) {
-        if (e.errors) {
-            var message = "Errors:\n";
-            $.each(e.errors, function (key, value) {
-                if ('errors' in value) {
-                    $.each(value.errors, function () {
-                        message += this + "\n";
-                    });
-                }
-            });
-            alert(message);
         }
-    }
-</script>
 
-@(Html.Kendo().Grid(Model.Guests)
-                .Name("grid")
-                .Columns(columns =>
+        function returnFalse() {
+            return false;
+        }
+
+
+        function error_handler(e) {
+            if (e.errors) {
+                var message = "Errors:\n";
+                $.each(e.errors, function (key, value) {
+                    if ('errors' in value) {
+                        $.each(value.errors, function () {
+                            message += this + "\n";
+                        });
+                    }
+                });
+                alert(message);
+            }
+        }
+    </script>*@
+
+@*@(Html.Kendo().Grid(Model.Guests)
+                    .Name("grid")
+                    .Columns(columns =>
+                    {
+                        columns.Bound(c => c.GuestId).Width(40).Title("کد");
+                        columns.Bound(c => c.Guest).Width(140).Title("میهمان").EditorTemplateName("GuestEditor").ClientTemplate(
+                            @"<div class='product-photo'
+                        style='background-image: url(" + @Url.Content("~/#:GuestPic#") + ");'></div><div class='product-name'>#:Guest#</div>").Width(300);
+                        //.EditorTemplateName("Country").ClientTemplate(
+                        //@"<div class='k-text-center'><img class='product-photo' src='" + @Url.Content("~/#:GuestPic#") + "' alt='#: Guest#' title='#: Guest#' width='100' /></div>").Width(220);
+                        columns.Bound(c => c.GuestType).Title("نوع میهمان").Width(190);
+                        columns.Bound(c => c.Satisfication).Title("رضایتمندی").Width(150).Editable("returnFalse").ClientTemplate(Html.Kendo().Rating()
+                            .Name("rating_#=GuestId#")
+                            .Min(1)
+                            .Max(5)
+                            .Label(false)
+                            .HtmlAttributes(new { data_bind = "value: Satisfication" })
+                            .Selection("continuous")
+                            .ToClientTemplate().Value);
+                    })
+                    .ToolBar(toolBar =>
+                        {
+                            toolBar.Create();
+                            toolBar.Save();
+                        })
+                    .DataSource(dataSource => dataSource
+                        .Ajax()
+                        .Model(model =>
                 {
-                    columns.Bound(c => c.GuestId).Width(40).Title("کد");
-                    columns.Bound(c => c.Guest).Width(140).Title("میهمان").EditorTemplateName("GuestEditor").ClientTemplate(
-                        @"<div class='product-photo'
-                    style='background-image: url(" + @Url.Content("~/#:GuestPic#") + ");'></div><div class='product-name'>#:Guest#</div>").Width(300);
-                    //.EditorTemplateName("Country").ClientTemplate(
-                    //@"<div class='k-text-center'><img class='product-photo' src='" + @Url.Content("~/#:GuestPic#") + "' alt='#: Guest#' title='#: Guest#' width='100' /></div>").Width(220);
-                    columns.Bound(c => c.GuestType).Title("نوع میهمان").Width(190);
-                    columns.Bound(c => c.Satisfication).Title("رضایتمندی").Width(150).Editable("returnFalse").ClientTemplate(Html.Kendo().Rating()
-                        .Name("rating_#=GuestId#")
-                        .Min(1)
-                        .Max(5)
-                        .Label(false)
-                        .HtmlAttributes(new { data_bind = "value: Satisfication" })
-                        .Selection("continuous")
-                        .ToClientTemplate().Value);
+                    model.Id(p => p.GuestId);
+                    model.Field(p => p.GuestId).Editable(false);
+                    model.Field(p => p.CeremonyId).DefaultValue(
+                        ViewData["defaultCategory"] as Kendo.Mvc.Examples.Models.CategoryViewModel);
                 })
-                .Events(ev => ev.DataBound("onDataBound"))
-                .DataSource(dataSource => dataSource
-                    .Ajax()
-                    .Read(read => read.Action("ceremonyGuest", "Grid"))
+                .Read(read => read.Action("EditingCustom_Read", "Grid"))
+                .Update(update => update.Action("EditingCustom_Update", "Grid"))
+                .Create(create => create.Action("EditingCustom_Create", "Grid"))
+                .Destroy(destroy => destroy.Action("EditingCustom_Destroy", "Grid"))
+
+                        .Read(read => read.Action("OnGetEdit", "Index"))
+
+                        //.Create(update => update.Action("Create", "Create"))
+                        .Update(update => update.Action("OnPostEdit", "Index"))
+                        //.Destroy(destroy => destroy.Action("Edit", "Edit"))
+                    )
+                        .Events(ev => ev.DataBound("onDataBound"))
+                        .Editable(e => e.Mode(GridEditMode.InCell))
                 )
-                    .Events(ev => ev.DataBound("onDataBound"))
-                    .Editable(e => e.Mode(GridEditMode.InCell))
-            )
 
 
-
+    <script type="text/javascript">
+        function errorHandler(e) {
+            if (e.errors) {
+                var message = "Errors:\n";
+                $.each(e.errors, function (key, value) {
+                    if ('errors' in value) {
+                        $.each(value.errors, function () {
+                            message += this + "\n";
+                        });
+                    }
+                });
+                alert(message);
+            }
+        }
+    </script>*@
 
 
 
@@ -184,53 +280,53 @@
 
 
 
-<style>
-    .k-grid tr .checkbox-align {
-        text-align: center;
-        vertical-align: middle;
-    }
-
-    .product-photo {
-        display: inline-block;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background-size: 32px 35px;
-        background-position: center center;
-        vertical-align: middle;
-        line-height: 32px;
-        box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
-        margin-right: 5px;
-    }
-
-    .product-name {
-        display: inline-block;
-        vertical-align: middle;
-        line-height: 32px;
-        padding-left: 3px;
-    }
-
-    .k-rating-container .k-rating-item {
-        padding: 4px 0;
-    }
-
-        .k-rating-container .k-rating-item .k-icon {
-            font-size: 16px;
+@*<style>
+        .k-grid tr .checkbox-align {
+            text-align: center;
+            vertical-align: middle;
         }
 
-    .dropdown-country-wrap {
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        white-space: nowrap;
-    }
-
-        .dropdown-country-wrap img {
-            margin-right: 10px;
+        .product-photo {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-size: 32px 35px;
+            background-position: center center;
+            vertical-align: middle;
+            line-height: 32px;
+            box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
+            margin-right: 5px;
         }
 
-    #grid .k-grid-edit-row > td > .k-rating {
-        margin-left: 0;
-        width: 100%;
-    }
-</style>
+        .product-name {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 32px;
+            padding-left: 3px;
+        }
+
+        .k-rating-container .k-rating-item {
+            padding: 4px 0;
+        }
+
+            .k-rating-container .k-rating-item .k-icon {
+                font-size: 16px;
+            }
+
+        .dropdown-country-wrap {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+            .dropdown-country-wrap img {
+                margin-right: 10px;
+            }
+
+        #grid .k-grid-edit-row > td > .k-rating {
+            margin-left: 0;
+            width: 100%;
+        }
+    </style>*@

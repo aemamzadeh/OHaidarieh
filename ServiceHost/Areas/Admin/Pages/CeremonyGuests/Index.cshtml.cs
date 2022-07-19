@@ -20,12 +20,15 @@ namespace ServiceHost.Areas.Admin.Pages.CeremonyGuests
         public CeremonyGuestSearchModel SearchModel;
         public List<CeremonyViewModel> CeremonyGuests;
         public EditCeremonyGuest ceremonyGuest;
+        public CeremonyViewModel ceremonyVM;
         public SelectList CeremoniesList;
         public SelectList GuestsList;
         private readonly ICeremonyGuestApplication _ceremonyGuestApplication;
         private readonly ICeremonyApplication _ceremonyApplication;
         private readonly IGuestApplication _guestApplication;
         private readonly IEmailService _emailService;
+        public List<int> chk { get; set; }
+
 
 
         public IndexModel(ICeremonyGuestApplication ceremonyGuestApplication, ICeremonyApplication ceremonyApplication, IGuestApplication guestApplication, IEmailService emailService)
@@ -48,7 +51,7 @@ namespace ServiceHost.Areas.Admin.Pages.CeremonyGuests
             var command = new CreateCeremonyGuest
             {
                 Ceremonies = _ceremonyApplication.GetCeremonies(),
-                //Guests = _guestApplication.GetGuests()
+                Guests = _guestApplication.GetGuests()
             };
             return Partial("./Create", command);
         }
@@ -70,24 +73,36 @@ namespace ServiceHost.Areas.Admin.Pages.CeremonyGuests
 
         public IActionResult OnGetEdit(long ceremonyId)
         {
+            //var selectedceremony = _ceremonyApplication.GetDetail(ceremonyId);
+            //selectedceremony.CeremonyGuests = _ceremonyGuestApplication.GetCeremonyGuests(ceremonyId);
             ceremonyGuest = _ceremonyGuestApplication.GetDetail(ceremonyId);
-            ViewData["guests"] = _guestApplication.GetGuests();
+            ceremonyGuest.Guests = _ceremonyGuestApplication.GetGuests();
+            //ceremonyGuest.Guests = _ceremonyGuestApplication.GetCeremonyGuests(ceremonyId);
+            //ViewData["guests"] = _guestApplication.GetGuests();
             //ceremonyGuest.Guests = _guestApplication.GetGuests();
             //ceremonyGuest.Ceremonies = _ceremonyApplication.GetCeremonies();
-            return Partial("./Edit", ceremonyGuest);
+            return Partial("Edit", ceremonyGuest);
         }
 
         [NeedPermission(HPermissions.EditCeremonyGuest)]
-        public JsonResult OnPostEdit(EditCeremonyGuest command)
+        public JsonResult OnPostEdit(EditCeremonyGuest command, int[] chk)
         {
-            var result = _ceremonyGuestApplication.Edit(command);
+            
+            var result = _ceremonyGuestApplication.Edit(command,chk);
             return new JsonResult(result);
         }
-
 
         public JsonResult OnGetGuests()
         {
             return new JsonResult(_guestApplication.GetGuests());
+        }
+        public IActionResult OnGetDelete(long Id)
+        {
+            _ceremonyGuestApplication.Delete(Id);
+            //var showList=OnGetShow(command);
+            //return Partial("Show", showList);
+            //return new JsonResult(result);
+            return RedirectToPage("Index");//, new { Id = Id });
         }
     }
 }

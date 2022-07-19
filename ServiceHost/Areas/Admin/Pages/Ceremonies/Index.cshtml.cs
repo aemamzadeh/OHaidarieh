@@ -4,15 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using _0_Framework.Infrastructure;
 using _01_HaidariehQuery.Contracts.Ceremonies;
-using _01_HaidariehQuery.Query;
 using Haidarieh.Application.Contracts.Ceremony;
-using Haidarieh.Application.Contracts.Multimedia;
 using Haidarieh.Configuration.Permissions;
-using Haidarieh.Domain.CeremonyAgg;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ServiceHost.Areas.Admin.Pages.Ceremonies
 {
@@ -57,7 +52,7 @@ namespace ServiceHost.Areas.Admin.Pages.Ceremonies
             return new JsonResult(result);
         }
 
-        [NeedPermission(HPermissions.LogCeremony)]
+        //[NeedPermission(HPermissions.LogCeremony)]
         public IActionResult OnGetLog()
         {
             var logs = _ceremonyApplication.GetCeremonyWithOperationsLog();

@@ -25,25 +25,69 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
 
         public List<CeremonyGuestViewModel> GetCeremonyGuests(long id = 0)
         {
-            return _hContext.CeremonyGuests.Where(x => x.CeremonyId == id).Select(x => new CeremonyGuestViewModel
+            return _hContext.CeremonyGuests.Where(x => x.CeremonyId == id).Include(x=>x.Guest).Select(x => new CeremonyGuestViewModel
             {
                 Id = x.Id,
                 GuestId = x.GuestId,
+                Guest=x.Guest.FullName,
                 CeremonyId = x.CeremonyId,
                 Satisfication = x.Satisfication
             }).ToList();
         }
+
+        //public EditCeremonyGuest GetDetail(long Id)
+        //{
+        //    return _hContext.CeremonyGuests.Include(x => x.Ceremony).Include(x => x.Guest)
+        //        .Select(x => new EditCeremonyGuest
+        //        {
+        //            Id = x.Id,
+        //            Title = x.Ceremony.Title,
+        //            CeremonyDate = x.Ceremony.CeremonyDate.ToFarsi(),
+        //            //Guests = MapGuests(x.Ceremony.CeremonyGuests)
+        //        }).FirstOrDefault(x => x.CeremonyId == Id);
+        //}
+
+        //public CeremonyViewModel GetCeremonybyCeremonyGuest(long Id)
+        //{
+        //    return _hContext.CeremonyGuests.Include(x => x.Ceremony)
+        //        .Select(x => new CeremonyViewModel
+        //        {
+        //            Id = x.Id,
+        //            Title = x.Ceremony.Title,
+        //            CeremonyDate = x.Ceremony.CeremonyDate.ToFarsi(),
+        //            //Guests = MapGuests(x.Ceremony.CeremonyGuests)
+        //        }).FirstOrDefault(x => x.Id == Id);
+        //}
+
+
+        // GetDetail Mohsen
+
+        //public Dictionary<long,List<CeremonyGuestViewModel>> GetDetail(long Id)
+        //{
+        //    var result = _hContext.CeremonyGuests.Where(x => x.CeremonyId == Id).Include(x => x.Ceremony).Include(x => x.Guest)
+        //        .Select(x => new CeremonyGuestViewModel
+        //        {
+        //            Id = x.Id,
+        //            Ceremony = x.Ceremony.Title,
+        //            CeremonyDate = x.Ceremony.CeremonyDate.ToFarsi(),
+        //            GuestId = x.GuestId,
+        //            Guest=x.Guest.FullName
+        //        }).AsEnumerable().GroupBy(x => x.CeremonyId).ToList();
+        //    return result.ToDictionary(k => k.Key, v => v.ToList());
+        //}
+
+        //end
 
         public EditCeremonyGuest GetDetail(long Id)
         {
             return _hContext.Ceremonies.Include(x => x.CeremonyGuests).ThenInclude(x => x.Guest)
                 .Select(x => new EditCeremonyGuest
                 {
-                    Id = x.Id,
+                    CeremonyId=x.Id,
                     Title = x.Title,
                     CeremonyDate = x.CeremonyDate.ToFarsi(),
                     Guests = MapGuests(x.CeremonyGuests)
-                }).FirstOrDefault(x => x.Id == Id);
+                }).FirstOrDefault(x => x.CeremonyId == Id);
         }
 
         private static List<CeremonyGuestViewModel> MapGuests(List<CeremonyGuest> ceremonyGuests)
@@ -52,24 +96,24 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             foreach (var item in ceremonyGuests)
             {
                 var gst = new CeremonyGuestViewModel
-                    {
-                        Id = item.CeremonyId,
-                        CeremonyId = item.CeremonyId,
-                        GuestId = item.GuestId,
-                        GuestType = GuestTypes.GetGuestType(item.Guest.GuestType),
-                        Guest = item.Guest.FullName,
-                        GuestPic=item.Guest.Image,
-                        Satisfication=item.Satisfication
-                    };
-                    guests.Add(gst);
-                }
+                {
+                    Id = item.Id,
+                    CeremonyId = item.CeremonyId,
+                    GuestId = item.GuestId,
+                    GuestType = GuestTypes.GetGuestType(item.Guest.GuestType),
+                    Guest = item.Guest.FullName,
+                    GuestPic = item.Guest.Image,
+                    Satisfication = item.Satisfication
+                };
+                guests.Add(gst);
+            }
             return guests;
         }
 
 
         public List<CeremonyViewModel> Search(CeremonyGuestSearchModel searchModel)
         {
-            var query = _hContext.Ceremonies.Where(x=>x.CeremonyGuests.Count()>0).Include(x => x.CeremonyGuests).ThenInclude(x=>x.Guest)
+            var query = _hContext.Ceremonies.Include(x => x.CeremonyGuests).ThenInclude(x => x.Guest)  //Where(x => x.CeremonyGuests.Count() > 0).
             .Select(x => new CeremonyViewModel
             {
                 Id = x.Id,
@@ -78,14 +122,67 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 CeremonyGuests = MapGuests(x.CeremonyGuests)
             });
 
-        //if (searchModel.GuestId != 0)
-        //    query = query.Where(x => x.CeremonyGuests.GuestId == searchModel.GuestId);
+            //if (searchModel.GuestId != 0)
+            //    query = query.Where(x => x.CeremonyGuests.GuestId == searchModel.GuestId);
 
-        if (searchModel.CeremonyId != 0)
-            query = query.Where(x => x.Id == searchModel.CeremonyId);
+            if (searchModel.CeremonyId != 0)
+                query = query.Where(x => x.Id == searchModel.CeremonyId);
 
-        return query.OrderByDescending(x => x.Id).ToList();
-    }
+            return query.OrderByDescending(x => x.Id).ToList();
+        }
+
+        public CeremonyGuestViewModel GetDeleteGuest(long command, long guestId)
+        {
+            return _hContext.CeremonyGuests.Where(x=>x.Id==command).Include(x => x.Guest).Select(x => new CeremonyGuestViewModel
+                {
+                    Id = x.Id,
+                    GuestId = x.GuestId,
+                    CeremonyId=x.CeremonyId
+                }).FirstOrDefault(x => x.GuestId == guestId);
+        }
+
+
+        public List<CeremonyGuestViewModel> GetGuests(long id = 0)
+        {
+            var guestInfo = _hContext.Guests.Select(x => new CeremonyGuestViewModel
+            {
+                GuestId = x.Id,
+                GuestType = GuestTypes.GetGuestType(x.GuestType),
+                Guest = x.FullName,
+                GuestPic = x.Image
+            });
+            if (id != 0)
+                guestInfo = guestInfo.Where(x => x.Id == id);
+            return guestInfo.ToList();
+        }
+
+
+        public List<CeremonyGuestViewModel> GetRestGuests(List<CeremonyGuestViewModel> CurGuest)
+        {
+            var AllGuest = GetGuests();
+
+            //var RestGuests = from p in _hContext.Guests  where
+
+            var RestGuests = (from p in _hContext.Guests.AsEnumerable() where !CurGuest.Any(e=>p.Id == e.GuestId) select p).AsEnumerable();
+            var restguestlist = RestGuests.Select(x => new CeremonyGuestViewModel
+                {
+                    GuestId = x.Id,
+                    GuestType = GuestTypes.GetGuestType(x.GuestType),
+                    Guest = x.FullName,
+                    GuestPic = x.Image
+                });
+
+            //foreach (var item in AllGuest)
+            //{
+            //    RestGuests.
+            //}
+
+            //if (id != 0)
+            //    guestInfo = guestInfo.Where(x => x.Id == id);
+            //return guestInfo.ToList();
+            return restguestlist.ToList();
+
+        }
 
 
         //public Dictionary<long, List<CeremonyGuestViewModel>> Search(CeremonyGuestSearchModel searchModel)

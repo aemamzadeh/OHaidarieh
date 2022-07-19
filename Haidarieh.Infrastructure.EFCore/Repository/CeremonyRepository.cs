@@ -1,26 +1,24 @@
 ﻿using _0_Framework.Application;
 using _0_Framework.Infrastructure;
+using AccountManagement.Infrastructure.EFCore;
 using Haidarieh.Application.Contracts.Ceremony;
 using Haidarieh.Domain.CeremonyAgg;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection.Metadata.Ecma335;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
+
 
 namespace Haidarieh.Infrastructure.EFCore.Repository
 {
     public class CeremonyRepository : RepositoryBase<long, Ceremony>, ICeremonyRepository
     {
         private readonly HContext _hContext;
+        private readonly AccountContext _accountContext;
 
-        public CeremonyRepository(HContext hContext) : base(hContext)
+        public CeremonyRepository(HContext hContext, AccountContext accountContext) : base(hContext)
         {
             _hContext = hContext;
+            _accountContext = accountContext;
         }
 
         public List<CeremonyViewModel> GetCeremonies()
@@ -66,6 +64,15 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                     };
                     result.Add(ops);
                 }
+                var users = _accountContext.Accounts.Select(x => new { x.Id, x.Fname,x.Lname}).ToList();
+                foreach (var item in result)
+                {
+                    var user = users.FirstOrDefault(x => x.Id == item.OperatorId);
+                    if (user !=null)
+                    {
+                        item.OperatorName = user.Fname+" "+user.Lname;
+                    }
+                }
             }
 
             return result.OrderByDescending(x=>x.Id).ToList();
@@ -99,7 +106,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 Title = x.Title,
-                CeremonyDate=x.CeremonyDate.ToString(CultureInfo.InvariantCulture),
+                CeremonyDate=x.CeremonyDate.ToFarsiFull(), //.ToString(CultureInfo.InvariantCulture),
                 IsLive = x.IsLive,
                 ImageAlt = x.ImageAlt,
                 ImageTitle = x.ImageTitle,
@@ -128,5 +135,16 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             return query.OrderByDescending(x => x.Id).ToList();
         }
 
+        public List<CeremonyViewModel> GetUpcommingCeremonies()
+        {
+            return _hContext.Ceremonies.Where(x => x.Status && x.CeremonyDate>=System.DateTime.Today).Select(x => new CeremonyViewModel
+            {
+                Id = x.Id,
+                Title = x.Title,
+                CeremonyDate = x.CeremonyDate.ToFarsi(),
+                Image = x.Image,
+                IsLive = x.IsLive
+            }).ToList();
+        }
     }
 }

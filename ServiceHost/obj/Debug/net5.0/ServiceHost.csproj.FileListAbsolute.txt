@@ -612,3 +612,4 @@ D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\ServiceH
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\ref\ServiceHost.dll
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\ServiceHost.pdb
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\ServiceHost.genruntimeconfig.cache
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\CeremonyGuests\Add.cshtml.g.cs

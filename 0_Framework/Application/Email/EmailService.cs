@@ -26,8 +26,8 @@ namespace _0_Framework.Application.Email
             message.Body = bodyBuilder.ToMessageBody();
 
             var client = new SmtpClient();
-            client.Connect("smtp.aol.com", 25, false);
-            client.Authenticate("emamzadeha@aol.com", "hani3205");
+            client.Connect("smtp.mail.yahoo.com", 587, false);
+            client.Authenticate("eamin_00@yahoo.com", "ibm880683111");
             client.Send(message);
             client.Disconnect(true);
             client.Dispose();

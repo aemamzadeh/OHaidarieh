@@ -14,5 +14,6 @@ namespace _0_Framework.Application
         string CurrentAccountRole();
         AuthViewModel CurrentUserInfo();
         List<int> GetPermissions();
+
     }
 }

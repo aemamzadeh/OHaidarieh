@@ -2,6 +2,12 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "bootstrap/3.3.1": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "1.9.0"
+        }
+      },
       "Elasticsearch.Net/7.10.1": {
         "type": "package",
         "dependencies": {
@@ -46,6 +52,9 @@
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {}
         }
+      },
+      "jQuery/1.9.0": {
+        "type": "package"
       },
       "Kavenegar/1.2.4": {
         "type": "package",
@@ -148,6 +157,13 @@
         },
         "runtime": {
           "lib/netstandard2.0/MailKit.dll": {}
+        }
+      },
+      "MD.BootstrapPersianDateTimePicker/2.3.0": {
+        "type": "package",
+        "dependencies": {
+          "bootstrap": "3.3.1",
+          "jQuery": "1.9.0"
         }
       },
       "Microsoft.AspNetCore.Antiforgery/2.2.0": {
@@ -4357,6 +4373,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "AccountManagement.Domain": "1.0.0",
+          "AccountManagement.Infrastructure.EFCore": "1.0.0",
           "EntityFramework": "6.4.4",
           "Haidarieh.Domain": "1.0.0",
           "Kavenegar": "1.2.4",
@@ -4375,6 +4393,30 @@
     }
   },
   "libraries": {
+    "bootstrap/3.3.1": {
+      "sha512": "+OganGYT1i1uIwZPa+AQUT3F3XxWUgFpFoYj+ujM4U5ZJYywW+nEl3v+A5BElLZNbk0FkFFZV4JixIfL6Q4xfg==",
+      "type": "package",
+      "path": "bootstrap/3.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bootstrap.3.3.1.nupkg.sha512",
+        "bootstrap.nuspec",
+        "content/Content/bootstrap-theme.css",
+        "content/Content/bootstrap-theme.css.map",
+        "content/Content/bootstrap-theme.min.css",
+        "content/Content/bootstrap.css",
+        "content/Content/bootstrap.css.map",
+        "content/Content/bootstrap.min.css",
+        "content/Scripts/bootstrap.js",
+        "content/Scripts/bootstrap.min.js",
+        "content/Scripts/npm.js",
+        "content/fonts/glyphicons-halflings-regular.eot",
+        "content/fonts/glyphicons-halflings-regular.svg",
+        "content/fonts/glyphicons-halflings-regular.ttf",
+        "content/fonts/glyphicons-halflings-regular.woff"
+      ]
+    },
     "Elasticsearch.Net/7.10.1": {
       "sha512": "Eo7KwMgLt6kJ8SYo1UmYDWZ02wbZGRBCSsjyyKSKbF4HKBA1HLKIWmLCFMk+x22DNbTLV5E++30IgRNKZSLVPQ==",
       "type": "package",
@@ -4468,6 +4510,26 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "jQuery/1.9.0": {
+      "sha512": "bS6OGSd/QL39vKKhATpeehgZDCzV6foRJ52EocEGAB29VetwXkQHN6KQIBlBbW9VJzuHr+rQxHYZ13MnPGQ/vw==",
+      "type": "package",
+      "path": "jquery/1.9.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery-1.9.0-vsdoc.js",
+        "Content/Scripts/jquery-1.9.0.js",
+        "Content/Scripts/jquery-1.9.0.min.js",
+        "Content/Scripts/jquery-1.9.0.min.map",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/jquery-1.9.0.intellisense.js",
+        "Tools/uninstall.ps1",
+        "jquery.1.9.0.nupkg.sha512",
+        "jquery.nuspec"
       ]
     },
     "Kavenegar/1.2.4": {
@@ -4580,6 +4642,20 @@
         "lib/xamarinios/MailKit.xml",
         "mailkit.2.6.0.nupkg.sha512",
         "mailkit.nuspec"
+      ]
+    },
+    "MD.BootstrapPersianDateTimePicker/2.3.0": {
+      "sha512": "PkC/9S/qBG9jmc8gQJ2mjN3+DPdXf4bI5pDsCxMaNs0RFUPlHHYpYPqq274qoYemFg/jEI98GZqZ7DL7xz4OQw==",
+      "type": "package",
+      "path": "md.bootstrappersiandatetimepicker/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Content/MdBootstrapPersianDateTimePicker/jquery.Bootstrap-PersianDateTimePicker.css",
+        "Content/Scripts/MdBootstrapPersianDateTimePicker/jalaali.js",
+        "Content/Scripts/MdBootstrapPersianDateTimePicker/jquery.Bootstrap-PersianDateTimePicker.js",
+        "md.bootstrappersiandatetimepicker.2.3.0.nupkg.sha512",
+        "md.bootstrappersiandatetimepicker.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Antiforgery/2.2.0": {
@@ -12611,6 +12687,7 @@
       "AccountManagement.Configuration >= 1.0.0",
       "Haidarieh.Configuration >= 1.0.0",
       "Kendo.for.AspNet.Core >= 2019.1.115",
+      "MD.BootstrapPersianDateTimePicker >= 2.3.0",
       "Microsoft.CodeAnalysis >= 3.8.0",
       "Microsoft.CodeAnalysis.CSharp >= 3.8.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.1",
@@ -12672,6 +12749,10 @@
           "Kendo.for.AspNet.Core": {
             "target": "Package",
             "version": "[2019.1.115, )"
+          },
+          "MD.BootstrapPersianDateTimePicker": {
+            "target": "Package",
+            "version": "[2.3.0, )"
           },
           "Microsoft.CodeAnalysis": {
             "target": "Package",

@@ -15,15 +15,15 @@
                 {
                     <div class="col-md-3 col-sm-6 col-lg-3 fadeIn" data-wow-duration=".8s" data-wow-delay=".2s">
                         <div class="team-box2">
-                            <img class="rounded-pill mx-auto d-block" src=@ceremony.Image alt="Image">
+                            <img class="rounded-pill mx-auto d-block" src=~/@ceremony.Image alt="@ceremony.ImageAlt">
                             <div class="team-info2">
                                 <h4><a asp-controller="Ceremony" asp-action="Index">@ceremony.Title</a> </h4>
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
+                                <p>@ceremony.MetaDescription </p>
+                                <p> تاریخ: @ceremony.CeremonyDateFa </p>
+                                <p> زمان: @ceremony.CeremonyTime</p>
+                                <p>@ceremony.CeremonyGuests</p>
                                 <div class="team-scl">
-                                    <a href="index.html#" title="توییتر" target="_blank"><i class="fa fa-twitter"></i></a>
-                                    <a href="index.html#" title="اینستاگرام" target="_blank"><i class="fa fa-instagram"></i></a>
-                                    <a href="index.html#" title="گوگل پلاس" target="_blank"><i class="fa fa-google-plus"></i></a>
-                                    <a href="index.html#" title="فیسبوک" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    <a href="@ceremony.BannerFile" title="دانلود بنر" target="_blank"><i class="fa fa-file"></i></a>
                                 </div>
                             </div>
                         </div>

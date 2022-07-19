@@ -46,3 +46,9 @@ D:\NetCoreProjects\repos\OHaidariehProject\01_HaidariehQuery\obj\Debug\net5.0\01
 D:\NetCoreProjects\repos\OHaidariehProject\01_HaidariehQuery\obj\Debug\net5.0\ref\01_HaidariehQuery.dll
 D:\NetCoreProjects\repos\OHaidariehProject\01_HaidariehQuery\obj\Debug\net5.0\01_HaidariehQuery.pdb
 D:\NetCoreProjects\repos\OHaidariehProject\01_HaidariehQuery\obj\Debug\net5.0\01_HaidariehQuery.genruntimeconfig.cache
+D:\NetCoreProjects\repos\OHaidariehProject\01_HaidariehQuery\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
+D:\NetCoreProjects\repos\OHaidariehProject\01_HaidariehQuery\bin\Debug\net5.0\AccountManagement.Domain.dll
+D:\NetCoreProjects\repos\OHaidariehProject\01_HaidariehQuery\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.dll
+D:\NetCoreProjects\repos\OHaidariehProject\01_HaidariehQuery\bin\Debug\net5.0\AccountManagement.Application.Contracts.pdb
+D:\NetCoreProjects\repos\OHaidariehProject\01_HaidariehQuery\bin\Debug\net5.0\AccountManagement.Domain.pdb
+D:\NetCoreProjects\repos\OHaidariehProject\01_HaidariehQuery\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.pdb

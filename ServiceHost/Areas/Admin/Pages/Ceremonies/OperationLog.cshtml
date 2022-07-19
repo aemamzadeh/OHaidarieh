@@ -27,13 +27,13 @@
                         @if (item.Operation == 1)
                         {
                             <span>ایجاد</span>
-                }
-                        else if (item.Operation==2)
-                {
+                        }
+                        else if (item.Operation == 2)
+                        {
                             <span>ویرایش</span>
                         }
                     </td>
-                    <td>@item.OperatorId</td>
+                    <td>@item.OperatorName</td>
                     <td>@item.OperationDate</td>
                     <td>@item.Description</td>
                 </tr>
@@ -45,4 +45,3 @@
 <div class="modal-footer">
     <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
 </div>
-

@@ -21,6 +21,5 @@ namespace Haidarieh.Domain.CeremonyAgg
             OperationDate = DateTime.Now;
             CeremonyId = ceremonyId;
         }
-
     }
 }

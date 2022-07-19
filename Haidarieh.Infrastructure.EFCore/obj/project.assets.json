@@ -3667,6 +3667,51 @@
           "bin/placeholder/0_Framework.dll": {}
         }
       },
+      "AccountManagement.Application.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "0_Framework": "1.0.0",
+          "Kendo.for.AspNet.Core": "2019.1.115"
+        },
+        "compile": {
+          "bin/placeholder/AccountManagement.Application.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AccountManagement.Application.Contracts.dll": {}
+        }
+      },
+      "AccountManagement.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "0_Framework": "1.0.0",
+          "AccountManagement.Application.Contracts": "1.0.0",
+          "Kendo.for.AspNet.Core": "2019.1.115"
+        },
+        "compile": {
+          "bin/placeholder/AccountManagement.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AccountManagement.Domain.dll": {}
+        }
+      },
+      "AccountManagement.Infrastructure.EFCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "AccountManagement.Domain": "1.0.0",
+          "Kendo.for.AspNet.Core": "2019.1.115",
+          "Microsoft.EntityFrameworkCore": "5.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AccountManagement.Infrastructure.EFCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AccountManagement.Infrastructure.EFCore.dll": {}
+        }
+      },
       "Haidarieh.Application.Contracts/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -11038,6 +11083,21 @@
       "path": "../0_Framework/0_Framework.csproj",
       "msbuildProject": "../0_Framework/0_Framework.csproj"
     },
+    "AccountManagement.Application.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../AccountManagement.Application.Contracts/AccountManagement.Application.Contracts.csproj",
+      "msbuildProject": "../AccountManagement.Application.Contracts/AccountManagement.Application.Contracts.csproj"
+    },
+    "AccountManagement.Domain/1.0.0": {
+      "type": "project",
+      "path": "../AccountManagement.Domain/AccountManagement.Domain.csproj",
+      "msbuildProject": "../AccountManagement.Domain/AccountManagement.Domain.csproj"
+    },
+    "AccountManagement.Infrastructure.EFCore/1.0.0": {
+      "type": "project",
+      "path": "../AccountManagement.Infrastructure.EFCore/AccountManagement.Infrastructure.EFCore.csproj",
+      "msbuildProject": "../AccountManagement.Infrastructure.EFCore/AccountManagement.Infrastructure.EFCore.csproj"
+    },
     "Haidarieh.Application.Contracts/1.0.0": {
       "type": "project",
       "path": "../Haidarieh.Application.Contracts/Haidarieh.Application.Contracts.csproj",
@@ -11051,6 +11111,8 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "AccountManagement.Domain >= 1.0.0",
+      "AccountManagement.Infrastructure.EFCore >= 1.0.0",
       "EntityFramework >= 6.4.4",
       "Haidarieh.Domain >= 1.0.0",
       "Kavenegar >= 1.2.4",
@@ -11092,6 +11154,12 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "D:\\NetCoreProjects\\repos\\OHaidariehProject\\AccountManagement.Domain\\AccountManagement.Domain.csproj": {
+              "projectPath": "D:\\NetCoreProjects\\repos\\OHaidariehProject\\AccountManagement.Domain\\AccountManagement.Domain.csproj"
+            },
+            "D:\\NetCoreProjects\\repos\\OHaidariehProject\\AccountManagement.Infrastructure.EFCore\\AccountManagement.Infrastructure.EFCore.csproj": {
+              "projectPath": "D:\\NetCoreProjects\\repos\\OHaidariehProject\\AccountManagement.Infrastructure.EFCore\\AccountManagement.Infrastructure.EFCore.csproj"
+            },
             "D:\\NetCoreProjects\\repos\\OHaidariehProject\\Haidarieh.Domain\\Haidarieh.Domain.csproj": {
               "projectPath": "D:\\NetCoreProjects\\repos\\OHaidariehProject\\Haidarieh.Domain\\Haidarieh.Domain.csproj"
             }

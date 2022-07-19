@@ -11,6 +11,7 @@ namespace Haidarieh.Application
     {
         private readonly ICeremonyRepository _ceremonyRepository;
         private readonly IFileUploader _fileUploader;
+        private readonly IAuthHelper AuthHelper;
         public Ceremony ceremony { get; set; }
         public CeremonyApplication(ICeremonyRepository ceremonyRepository, IFileUploader fileUploader)
         {
@@ -43,12 +44,13 @@ namespace Haidarieh.Application
         public OperationResult CreateOperationLog(long id, int operationType)
         {
             var operation = new OperationResult();
-            
+            var currentAccount = AuthHelper.CurrentUserInfo();
+
             //var ceremony = _ceremonyRepository.Get(id);
             //var cer = new CeremonyOperation(operationType, 78, "Description", id);
             //if (ceremony == null)
             //    return operation.Failed(ApplicationMessages.RecordNotFound);
-            ceremony.CreateOperationLog(operationType, 78, "Description", id);
+            ceremony.CreateOperationLog(operationType, currentAccount.Id, "ندارد", id);
             _ceremonyRepository.SaveChanges();
             return operation.Succedded();
         }
@@ -97,6 +99,11 @@ namespace Haidarieh.Application
         public List<CeremonyViewModel> Search(CeremonySearchModel searchModel)
         {
             return _ceremonyRepository.Search(searchModel);
+        }
+
+        public List<CeremonyViewModel> GetUpcommingCeremonies()
+        {
+            return _ceremonyRepository.GetUpcommingCeremonies();
         }
     }
 }

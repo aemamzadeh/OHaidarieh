@@ -98,7 +98,10 @@ namespace _0_Framework.Application
             var year = Convert.ToInt32(persianDate.Substring(0, 4));
             var month = Convert.ToInt32(persianDate.Substring(5, 2));
             var day = Convert.ToInt32(persianDate.Substring(8, 2));
-            return new DateTime(year, month, day, new PersianCalendar());
+            var hour= Convert.ToInt32(persianDate.Substring(11, 2));
+            var minute = Convert.ToInt32(persianDate.Substring(14, 2));
+
+            return new DateTime(year, month, day, hour, minute,'0', new PersianCalendar());
         }
 
         public static string ToMoney(this double myMoney)

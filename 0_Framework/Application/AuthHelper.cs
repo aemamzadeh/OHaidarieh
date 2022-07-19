@@ -62,6 +62,7 @@ namespace _0_Framework.Application
             result.Fname = claim.FirstOrDefault(x => x.Type == ClaimTypes.Name).Value;
             result.Lname = claim.FirstOrDefault(x => x.Type == ClaimTypes.Name).Value;
             result.Role = Roles.GetRole(result.RoleId);
+            result.ProfilePhoto = claim.FirstOrDefault(x => x.Type == ClaimTypes.GivenName).Value; //profilePhoto
 
             return result;
         }
@@ -83,6 +84,7 @@ namespace _0_Framework.Application
             {
                 new Claim("AccountId", account.Id.ToString()),
                 new Claim(ClaimTypes.Name, account.Fname+" "+account.Lname),
+                new Claim(ClaimTypes.GivenName, account.ProfilePhoto),
                 new Claim(ClaimTypes.Role, account.RoleId.ToString()),
                 new Claim("Username", account.Username), // Or Use ClaimTypes.NameIdentifier
                 new Claim("permissions", permissions)
@@ -104,5 +106,6 @@ namespace _0_Framework.Application
         {
             _contextAccessor.HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         }
+
     }
 }

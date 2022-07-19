@@ -124,8 +124,9 @@
   width: 32px;
 }
 .thumb-md {
-  height: 48px;
-  width: 48px;
+    height: 48px;
+    width: 48px;
+    padding-inline:2px;
 }
 .thumb-lg {
   height: 88px;
