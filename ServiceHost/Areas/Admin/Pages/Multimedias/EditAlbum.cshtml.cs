@@ -15,6 +15,8 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
     public class EditAlbumModel : PageModel
     {
         public List<MultimediaViewModel> Command { get; set; }
+        public object ViewBag { get; private set; }
+
         //public MultimediaViewModel MVM { get; set; }
         private readonly ICeremonyGuestApplication _ceremonyGuestApplication;
         private readonly IMultimediaApplication _multimediaApplication;
@@ -26,6 +28,7 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
         }
         public void OnGet(long Id)
         {
+            ViewBag = Id;
             Command = _multimediaApplication.GetMultimediasWithCeremony(Id);
         }
         public IActionResult OnPost(EditMultimedia command, List<IFormFile> files)
@@ -41,6 +44,16 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
             //return Partial("Show", showList);
             //return new JsonResult(result);
             return RedirectToPage("./EditAlbum", new { id = ceremonyId });
+        }
+        public IActionResult OnGetAdd(long id)
+        {
+             var command = _multimediaApplication.GetDetail(id);
+            return Partial("./Add", command);   // new { id = id });
+        }
+        public JsonResult OnPostAdd(EditMultimedia createcommand, List<IFormFile> FileAddress)
+        {
+            var result = _multimediaApplication.EditAlbum(createcommand, FileAddress);
+            return new JsonResult(result);
         }
     }
 }

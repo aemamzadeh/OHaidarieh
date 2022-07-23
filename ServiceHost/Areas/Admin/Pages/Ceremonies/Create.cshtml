@@ -1,8 +1,9 @@
 ﻿@model Haidarieh.Application.Contracts.Ceremony.CreateCeremony
 @{
-    <script src="~/AdminTheme/assets/js/jalaali.js"></script>
     <link rel="stylesheet" href="~/AdminTheme/assets/css/jquery.Bootstrap-PersianDateTimePicker.css">
+    <script src="~/AdminTheme/assets/js/jquery.Bootstrap-PersianDateTimePicker.js"></script> 
 }
+
 
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -120,6 +121,7 @@
                     <span asp-validation-for="MetaDescription" class="error"></span>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -129,7 +131,6 @@
     </div>
 </form>
 
-<script src="~/AdminTheme/assets/js/jquery.Bootstrap-PersianDateTimePicker.js"></script>
 
 <script>
     $('.persianDateInput').persianDatepicker({
@@ -140,4 +141,5 @@
         initialValue: true
     });
 </script>
+<script src="~/AdminTheme/assets/js/jalaali.js"></script>
 

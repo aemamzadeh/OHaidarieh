@@ -576,10 +576,8 @@ D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Ar
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Sponsors\Index.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\_ViewImports.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\_ViewStart.cshtml.g.cs
-D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\About.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\AccessDenied.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\Account.cshtml.g.cs
-D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\Contact1.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\ContactInfo.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\Index.cshtml.g.cs
@@ -595,9 +593,6 @@ D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pa
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\PastEvents\Default.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\Sponsors\Default.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\UpComming\Default.cshtml.g.cs
-D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Footer.cshtml.g.cs
-D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Header.cshtml.g.cs
-D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Menu.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\_Layout.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\_Layout2.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -612,4 +607,6 @@ D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\ServiceH
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\ref\ServiceHost.dll
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\ServiceHost.pdb
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\ServiceHost.genruntimeconfig.cache
-D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\CeremonyGuests\Add.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\Contact.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\About.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Multimedias\Add.cshtml.g.cs

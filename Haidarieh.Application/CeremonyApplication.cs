@@ -13,10 +13,11 @@ namespace Haidarieh.Application
         private readonly IFileUploader _fileUploader;
         private readonly IAuthHelper AuthHelper;
         public Ceremony ceremony { get; set; }
-        public CeremonyApplication(ICeremonyRepository ceremonyRepository, IFileUploader fileUploader)
+        public CeremonyApplication(ICeremonyRepository ceremonyRepository, IFileUploader fileUploader, IAuthHelper authHelper)
         {
             _ceremonyRepository = ceremonyRepository;
             _fileUploader = fileUploader;
+            AuthHelper = authHelper;
         }
 
         public OperationResult Create(CreateCeremony command)
@@ -35,9 +36,9 @@ namespace Haidarieh.Application
 
             ceremony = new Ceremony(command.Title, command.CeremonyDate.ToGeorgianDateTime(), command.IsLive, bannerFileName, 
                 imageFileName, command.ImageAlt, command.ImageTitle, command.Keywords, command.MetaDescription, slug);
-            CreateOperationLog(ceremony.Id, 1);
             _ceremonyRepository.Create(ceremony);   
             _ceremonyRepository.SaveChanges();
+            CreateOperationLog(ceremony.Id, 1);
             return operation.Succedded();
         }
 

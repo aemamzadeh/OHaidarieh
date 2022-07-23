@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\Contact.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\AccountManagement.Infrastructure.Configuration\AccountManagement.Configuration.csproj" />
     <ProjectReference Include="..\Haidarieh.Configuration\Haidarieh.Configuration.csproj" />
   </ItemGroup>
@@ -33,18 +29,6 @@
   <ItemGroup>
     <Folder Include="Pages\Shared\Components\Multimedias\" />
     <Folder Include="wwwroot\AccountImages\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\Contact.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\Contact.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Pages\Contact.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

@@ -52,7 +52,7 @@ namespace ServiceHost.Areas.Admin.Pages.Ceremonies
             return new JsonResult(result);
         }
 
-        //[NeedPermission(HPermissions.LogCeremony)]
+        [NeedPermission(HPermissions.LogCeremony)]
         public IActionResult OnGetLog()
         {
             var logs = _ceremonyApplication.GetCeremonyWithOperationsLog();
