@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Kendo.for.AspNet.Core" Version="2019.1.115" />
   </ItemGroup>
 
   <ItemGroup>

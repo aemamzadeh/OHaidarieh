@@ -31,7 +31,7 @@ namespace Haidarieh.Application
             var ImagePath = $"{ImageFolderName}/{slug}";
             var imageFileName = _fileUploader.Upload(command.Image, ImagePath); 
             
-            var guest = new Guest(command.FullName, command.Tel, command.Email, imageFileName, command.ImageAlt,
+            var guest = new Guest(command.FullName, command.Tel, command.Email, imageFileName.savePath, command.ImageAlt,
                 command.ImageTitle, command.GuestType, command.Coordinator);
             _guestRepository.Create(guest);
             _guestRepository.SaveChanges();
@@ -54,7 +54,7 @@ namespace Haidarieh.Application
             var ImagePath = $"{ImageFolderName}/{slug}";
             var imageFileName = _fileUploader.Upload(command.Image, ImagePath);
 
-            editItem.Edit(command.FullName, command.Tel, command.Email, imageFileName, command.ImageAlt,
+            editItem.Edit(command.FullName, command.Tel, command.Email, imageFileName.savePath, command.ImageAlt,
                 command.ImageTitle, command.GuestType, command.Coordinator);
             _guestRepository.SaveChanges();
             return operation.Succedded();

@@ -6,7 +6,9 @@
     ViewData["MetaDescription"] = Model.ceremony.MetaDescription;
 
 <link rel="canonical" href="www.haidarieh.com/ceremonies">
-<link href="~/Theme/assets/css/fancybox.min.css" rel="stylesheet" /> }
+            <link href="~/Theme/assets/css/fancybox.min.css" rel="stylesheet" />
+}
+
 <div class="gap remove-gap">
     <div class="page-title-wrap">
         <h2>فایلهای چندرسانه ای </h2>
@@ -20,50 +22,45 @@
                         <h3><span>@Model.ceremony.CeremonyDateFa </span></h3>
                         @foreach (var itm in Model.ceremony.CeremonyGuests)
                         {
-            @*@if (itm.GuestType == "1")
-            {*@
-                    <h3>@itm.GuestType:<span> @itm.Guest </span></h3> 
-                    @*}
-                            if (itm.GuestType == "2")
-                            {
-            <h3>خطیب:<span> @itm.Guest </span></h3> }
-                            if (itm.GuestType == "3")
-                            {
-            <h3>مداح:<span> @itm.Guest </span></h3> }
-                            if (itm.GuestType == "4")
-                            {
-            <h3>مجری:<span> @itm.Guest </span></h3>}*@
-                        }
+            <h3>@itm.GuestType:<span> @itm.Guest </span></h3>}
                     </div>
                 </div>
-                @*<div class="evnt-wrap remove-ext5">
-        <div class="row mrg20">*@
-
                 <ul style="list-style:none;" class="row">
                     @foreach (var item in Model.ceremony.Multimedias)
                     {
 
-            <li class="col-md-3">
-                <br />
+        <li class="col-md-3">
+            <br />
+            @if (item.ContentType.StartsWith("image/"))
+            {
                     <a data-fancybox="gallery" data-caption="@item.Title" href="~/@item.FileAddress">
-                    <img class="img" src="~/@item.FileAddress"
-                    style="width:100%;height:180px;" />
-</a>
-                <br />
+                        <img src="~/@item.FileAddress" class="img" style="width: 100%; height: 180px;" />
+                    </a> }
+            else if (item.ContentType.StartsWith("audio/"))
+            {
 
-            </li>}
+                    <a data-fancybox="gallery" data-caption="@item.Title" href="~/@item.FileAddress" data-type="video" style="width: 70px; height: 70px;">
+                        <img src="~/Theme/assets/images/video__player__movie.jpg" style="width: 70px; height: 70px;" />
+                        @item.Title
+                        @*<audio controls id="MyAudio1" style="display:none;">
+                                <source src="~/@item.FileAddress" type="@item.ContentType" />
+                            </audio>*@
+                    </a> }
+            else if (item.ContentType.StartsWith("video/"))
+            {
+                    <a data-fancybox="gallery" data-caption="@item.Title" href="~/@item.FileAddress">
+                        <video src="~/@item.FileAddress" style="width:100%;height:180px;" />
+                    </a>}
+            <br />
+
+        </li>
+}
                 </ul>
 
-               </div> @*<div class="col-md-4 col-sm-4 col-lg-4">
-            <div class="evnt-box">
-                <img src="~/@item.FileAddress" title="@item.FileTitle" alt="@item.FileAlt">
             </div>
-        </div>
-                *@
-            </div>
-
         </div>
     </div>
+</div>
 
 <script src="~/Theme/assets/js/fancybox.min.js"></script>
 

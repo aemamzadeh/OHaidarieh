@@ -12,15 +12,8 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
-#nullable restore
-#line 5 "D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\Areas\Admin\Pages\_ViewImports.cshtml"
-using Kendo.Mvc.UI;
-
-#line default
-#line hidden
-#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4a02501db0bf2e85d1ca9c4bd0e84630880a755c", @"/Areas/Admin/Pages/Multimedias/EditAlbum.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1cfab432600b8205c2cbdbddb69cb692b1a4da87", @"/Areas/Admin/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1fb10717bd390f49ec69c2616d913eb109cc2504", @"/Areas/Admin/Pages/_ViewImports.cshtml")]
     public class Areas_Admin_Pages_Multimedias_EditAlbum : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("style", new global::Microsoft.AspNetCore.Html.HtmlString("width: 70px; height: 70px"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -99,7 +92,7 @@ WriteAttributeValue("", 382, Url.Page("./EditAlbum", "Add", new { id = Model.Vie
             </div>
             <div class=""panel-body"">
                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4a02501db0bf2e85d1ca9c4bd0e84630880a755c7853", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4a02501db0bf2e85d1ca9c4bd0e84630880a755c7659", async() => {
                 WriteLiteral(@"
                     <div class=""row"">
                         <div class=""col-md-12"">
@@ -159,7 +152,7 @@ WriteAttributeValue("", 382, Url.Page("./EditAlbum", "Add", new { id = Model.Vie
 #line hidden
 #nullable disable
                 WriteLiteral("                                                    <td>\r\n                                                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "4a02501db0bf2e85d1ca9c4bd0e84630880a755c10492", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "4a02501db0bf2e85d1ca9c4bd0e84630880a755c10298", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -183,7 +176,7 @@ AddHtmlAttributeValue("", 2012, Model.Command[j].FileAddress, 2012, 29, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                    </td>\r\n                                                    <td>\r\n                                                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4a02501db0bf2e85d1ca9c4bd0e84630880a755c12333", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4a02501db0bf2e85d1ca9c4bd0e84630880a755c12139", async() => {
                     WriteLiteral("\r\n                                                            <i class=\"fa fa-edit\"></i>حذف\r\n                                                        ");
                 }
                 );
@@ -228,7 +221,7 @@ AddHtmlAttributeValue("", 2012, Model.Command[j].FileAddress, 2012, 29, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "4a02501db0bf2e85d1ca9c4bd0e84630880a755c16167", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "4a02501db0bf2e85d1ca9c4bd0e84630880a755c15973", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -307,7 +300,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
 #line hidden
 #nullable disable
                 WriteLiteral("                                                    <td>\r\n                                                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "4a02501db0bf2e85d1ca9c4bd0e84630880a755c20616", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "4a02501db0bf2e85d1ca9c4bd0e84630880a755c20422", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -331,7 +324,7 @@ AddHtmlAttributeValue("", 3562, Model.Command[k].FileAddress, 3562, 29, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                    </td>\r\n                                                    <td>\r\n                                                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4a02501db0bf2e85d1ca9c4bd0e84630880a755c22457", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4a02501db0bf2e85d1ca9c4bd0e84630880a755c22263", async() => {
                     WriteLiteral("\r\n                                                            <i class=\"fa fa-edit\"></i>حذف\r\n                                                        ");
                 }
                 );
@@ -376,7 +369,7 @@ AddHtmlAttributeValue("", 3562, Model.Command[k].FileAddress, 3562, 29, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "4a02501db0bf2e85d1ca9c4bd0e84630880a755c26287", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "4a02501db0bf2e85d1ca9c4bd0e84630880a755c26093", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();

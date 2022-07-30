@@ -11,7 +11,9 @@ namespace _01_HaidariehQuery.Contracts.Ceremonies
         List<CeremonyQueryModel> GetPast();
         List<CeremonyQueryModel> GetAll();
         List<CeremonyQueryModel> GetCeremonyWithMultimedias();
-        CeremonyQueryModel GetCeremonyWithMultimedias(string id);
+        CeremonyQueryModel GetCeremonyWithMultimedias(string id=null,int typeId=0);
         List<CeremonyQueryModel> Search(string phrase);
+        List<CeremonyQueryModel> GetAllCeremonyWithMultimedias();
+
     }
 }

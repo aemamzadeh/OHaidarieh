@@ -14,14 +14,14 @@
                 <ul>
                     <li><a asp-page="/Index" title="">صفحه اصلی</a></li>
                     <li class="menu-item-has-children">
-                        <a asp-page="Index" title="">مجالس</a>
+                        <a title="">مجالس</a>
                         <ul>
-                            <li><a href="/Index" title="">مجالس پیش رو</a></li>
-                            <li><a href="/Index" title="">مجالس گذشته</a></li>
+                            <li><a asp-page="/Index" asp-fragment="Upcomming" title="">مجالس پیش رو</a></li>
+                            <li><a asp-page="/MultimediaDetail/CeremonyArchive" title="">آرشیو مجالس </a></li>
                         </ul>
                     </li>
                     <li><a asp-page="/Support" title="">کمک مالی </a></li>
-                    <li><a asp-page="/Index" title="">آلبوم تصاویر </a></li>
+                    <li><a asp-page="/MultimediaDetail/GalleryArchive" title="">آلبوم تصاویر </a></li>
                     <li><a asp-page="/Index" asp-fragment="Sponsor" title="">خادمین اهل بیت ع</a></li>
                     <li><a asp-page="/Index" asp-fragment="About" title="">درباره ما</a></li>
                     <li><a asp-page="/ContactInfo">تماس با ما</a></li>
@@ -53,21 +53,19 @@
     <div class="rsnp-mnu">
         <span class="rspn-mnu-cls"> <i class="fa fa-times"></i> </span>
         <ul>
+            <li><a asp-page="/Index" title="">صفحه اصلی</a></li>
             <li class="menu-item-has-children">
-                <a asp-page="/Index" title="">صفحه اصلی</a>
-            </li>
-            <li class="menu-item-has-children">
-                <a asp-page="/Index" title="">مجالس</a>
+                <a asp-page="/MutimediaDetail/CeremonyArchive" title="">مجالس</a>
                 <ul>
-                    <li><a href="/Index" title="">مجالس پیش رو</a></li>
-                    <li><a href="/Index" title="">مجالس گذشته</a></li>
+                    <li><a asp-page="/Index" asp-fragment="Upcomming" title="">مجالس پیش رو</a></li>
+                    <li><a asp-page="/MultimediaDetail/CeremonyArchive" title="">آرشیو مجالس </a></li>
                 </ul>
             </li>
             <li><a asp-page="/Support" title="">کمک مالی </a></li>
-            <li><a asp-page="/Index" title="">آلبوم تصاویر </a></li>
-            <li><a asp-page="/Index" asp-fragment="Sponsor">خادمین اهل بیت ع</a></li>
-            <li><a asp-page="About" title="">درباره ما</a></li>
-            <li><a asp-page="/Contactinfo" title="">تماس با ما</a></li>
+            <li><a asp-page="/MultimediaDetail/AlbumArchive" title="">آلبوم تصاویر </a></li>
+            <li><a asp-page="/Index" asp-fragment="Sponsor" title="">خادمین اهل بیت ع</a></li>
+            <li><a asp-page="/Index" asp-fragment="About" title="">درباره ما</a></li>
+            <li><a asp-page="/ContactInfo">تماس با ما</a></li>
 
         </ul>
     </div><!-- Responsive Menu -->

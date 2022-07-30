@@ -15,10 +15,12 @@ namespace ServiceHost.Pages.MultimediaDetail
         {
             _ceremonyQuery = ceremonyQuery;
         }
-        public void OnGet(string Id)
+        public void OnGet(string Id, int typeId)
         {
-            ceremony=_ceremonyQuery.GetCeremonyWithMultimedias(Id);
+            ceremony=_ceremonyQuery.GetCeremonyWithMultimedias(Id, typeId);
+            //ViewData["typeId"] = typeId;
         }
+
     }
 
 }

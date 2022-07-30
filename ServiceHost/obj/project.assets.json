@@ -424,11 +424,11 @@
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Http.Features.dll": {}
         }
       },
-      "Microsoft.AspNetCore.JsonPatch/3.0.0": {
+      "Microsoft.AspNetCore.JsonPatch/2.2.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.CSharp": "4.6.0",
-          "Newtonsoft.Json": "12.0.2"
+          "Microsoft.CSharp": "4.5.0",
+          "Newtonsoft.Json": "11.0.2"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {}
@@ -593,23 +593,6 @@
           "lib/netstandard1.6/Microsoft.AspNetCore.Mvc.Localization.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Mvc.NewtonsoftJson/3.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNetCore.JsonPatch": "3.0.0",
-          "Newtonsoft.Json": "12.0.2",
-          "Newtonsoft.Json.Bson": "1.0.2"
-        },
-        "compile": {
-          "lib/netcoreapp3.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
       "Microsoft.AspNetCore.Mvc.Razor/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -751,6 +734,22 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Routing.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.StaticFiles/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
+          "Microsoft.AspNetCore.Http.Extensions": "2.2.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.2.0",
+          "Microsoft.Extensions.WebEncoders": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.StaticFiles.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.StaticFiles.dll": {}
         }
       },
       "Microsoft.AspNetCore.WebUtilities/2.2.0": {
@@ -1210,25 +1209,6 @@
           }
         }
       },
-      "Microsoft.DotNet.InternalAbstractions/1.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.AppContext": "4.1.0",
-          "System.Collections": "4.0.11",
-          "System.IO": "4.1.0",
-          "System.IO.FileSystem": "4.0.1",
-          "System.Reflection.TypeExtensions": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Runtime.InteropServices": "4.1.0",
-          "System.Runtime.InteropServices.RuntimeInformation": "4.0.0"
-        },
-        "compile": {
-          "lib/netstandard1.3/Microsoft.DotNet.InternalAbstractions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/Microsoft.DotNet.InternalAbstractions.dll": {}
-        }
-      },
       "Microsoft.DotNet.PlatformAbstractions/2.1.0": {
         "type": "package",
         "dependencies": {
@@ -1562,11 +1542,15 @@
           "lib/net5.0/Microsoft.Extensions.Options.dll": {}
         }
       },
-      "Microsoft.Extensions.PlatformAbstractions/1.1.0": {
+      "Microsoft.Extensions.PlatformAbstractions/1.0.0": {
         "type": "package",
         "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "System.Reflection.TypeExtensions": "4.3.0"
+          "System.AppContext": "4.1.0",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Reflection.TypeExtensions": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime.Extensions": "4.1.0"
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {}
@@ -1862,19 +1846,19 @@
           }
         }
       },
-      "Microsoft.Win32.SystemEvents/4.7.0": {
+      "Microsoft.Win32.SystemEvents/6.0.0": {
         "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.1.0"
-        },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {}
+          "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
+          "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -1979,16 +1963,17 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Newtonsoft.Json.Bson/1.0.2": {
+      "Newtonsoft.Json.Bson/1.0.1": {
         "type": "package",
         "dependencies": {
-          "Newtonsoft.Json": "12.0.1"
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "10.0.1"
         },
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {}
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {}
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
       "Portable.BouncyCastle/1.8.8": {
@@ -2217,6 +2202,18 @@
             "assetType": "native",
             "rid": "win-x86"
           }
+        }
+      },
+      "SolrNet.Core/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/SolrNet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SolrNet.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -2611,24 +2608,26 @@
           "ref/netstandard1.5/System.Diagnostics.Tracing.dll": {}
         }
       },
-      "System.Drawing.Common/4.7.0": {
+      "System.Drawing.Common/6.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.1.0",
-          "Microsoft.Win32.SystemEvents": "4.7.0"
+          "Microsoft.Win32.SystemEvents": "6.0.0"
         },
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "lib/netcoreapp3.1/System.Drawing.Common.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+          "lib/netcoreapp3.1/System.Drawing.Common.dll": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+          "runtimes/unix/lib/netcoreapp3.1/System.Drawing.Common.dll": {
             "assetType": "runtime",
             "rid": "unix"
           },
-          "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+          "runtimes/win/lib/netcoreapp3.1/System.Drawing.Common.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -4071,92 +4070,6 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Telerik.UI.for.AspNet.Core/2020.3.1118": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.0.0",
-          "Microsoft.CodeAnalysis": "3.3.1",
-          "Microsoft.CodeAnalysis.CSharp": "3.3.1",
-          "Microsoft.DotNet.InternalAbstractions": "1.0.0",
-          "Microsoft.Extensions.PlatformAbstractions": "1.1.0",
-          "System.Data.Common": "4.1.0",
-          "System.Linq.Queryable": "4.0.1"
-        },
-        "compile": {
-          "lib/netcoreapp3.1/Kendo.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Kendo.Mvc.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ],
-        "resource": {
-          "lib/netcoreapp3.1/ar-AE/Kendo.Mvc.resources.dll": {
-            "locale": "ar-AE"
-          },
-          "lib/netcoreapp3.1/bg-BG/Kendo.Mvc.resources.dll": {
-            "locale": "bg-BG"
-          },
-          "lib/netcoreapp3.1/cs-CZ/Kendo.Mvc.resources.dll": {
-            "locale": "cs-CZ"
-          },
-          "lib/netcoreapp3.1/da-DK/Kendo.Mvc.resources.dll": {
-            "locale": "da-DK"
-          },
-          "lib/netcoreapp3.1/de-DE/Kendo.Mvc.resources.dll": {
-            "locale": "de-DE"
-          },
-          "lib/netcoreapp3.1/el-GR/Kendo.Mvc.resources.dll": {
-            "locale": "el-GR"
-          },
-          "lib/netcoreapp3.1/es-ES/Kendo.Mvc.resources.dll": {
-            "locale": "es-ES"
-          },
-          "lib/netcoreapp3.1/fr-CA/Kendo.Mvc.resources.dll": {
-            "locale": "fr-CA"
-          },
-          "lib/netcoreapp3.1/fr-FR/Kendo.Mvc.resources.dll": {
-            "locale": "fr-FR"
-          },
-          "lib/netcoreapp3.1/it-IT/Kendo.Mvc.resources.dll": {
-            "locale": "it-IT"
-          },
-          "lib/netcoreapp3.1/nb-NO/Kendo.Mvc.resources.dll": {
-            "locale": "nb-NO"
-          },
-          "lib/netcoreapp3.1/nl-NL/Kendo.Mvc.resources.dll": {
-            "locale": "nl-NL"
-          },
-          "lib/netcoreapp3.1/pl-PL/Kendo.Mvc.resources.dll": {
-            "locale": "pl-PL"
-          },
-          "lib/netcoreapp3.1/pt-BR/Kendo.Mvc.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netcoreapp3.1/pt-PT/Kendo.Mvc.resources.dll": {
-            "locale": "pt-PT"
-          },
-          "lib/netcoreapp3.1/ro-RO/Kendo.Mvc.resources.dll": {
-            "locale": "ro-RO"
-          },
-          "lib/netcoreapp3.1/ru-RU/Kendo.Mvc.resources.dll": {
-            "locale": "ru-RU"
-          },
-          "lib/netcoreapp3.1/sv-SE/Kendo.Mvc.resources.dll": {
-            "locale": "sv-SE"
-          },
-          "lib/netcoreapp3.1/tr-TR/Kendo.Mvc.resources.dll": {
-            "locale": "tr-TR"
-          },
-          "lib/netcoreapp3.1/uk-UA/Kendo.Mvc.resources.dll": {
-            "locale": "uk-UA"
-          },
-          "lib/netcoreapp3.1/zh-CN/Kendo.Mvc.resources.dll": {
-            "locale": "zh-CN"
-          }
-        }
-      },
       "xunit.abstractions/2.0.3": {
         "type": "package",
         "compile": {
@@ -4198,6 +4111,8 @@
         "dependencies": {
           "Haidarieh.Infrastructure.EFCore": "1.0.0",
           "Kendo.for.AspNet.Core": "2019.1.115",
+          "Microsoft.AspNetCore.StaticFiles": "2.2.0",
+          "SolrNet.Core": "1.1.1",
           "System.Linq": "4.3.0"
         },
         "compile": {
@@ -4311,7 +4226,8 @@
           "0_Framework": "1.0.0",
           "Haidarieh.Application.Contracts": "1.0.0",
           "Haidarieh.Domain": "1.0.0",
-          "Kendo.for.AspNet.Core": "2019.1.115"
+          "Kendo.for.AspNet.Core": "2019.1.115",
+          "System.Drawing.Common": "6.0.0"
         },
         "compile": {
           "bin/placeholder/Haidarieh.Application.dll": {}
@@ -4344,8 +4260,7 @@
         "dependencies": {
           "01_HaidariehQuery": "1.0.0",
           "Haidarieh.Application": "1.0.0",
-          "Haidarieh.Infrastructure.EFCore": "1.0.0",
-          "Kendo.for.AspNet.Core": "2019.1.115"
+          "Haidarieh.Infrastructure.EFCore": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Haidarieh.Configuration.dll": {}
@@ -4911,16 +4826,16 @@
         "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.JsonPatch/3.0.0": {
-      "sha512": "LQVXEPxV4jIUiVHHUgBzZxOePSdD7wxV1ndtjg1a76JMqoK3siFka2pVfJXwRq0G4hxbYVWxvamqO733wUhQiA==",
+    "Microsoft.AspNetCore.JsonPatch/2.2.0": {
+      "sha512": "o9BB9hftnCsyJalz9IT0DUFxz8Xvgh3TOfGWolpuf19duxB4FySq7c25XDYBmBMS+sun5/PsEUAi58ra4iJAoA==",
       "type": "package",
-      "path": "microsoft.aspnetcore.jsonpatch/3.0.0",
+      "path": "microsoft.aspnetcore.jsonpatch/2.2.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.xml",
-        "microsoft.aspnetcore.jsonpatch.3.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.jsonpatch.2.2.0.nupkg.sha512",
         "microsoft.aspnetcore.jsonpatch.nuspec"
       ]
     },
@@ -5066,19 +4981,6 @@
         "microsoft.aspnetcore.mvc.localization.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Mvc.NewtonsoftJson/3.0.0": {
-      "sha512": "euuKDPev8bb87dzyyDd252jxafKkCNCU0Yh1ujLq7DT7g4sUwUsq1bVnow9isaYFFx+DBWSywUcL8ngSra0QHg==",
-      "type": "package",
-      "path": "microsoft.aspnetcore.mvc.newtonsoftjson/3.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netcoreapp3.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll",
-        "lib/netcoreapp3.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.xml",
-        "microsoft.aspnetcore.mvc.newtonsoftjson.3.0.0.nupkg.sha512",
-        "microsoft.aspnetcore.mvc.newtonsoftjson.nuspec"
-      ]
-    },
     "Microsoft.AspNetCore.Mvc.Razor/1.0.0": {
       "sha512": "G17pVnANhBj6AdpzTnJV36MRx4KNLQao0NqGUyKFvtKjy77KR55Fmt6/MVykbOB5xH33fbMIveTiSF3h4kWSQA==",
       "type": "package",
@@ -5216,6 +5118,19 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Routing.Abstractions.xml",
         "microsoft.aspnetcore.routing.abstractions.2.2.0.nupkg.sha512",
         "microsoft.aspnetcore.routing.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.StaticFiles/2.2.0": {
+      "sha512": "byZDrjir6Co5EoWbraQyG0qbPCUG6XgGYQstipMF9lucOAjq/mqnIyt8B8iMWnin/ghZoOln9Y01af4rUAwOhA==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.staticfiles/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.StaticFiles.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.StaticFiles.xml",
+        "microsoft.aspnetcore.staticfiles.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.staticfiles.nuspec"
       ]
     },
     "Microsoft.AspNetCore.WebUtilities/2.2.0": {
@@ -5804,19 +5719,6 @@
         "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.pdb"
       ]
     },
-    "Microsoft.DotNet.InternalAbstractions/1.0.0": {
-      "sha512": "AAguUq7YyKk3yDWPoWA8DrLZvURxB/LrDdTn1h5lmPeznkFUpfC3p459w5mQYQE0qpquf/CkSQZ0etiV5vRHFA==",
-      "type": "package",
-      "path": "microsoft.dotnet.internalabstractions/1.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net451/Microsoft.DotNet.InternalAbstractions.dll",
-        "lib/netstandard1.3/Microsoft.DotNet.InternalAbstractions.dll",
-        "microsoft.dotnet.internalabstractions.1.0.0.nupkg.sha512",
-        "microsoft.dotnet.internalabstractions.nuspec"
-      ]
-    },
     "Microsoft.DotNet.PlatformAbstractions/2.1.0": {
       "sha512": "9KPDwvb/hLEVXYruVHVZ8BkebC8j17DmPb56LnqRF74HqSPLjCkrlFUjOtFpQPA2DeADBRTI/e69aCfRBfrhxw==",
       "type": "package",
@@ -6222,17 +6124,18 @@
         "version.txt"
       ]
     },
-    "Microsoft.Extensions.PlatformAbstractions/1.1.0": {
-      "sha512": "H6ZsQzxYw/6k2DfEQRXdC+vQ6obd6Uba3uGJrnJ2vG4PRXjQZ7seB13JdCfE72abp8E6Fk3gGgDzfJiLZi5ZpQ==",
+    "Microsoft.Extensions.PlatformAbstractions/1.0.0": {
+      "sha512": "zyjUzrOmuevOAJpIo3Mt5GmpALVYCVdLZ99keMbmCxxgQH7oxzU58kGHzE6hAgYEiWsdfMJLjVR7r+vSmaJmtg==",
       "type": "package",
-      "path": "microsoft.extensions.platformabstractions/1.1.0",
+      "path": "microsoft.extensions.platformabstractions/1.0.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll",
         "lib/net451/Microsoft.Extensions.PlatformAbstractions.xml",
         "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll",
         "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.xml",
-        "microsoft.extensions.platformabstractions.1.1.0.nupkg.sha512",
+        "microsoft.extensions.platformabstractions.1.0.0.nupkg.sha512",
         "microsoft.extensions.platformabstractions.nuspec"
       ]
     },
@@ -6953,33 +6856,33 @@
         "version.txt"
       ]
     },
-    "Microsoft.Win32.SystemEvents/4.7.0": {
-      "sha512": "mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
+    "Microsoft.Win32.SystemEvents/6.0.0": {
+      "sha512": "hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
       "type": "package",
-      "path": "microsoft.win32.systemevents/4.7.0",
+      "path": "microsoft.win32.systemevents/6.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/Microsoft.Win32.SystemEvents.targets",
+        "buildTransitive/netcoreapp3.1/_._",
         "lib/net461/Microsoft.Win32.SystemEvents.dll",
         "lib/net461/Microsoft.Win32.SystemEvents.xml",
+        "lib/net6.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/net6.0/Microsoft.Win32.SystemEvents.xml",
+        "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll",
+        "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.xml",
         "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
         "lib/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
-        "microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+        "microsoft.win32.systemevents.6.0.0.nupkg.sha512",
         "microsoft.win32.systemevents.nuspec",
-        "ref/net461/Microsoft.Win32.SystemEvents.dll",
-        "ref/net461/Microsoft.Win32.SystemEvents.xml",
-        "ref/net472/Microsoft.Win32.SystemEvents.dll",
-        "ref/net472/Microsoft.Win32.SystemEvents.xml",
-        "ref/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
-        "ref/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
-        "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.dll",
-        "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.xml",
-        "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll",
-        "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.xml",
+        "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.xml",
+        "useSharedDesignerContext.txt"
       ]
     },
     "MimeKit/2.10.1": {
@@ -7086,24 +6989,18 @@
         "packageIcon.png"
       ]
     },
-    "Newtonsoft.Json.Bson/1.0.2": {
-      "sha512": "QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
+    "Newtonsoft.Json.Bson/1.0.1": {
+      "sha512": "5PYT/IqQ+UK31AmZiSS102R6EsTo+LGTSI8bp7WAUqDKaF4wHXD8U9u4WxTI1vc64tYi++8p3dk3WWNqPFgldw==",
       "type": "package",
-      "path": "newtonsoft.json.bson/1.0.2",
+      "path": "newtonsoft.json.bson/1.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.md",
         "lib/net45/Newtonsoft.Json.Bson.dll",
-        "lib/net45/Newtonsoft.Json.Bson.pdb",
         "lib/net45/Newtonsoft.Json.Bson.xml",
         "lib/netstandard1.3/Newtonsoft.Json.Bson.dll",
-        "lib/netstandard1.3/Newtonsoft.Json.Bson.pdb",
         "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
-        "lib/netstandard2.0/Newtonsoft.Json.Bson.dll",
-        "lib/netstandard2.0/Newtonsoft.Json.Bson.pdb",
-        "lib/netstandard2.0/Newtonsoft.Json.Bson.xml",
-        "newtonsoft.json.bson.1.0.2.nupkg.sha512",
+        "newtonsoft.json.bson.1.0.1.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
       ]
     },
@@ -7412,6 +7309,23 @@
         "runtimes/win-x86/native/sni.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "SolrNet.Core/1.1.1": {
+      "sha512": "MlitQHkLWUeZdN8Aw3nic/eYATLwGEbesVo69g2Zox4As9Rp7ptAxcl9nBzP+a0wyBX1ECmsiHtrrw1M/tiqkg==",
+      "type": "package",
+      "path": "solrnet.core/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/SolrNet.dll",
+        "lib/net46/SolrNet.pdb",
+        "lib/net46/SolrNet.xml",
+        "lib/netstandard2.0/SolrNet.dll",
+        "lib/netstandard2.0/SolrNet.pdb",
+        "lib/netstandard2.0/SolrNet.xml",
+        "solrnet.core.1.1.1.nupkg.sha512",
+        "solrnet.core.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -8517,43 +8431,43 @@
         "system.diagnostics.tracing.nuspec"
       ]
     },
-    "System.Drawing.Common/4.7.0": {
-      "sha512": "v+XbyYHaZjDfn0ENmJEV1VYLgGgCTx1gnfOBcppowbpOAriglYgGCvFCPr2EEZyBvXlpxbEsTwkOlInl107ahA==",
+    "System.Drawing.Common/6.0.0": {
+      "sha512": "NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==",
       "type": "package",
-      "path": "system.drawing.common/4.7.0",
+      "path": "system.drawing.common/6.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Drawing.Common.targets",
+        "buildTransitive/netcoreapp3.1/_._",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
         "lib/net461/System.Drawing.Common.dll",
+        "lib/net461/System.Drawing.Common.xml",
+        "lib/net6.0/System.Drawing.Common.dll",
+        "lib/net6.0/System.Drawing.Common.xml",
+        "lib/netcoreapp3.1/System.Drawing.Common.dll",
+        "lib/netcoreapp3.1/System.Drawing.Common.xml",
         "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.xml",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net461/System.Drawing.Common.dll",
-        "ref/netcoreapp3.0/System.Drawing.Common.dll",
-        "ref/netcoreapp3.0/System.Drawing.Common.xml",
-        "ref/netstandard2.0/System.Drawing.Common.dll",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
-        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll",
-        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.xml",
-        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.xml",
-        "system.drawing.common.4.7.0.nupkg.sha512",
+        "runtimes/unix/lib/net6.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/net6.0/System.Drawing.Common.xml",
+        "runtimes/unix/lib/netcoreapp3.1/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.1/System.Drawing.Common.xml",
+        "runtimes/win/lib/net6.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/net6.0/System.Drawing.Common.xml",
+        "runtimes/win/lib/netcoreapp3.1/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.1/System.Drawing.Common.xml",
+        "system.drawing.common.6.0.0.nupkg.sha512",
         "system.drawing.common.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "useSharedDesignerContext.txt"
       ]
     },
     "System.Dynamic.Runtime/4.0.11": {
@@ -12450,127 +12364,6 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "Telerik.UI.for.AspNet.Core/2020.3.1118": {
-      "sha512": "zCb0b75vQV2UZf3S3VTCaXWnu6Pv0xcfpGam0dp0cRY4CvkDIU13qxMnHIjlSUbwv0ZBZCmFvyIVVaR7QQLnQw==",
-      "type": "package",
-      "path": "telerik.ui.for.aspnet.core/2020.3.1118",
-      "files": [
-        ".nupkg.metadata",
-        "lib/net451/Kendo.Mvc.dll",
-        "lib/net451/Kendo.Mvc.xml",
-        "lib/net451/ar-AE/Kendo.Mvc.resources.dll",
-        "lib/net451/bg-BG/Kendo.Mvc.resources.dll",
-        "lib/net451/cs-CZ/Kendo.Mvc.resources.dll",
-        "lib/net451/da-DK/Kendo.Mvc.resources.dll",
-        "lib/net451/de-DE/Kendo.Mvc.resources.dll",
-        "lib/net451/el-GR/Kendo.Mvc.resources.dll",
-        "lib/net451/es-ES/Kendo.Mvc.resources.dll",
-        "lib/net451/fr-CA/Kendo.Mvc.resources.dll",
-        "lib/net451/fr-FR/Kendo.Mvc.resources.dll",
-        "lib/net451/it-IT/Kendo.Mvc.resources.dll",
-        "lib/net451/nb-NO/Kendo.Mvc.resources.dll",
-        "lib/net451/nl-NL/Kendo.Mvc.resources.dll",
-        "lib/net451/pl-PL/Kendo.Mvc.resources.dll",
-        "lib/net451/pt-BR/Kendo.Mvc.resources.dll",
-        "lib/net451/pt-PT/Kendo.Mvc.resources.dll",
-        "lib/net451/ro-RO/Kendo.Mvc.resources.dll",
-        "lib/net451/ru-RU/Kendo.Mvc.resources.dll",
-        "lib/net451/sv-SE/Kendo.Mvc.resources.dll",
-        "lib/net451/tr-TR/Kendo.Mvc.resources.dll",
-        "lib/net451/uk-UA/Kendo.Mvc.resources.dll",
-        "lib/net451/zh-CN/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/Kendo.Mvc.dll",
-        "lib/netcoreapp3.0/ar-AE/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/bg-BG/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/cs-CZ/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/da-DK/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/de-DE/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/el-GR/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/es-ES/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/fr-CA/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/fr-FR/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/it-IT/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/nb-NO/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/nl-NL/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/pl-PL/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/pt-BR/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/pt-PT/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/ro-RO/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/ru-RU/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/sv-SE/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/tr-TR/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/uk-UA/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.0/zh-CN/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/Kendo.Mvc.dll",
-        "lib/netcoreapp3.1/ar-AE/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/bg-BG/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/cs-CZ/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/da-DK/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/de-DE/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/el-GR/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/es-ES/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/fr-CA/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/fr-FR/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/it-IT/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/nb-NO/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/nl-NL/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/pl-PL/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/pt-BR/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/pt-PT/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/ro-RO/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/ru-RU/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/sv-SE/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/tr-TR/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/uk-UA/Kendo.Mvc.resources.dll",
-        "lib/netcoreapp3.1/zh-CN/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/Kendo.Mvc.dll",
-        "lib/netstandard1.6/ar-AE/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/bg-BG/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/cs-CZ/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/da-DK/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/de-DE/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/el-GR/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/es-ES/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/fr-CA/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/fr-FR/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/it-IT/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/nb-NO/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/nl-NL/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/pl-PL/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/pt-BR/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/pt-PT/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/ro-RO/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/ru-RU/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/sv-SE/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/tr-TR/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/uk-UA/Kendo.Mvc.resources.dll",
-        "lib/netstandard1.6/zh-CN/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/Kendo.Mvc.dll",
-        "lib/netstandard2.0/ar-AE/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/bg-BG/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/cs-CZ/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/da-DK/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/de-DE/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/el-GR/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/es-ES/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/fr-CA/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/fr-FR/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/it-IT/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/nb-NO/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/nl-NL/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/pl-PL/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/pt-BR/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/pt-PT/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/ro-RO/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/ru-RU/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/sv-SE/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/tr-TR/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/uk-UA/Kendo.Mvc.resources.dll",
-        "lib/netstandard2.0/zh-CN/Kendo.Mvc.resources.dll",
-        "telerik.ui.for.aspnet.core.2020.3.1118.nupkg.sha512",
-        "telerik.ui.for.aspnet.core.nuspec"
-      ]
-    },
     "xunit.abstractions/2.0.3": {
       "sha512": "pot1I4YOxlWjIb5jmwvvQNbTrZ3lJQ+jUGkGjWE3hEFM0l5gOnBWS+H3qsex68s5cO52g+44vpGzhAt+42vwKg==",
       "type": "package",
@@ -12686,14 +12479,12 @@
     "net5.0": [
       "AccountManagement.Configuration >= 1.0.0",
       "Haidarieh.Configuration >= 1.0.0",
-      "Kendo.for.AspNet.Core >= 2019.1.115",
       "MD.BootstrapPersianDateTimePicker >= 2.3.0",
       "Microsoft.CodeAnalysis >= 3.8.0",
       "Microsoft.CodeAnalysis.CSharp >= 3.8.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.1",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.1",
-      "System.Collections >= 4.3.0",
-      "Telerik.UI.for.AspNet.Core >= 2020.3.1118"
+      "System.Collections >= 4.3.0"
     ]
   },
   "packageFolders": {
@@ -12746,10 +12537,6 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
-          "Kendo.for.AspNet.Core": {
-            "target": "Package",
-            "version": "[2019.1.115, )"
-          },
           "MD.BootstrapPersianDateTimePicker": {
             "target": "Package",
             "version": "[2.3.0, )"
@@ -12775,10 +12562,6 @@
           "System.Collections": {
             "target": "Package",
             "version": "[4.3.0, )"
-          },
-          "Telerik.UI.for.AspNet.Core": {
-            "target": "Package",
-            "version": "[2020.3.1118, )"
           }
         },
         "imports": [

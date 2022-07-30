@@ -60,7 +60,7 @@ namespace AccountManagement.Application
             var password = _passwordHasher.Hash(command.Password);
 
             var account = new Account(command.Fname, command.Lname, command.Username, password,
-                command.Mobile, command.RoleId, filepath);
+                command.Mobile, command.RoleId, filepath.savePath);
             _accountRepository.Create(account);
             _accountRepository.SaveChanges();
             return operation.Succedded();
@@ -89,7 +89,7 @@ namespace AccountManagement.Application
 
             var filepath = _fileUploader.Upload(command.ProfilePhoto, ImagePath);
 
-            editItem.Edit(command.Fname, command.Lname, command.Username, command.Mobile, command.RoleId, filepath);
+            editItem.Edit(command.Fname, command.Lname, command.Username, command.Mobile, command.RoleId, filepath.savePath);
             _accountRepository.SaveChanges();
             return operation.Succedded();
         }

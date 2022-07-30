@@ -14,5 +14,8 @@ namespace _01_HaidariehQuery.Contracts.Multimedias
         public bool Status { get;  set; }
         public DateTime CeremonyDate { get; set; }
         public string Slug { get; set; }
+        public string ContentType { get; set; }
+
+
     }
 }

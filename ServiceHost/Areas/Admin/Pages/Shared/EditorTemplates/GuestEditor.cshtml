@@ -1,15 +1,3 @@
 ﻿@model string
 
-@(Html.Kendo().DropDownListFor(m=>m)
-            .DataValueField("fullName")
-            .DataTextField("fullName")
-            .DataSource(ds => ds
-               .Custom()
-               .Transport(transport => transport
-                   .Read(r => r
-                                .Url("CeremonyGuests/Index?handler=Guests")
-                    ))
-                   .ServerFiltering(false)
-                )
-)
 

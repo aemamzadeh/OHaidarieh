@@ -48,7 +48,7 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
         public IActionResult OnGetAdd(long id)
         {
              var command = _multimediaApplication.GetDetail(id);
-            return Partial("./Add", command);   // new { id = id });
+            return Partial("./Add", command);
         }
         public JsonResult OnPostAdd(EditMultimedia createcommand, List<IFormFile> FileAddress)
         {

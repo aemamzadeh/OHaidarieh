@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Kendo.for.AspNet.Core" Version="2019.1.115" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>

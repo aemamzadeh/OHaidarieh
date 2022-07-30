@@ -5,8 +5,14 @@ using Haidarieh.Domain.MultimediaAgg;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Drawing;
 using System.Linq;
 using System.Text;
+using static System.Net.Mime.MediaTypeNames;
+using System.Drawing.Drawing2D;
+using Org.BouncyCastle.Asn1.Ocsp;
+using System.Drawing.Imaging;
 
 namespace Haidarieh.Application
 {
@@ -15,12 +21,14 @@ namespace Haidarieh.Application
         private readonly IMultimediaRepository _multimediaRepository;
         private readonly ICeremonyRepository _ceremonyRepository;
         private readonly IFileUploader _fileUploader;
-   
-        public MultimediaApplication(IMultimediaRepository multimediaRepository, ICeremonyRepository ceremonyRepository, IFileUploader fileUploader)
+        private readonly IImageCompression _imageCompression;
+
+        public MultimediaApplication(IMultimediaRepository multimediaRepository, ICeremonyRepository ceremonyRepository, IFileUploader fileUploader, IImageCompression imageCompression)
         {
             _multimediaRepository = multimediaRepository;
             _ceremonyRepository = ceremonyRepository;
             _fileUploader = fileUploader;
+            _imageCompression = imageCompression;
         }
         public OperationResult Create(CreateMultimedia command, List<IFormFile> files)
         {
@@ -33,13 +41,16 @@ namespace Haidarieh.Application
                 var ImageFolderName = Tools.ToFolderName(this.GetType().Name);
                 var ImagePath = $"{ImageFolderName}/{ceremony.Slug}";
                 var imageFileName = _fileUploader.Upload(item, ImagePath);
-                var multimedia = new Multimedia(ceremony.Title, imageFileName, command.FileTitle, command.FileAlt, command.CeremonyId);
+                _imageCompression.ImageOptimize(item,imageFileName.filePath);
+                var multimedia = new Multimedia(ceremony.Title, imageFileName.savePath, command.FileTitle, command.FileAlt, command.CeremonyId);
                 _multimediaRepository.Create(multimedia);
             }
-               
+
+
             _multimediaRepository.SaveChanges();
             return operation.Succedded();
         }
+
 
         public OperationResult EditAlbum(EditMultimedia command, List<IFormFile> files)
         {
@@ -56,8 +67,13 @@ namespace Haidarieh.Application
                 var ImageFolderName = Tools.ToFolderName(this.GetType().Name);
                 var ImagePath = $"{ImageFolderName}/{ceremony.Slug}";
                 var imageFileName = _fileUploader.Upload(item, ImagePath);
+                if (item.ContentType.StartsWith("image/"))
+                {
+                    _imageCompression.ImageOptimize(item, ImagePath);
+                }
+                //var imageFileName = _fileUploader.Upload(item, ImagePath);
                 //editItem.EditAlbum(imageFileName, command.CeremonyId);
-                var multimedia = new Multimedia(ceremony.Title, imageFileName, command.FileTitle, command.FileAlt, command.CeremonyId);
+                var multimedia = new Multimedia(ceremony.Title, imageFileName.savePath, command.FileTitle, command.FileAlt, command.CeremonyId);
                 _multimediaRepository.Create(multimedia);
 
             }

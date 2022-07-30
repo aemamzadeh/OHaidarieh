@@ -62,7 +62,8 @@
 
 /*===== General Styling =====*/
 html, 
-body {overflow-x:hidden;}
+body {overflow-x:hidden;
+}
 body {
   float: left;
   font-family: shabnam;
@@ -70,6 +71,7 @@ body {
   margin: 0;
   position: relative;
   width: 100%;
+  direction:rtl;
 }
 h1,h2,h3,h4,h5,h6 {
   font-family: shabnam;
@@ -2242,7 +2244,7 @@ footer {
 .blog-box {
   float: left;
   position: relative;
-  width: 100%;
+  width: 120px;
   -webkit-box-shadow: 0 0px 50px rgba(0,0,0,.15);
   -ms-box-shadow: 0 0px 50px rgba(0,0,0,.15);
   -o-box-shadow: 0 0px 50px rgba(0,0,0,.15);
@@ -2258,7 +2260,7 @@ footer {
   width: 100%;
   position: relative;
 }
-.blog-thmb > a img {width: 100%;}
+.blog-thmb > a img {width: 120px; height:87px;}
 .blog-thmb > a:before {
   content: "";
   position: absolute;
@@ -2280,7 +2282,9 @@ footer {
 .blog-info {
   float: left;
   width: 100%;
-  padding: 25px 25px 30px;
+  padding: 5px 5px 5px;
+  direction:rtl;
+  height:105px;
 }
 .pst-mta2 {
   display: inline-block;
@@ -2295,6 +2299,7 @@ footer {
   font-size: 15px;
   font-weight: 300;
   color: #1e1e1e;
+  direction:rtl;
 }
 .pst-mta2 > li i {margin-right: 10px;}
 .pst-mta2 + h4 {margin-top: 2px;}
@@ -2302,6 +2307,7 @@ footer {
   margin-bottom: 0;
   font-size: 22px;
   font-weight: 500;
+  direction:rtl;
 }
 .blog-info > h4 + p {margin-top: 17px;}
 .blog-info > p {
@@ -2314,6 +2320,7 @@ footer {
   display: inline-block;
   font-size: 15px;
   font-weight: 500;
+  direction:rtl;
 }
 /*===== Pagination Wrap =====*/
 .pagination-wrap {

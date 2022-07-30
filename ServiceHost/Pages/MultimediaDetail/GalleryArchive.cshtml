@@ -1,0 +1,51 @@
+﻿@page
+@model GalleryArchiveModel
+@{Layout = "_Layout2"; }
+
+<div class="gap remove-bottom black-layer2 opc85">
+    <div class="fixed-bg" style="background-image: url(assets/images/parallax12.jpg);"></div>
+    <div class="container">
+        <div class="page-title-wrap">
+            <h2>آلبوم تصاویر</h2>
+        </div><!-- Page Title Wrap -->
+    </div>
+</div>
+
+<div class="gap">
+    <div class="container">
+        <div class="event-wrap">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="remove-ext3">
+                        <div class="row">
+                            @foreach (var item in Model.ceremonies)
+                            {
+                            <div class="col-md-4 col-sm-6 col-lg-4">
+                                <div class="event-box2">
+                                    <div class="event-thumb">
+                                        <a asp-page="/MultimediaDetail/Detail" asp-route-Id="@item.Slug" asp-route-typeId="1"><img src="~/@item.Image" alt="@item.ImageAlt"></a>
+                                    </div>
+                                    <div class="event-info">
+                                        <h4><a href="event.html#" title="">@item.Title</a></h4>
+                                        <ul class="event-mta">
+                                            <li><i class="flaticon-clock"></i>@item.CeremonyDateFa</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- Event Wrap -->
+        <div class="pagination-wrap text-center">
+            <ul class="pagination">
+                @for (int i = 1; i <= (int)(ViewData["pageCount"]); i++)
+                {
+                    <li class="@(ViewData["pageId"]=i)?" active":""><a asp-page="/MultimediaDetail/CeremonyArchive" asp-route-pageId="@i" title="">@i</a></li>
+                }
+            </ul>
+        </div><!-- Pagination Wrap -->
+    </div>
+</div>

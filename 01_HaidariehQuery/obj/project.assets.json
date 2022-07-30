@@ -715,6 +715,22 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Routing.Abstractions.dll": {}
         }
       },
+      "Microsoft.AspNetCore.StaticFiles/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
+          "Microsoft.AspNetCore.Http.Extensions": "2.2.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.2.0",
+          "Microsoft.Extensions.WebEncoders": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.StaticFiles.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.StaticFiles.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.WebUtilities/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -1730,6 +1746,18 @@
             "assetType": "native",
             "rid": "win-x86"
           }
+        }
+      },
+      "SolrNet.Core/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/SolrNet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SolrNet.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -4459,6 +4487,19 @@
         "microsoft.aspnetcore.routing.abstractions.nuspec"
       ]
     },
+    "Microsoft.AspNetCore.StaticFiles/2.2.0": {
+      "sha512": "byZDrjir6Co5EoWbraQyG0qbPCUG6XgGYQstipMF9lucOAjq/mqnIyt8B8iMWnin/ghZoOln9Y01af4rUAwOhA==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.staticfiles/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.StaticFiles.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.StaticFiles.xml",
+        "microsoft.aspnetcore.staticfiles.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.staticfiles.nuspec"
+      ]
+    },
     "Microsoft.AspNetCore.WebUtilities/2.2.0": {
       "sha512": "9ErxAAKaDzxXASB/b5uLEkLgUWv1QbeVxyJYEHQwMaxXOeFFVkQxiq8RyfVcifLU7NR0QY0p3acqx4ZpYfhHDg==",
       "type": "package",
@@ -5843,6 +5884,23 @@
         "runtimes/win-x86/native/sni.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "SolrNet.Core/1.1.1": {
+      "sha512": "MlitQHkLWUeZdN8Aw3nic/eYATLwGEbesVo69g2Zox4As9Rp7ptAxcl9nBzP+a0wyBX1ECmsiHtrrw1M/tiqkg==",
+      "type": "package",
+      "path": "solrnet.core/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/SolrNet.dll",
+        "lib/net46/SolrNet.pdb",
+        "lib/net46/SolrNet.xml",
+        "lib/netstandard2.0/SolrNet.dll",
+        "lib/netstandard2.0/SolrNet.pdb",
+        "lib/netstandard2.0/SolrNet.xml",
+        "solrnet.core.1.1.1.nupkg.sha512",
+        "solrnet.core.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -11046,6 +11104,8 @@
     "net5.0": [
       "Haidarieh.Infrastructure.EFCore >= 1.0.0",
       "Kendo.for.AspNet.Core >= 2019.1.115",
+      "Microsoft.AspNetCore.StaticFiles >= 2.2.0",
+      "SolrNet.Core >= 1.1.1",
       "System.Linq >= 4.3.0"
     ]
   },
@@ -11099,6 +11159,14 @@
           "Kendo.for.AspNet.Core": {
             "target": "Package",
             "version": "[2019.1.115, )"
+          },
+          "Microsoft.AspNetCore.StaticFiles": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
+          "SolrNet.Core": {
+            "target": "Package",
+            "version": "[1.1.1, )"
           },
           "System.Linq": {
             "target": "Package",

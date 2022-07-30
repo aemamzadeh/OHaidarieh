@@ -51,6 +51,14 @@
               "target": "Package",
               "version": "[2019.1.115, )"
             },
+            "Microsoft.AspNetCore.StaticFiles": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "SolrNet.Core": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
             "System.Linq": {
               "target": "Package",
               "version": "[4.3.0, )"
@@ -668,6 +676,10 @@
             "Kendo.for.AspNet.Core": {
               "target": "Package",
               "version": "[2019.1.115, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [
@@ -737,12 +749,6 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "dependencies": {
-            "Kendo.for.AspNet.Core": {
-              "target": "Package",
-              "version": "[2019.1.115, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -977,10 +983,6 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Kendo.for.AspNet.Core": {
-              "target": "Package",
-              "version": "[2019.1.115, )"
-            },
             "MD.BootstrapPersianDateTimePicker": {
               "target": "Package",
               "version": "[2.3.0, )"
@@ -1006,10 +1008,6 @@
             "System.Collections": {
               "target": "Package",
               "version": "[4.3.0, )"
-            },
-            "Telerik.UI.for.AspNet.Core": {
-              "target": "Package",
-              "version": "[2020.3.1118, )"
             }
           },
           "imports": [

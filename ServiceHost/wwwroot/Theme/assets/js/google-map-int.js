@@ -6,15 +6,15 @@
   function initMap() {
     var map = new google.maps.Map(document.getElementById('contact-loc'), {
       zoom: 13,
-      center: {lat: 35.46, lng: 51.44}
+        center: { lat: 35.68, lng: 51.43 } ,
     });
-    var image = 'assets/images/map-icon.png';
+    var image = '~/assets/images/map-icon.png';
 
     marker = new google.maps.Marker({
       map: map,
       draggable: true,
       animation: google.maps.Animation.DROP,
-      position: {lat: 35.46, lng: 51.44},
+        position: { lat: 35.68, lng: 51.43},
       icon: image
     });
     marker.addListener('click', toggleBounce);
