@@ -1,13 +1,16 @@
 ﻿@inject _0_Framework.Application.IAuthHelper AuthHelper;
-@{
-    var currentAccount = AuthHelper.CurrentUserInfo();
-}
+@{ var currentAccount = AuthHelper.CurrentUserInfo(); }
 
 <div class="left side-menu">
     <div class="sidebar-inner slimscrollleft">
         <div class="user-details">
             <div class="pull-right">
-                <img src="~/@currentAccount.ProfilePhoto" alt="" class="thumb-md img-circle img-responsive">
+                @if (currentAccount.ProfilePhoto !="NoImage")
+                {
+    <img src="~/@currentAccount.ProfilePhoto" alt="" class="thumb-md img-circle img-responsive"> }
+else
+{
+<img src="~/AdminTheme/Images/male_avatar-512.png" alt="" class="thumb-md img-circle img-responsive">}
             </div>
             <div class="user-info">
                 <div class="dropdown">
@@ -28,60 +31,66 @@
                 </li>
                 @if (AuthHelper.CurrentAccountRole() == "2")
                 {
-                    <li class="has_sub">
-                        <a href="#" class="waves-effect"><i class="md md-mail"></i><span>  مراسمات </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                        <ul class="list-unstyled">
-                            <li><a asp-page="/Ceremonies/Index">مراسم</a></li>
-                        </ul>
-                    </li>
-                }
+    <li class="has_sub">
+        <a href="#" class="waves-effect"><i class="md md-event"></i><span>  مراسمات </span><span class="pull-right"><i class="md md-add"></i></span></a>
+        <ul class="list-unstyled">
+            <li><a asp-page="/Ceremonies/Index">مراسم</a></li>
+        </ul>
+    </li>
+}
 
                 <li class="has_sub">
-                    <a class="waves-effect"><i class="md md-mail"></i><span>  میهمانان مراسمات </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <a class="waves-effect"><i class="md md-announcement"></i><span>  میهمانان مراسمات </span><span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a asp-page="/CeremonyGuests/Index">میهمانان هر مراسم</a></li>
                     </ul>
                 </li>
                 <li class="has_sub">
-                    <a class="waves-effect"><i class="md md-mail"></i><span> خادمین اهل بیت ع </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <a class="waves-effect"><i class="md md-people"></i><span> خادمین اهل بیت ع </span><span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a asp-page="/Sponsors/Index">اهدا کننده</a></li>
                     </ul>
                 </li>
 
                 <li class="has_sub">
-                    <a class="waves-effect"><i class="md md-mail"></i><span> میهمانان </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <a class="waves-effect"><i class="md md-speaker"></i><span> میهمانان </span><span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a asp-page="/Guests/Index">میهمان</a></li>
                     </ul>
                 </li>
 
                 <li class="has_sub">
-                    <a class="waves-effect"><i class="md md-mail"></i><span> فایلهای چندرسانه ای </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <a class="waves-effect"><i class="md md-multitrack-audio"></i><span> فایلهای چندرسانه ای </span><span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a asp-page="/Multimedias/Index">چندرسانه ای</a></li>
                     </ul>
                 </li>
 
                 <li class="has_sub">
-                    <a class="waves-effect"><i class="md md-mail"></i><span> اعضاء </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <a class="waves-effect"><i class="md md-wallet-membership"></i><span> اعضاء </span><span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a asp-page="/Members/Index">عضویت</a></li>
                     </ul>
                 </li>
                 @if (AuthHelper.CurrentAccountRole() == "2")
                 {
-                    <li class="has_sub">
-                        <a class="waves-effect"><i class="md md-mail"></i><span> مدیریت کاربران </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                        <ul class="list-unstyled">
-                            <li><a asp-page="/Accounts/Index">تعریف کاربران</a></li>
-                            <li><a asp-page="/Roles/Index">تعریف نقشها</a></li>
-                        </ul>
-                    </li>
-                }
+    <li class="has_sub">
+        <a class="waves-effect"><i class="md md-verified-user"></i><span> مدیریت کاربران </span><span class="pull-right"><i class="md md-add"></i></span></a>
+        <ul class="list-unstyled">
+            <li><a asp-page="/Accounts/Index">تعریف کاربران</a></li>
+            <li><a asp-page="/Roles/Index">تعریف نقشها</a></li>
+        </ul>
+    </li>
+}
+                <li class="has_sub">
+                    <a class="waves-effect"><i class="md md-report"></i><span> گزارش </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a asp-page="/Report/Report">گزارش مراسم</a></li>
+                    </ul>
+                </li>
             </ul>
             <div class="clearfix"></div>
         </div>
-            <div class="clearfix"></div>
-        </div>
+        <div class="clearfix"></div>
     </div>
+</div>

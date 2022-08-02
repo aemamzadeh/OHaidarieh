@@ -30,8 +30,8 @@ namespace ServiceHost
             var fileName = $"{DateTime.Now.ToFileName()}-{file.FileName}";
             var filePath = $"{directoryPath}//{fileName}";
             var savePath = $"{path}/{fileName}";
-            //using var output = File.Create(filePath);
-            //file.CopyTo(output);
+            using var output = File.Create(filePath);
+            file.CopyTo(output);
 
             //return filePath;
             //return $"{path}/{fileName}";

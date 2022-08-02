@@ -10,7 +10,7 @@ namespace ServiceHost.ViewComponents
     {
         public IViewComponentResult Invoke()
         {
-            return View("_Membership");
+            return View();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace _0_Framework.Application
         public string Fname { get; set; }
         public string Lname { get; set; }
         public string Username { get; set; }
-        public string ProfilePhoto { get; set; }
+        public string? ProfilePhoto { get; set; }
         public long RoleId { get; set; }
         public string Role { get; set; }
         public List<int> Permissions { get; set; }
@@ -18,7 +18,7 @@ namespace _0_Framework.Application
         {
         }
 
-        public AuthViewModel(long id, string fname, string lname, string username, string profilePhoto, long roleId, List<int> permissions)
+        public AuthViewModel(long id, string fname, string lname, string username, string? profilePhoto, long roleId, List<int> permissions)
         {
             Id = id;
             Fname = fname;

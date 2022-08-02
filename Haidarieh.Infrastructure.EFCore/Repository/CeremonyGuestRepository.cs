@@ -113,12 +113,13 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
 
         public List<CeremonyViewModel> Search(CeremonyGuestSearchModel searchModel)
         {
-            var query = _hContext.Ceremonies.Include(x => x.CeremonyGuests).ThenInclude(x => x.Guest)  //Where(x => x.CeremonyGuests.Count() > 0).
+            var query = _hContext.Ceremonies.Where(x=>x.CeremonyDate>=DateTime.Today).Include(x => x.CeremonyGuests).ThenInclude(x => x.Guest)  //Where(x => x.CeremonyGuests.Count() > 0).
             .Select(x => new CeremonyViewModel
             {
                 Id = x.Id,
                 Title = x.Title,
-                CeremonyDate = x.CeremonyDate.ToFarsi(),
+                CeremonyDate = x.CeremonyDate,
+                CeremonyDateFA = x.CeremonyDate.ToFarsi(),
                 CeremonyGuests = MapGuests(x.CeremonyGuests)
             });
 

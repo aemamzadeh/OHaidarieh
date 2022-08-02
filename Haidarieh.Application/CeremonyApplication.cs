@@ -31,11 +31,11 @@ namespace Haidarieh.Application
 
             var ImageFolderName = Tools.ToFolderName(this.GetType().Name);
             var ImagePath = $"{ImageFolderName}/{command.Slug}";
-            var imageFileName = _fileUploader.Upload(command.Image, ImagePath);
-            var bannerFileName = _fileUploader.Upload(command.BannerFile, ImagePath);
+            var imageFileName = _fileUploader.Upload(command.Image, ImagePath).savePath;
+            var bannerFileName = _fileUploader.Upload(command.BannerFile, ImagePath).savePath;
 
-            ceremony = new Ceremony(command.Title, command.CeremonyDate.ToGeorgianDateTime(), command.IsLive, bannerFileName.savePath, 
-                imageFileName.savePath, command.ImageAlt, command.ImageTitle, command.Keywords, command.MetaDescription, slug);
+            ceremony = new Ceremony(command.Title, command.CeremonyDate.ToGeorgianDateTime(), command.IsLive, bannerFileName, 
+                imageFileName, command.ImageAlt, command.ImageTitle, command.Keywords, command.MetaDescription, slug);
             _ceremonyRepository.Create(ceremony);   
             _ceremonyRepository.SaveChanges();
             CreateOperationLog(ceremony.Id, 1);
@@ -71,11 +71,11 @@ namespace Haidarieh.Application
 
             var ImageFolderName = Tools.ToFolderName(this.GetType().Name);
             var ImagePath = $"{ImageFolderName}/{command.Slug}";
-            var imageFileName = _fileUploader.Upload(command.Image, ImagePath);
-            var bannerFileName = _fileUploader.Upload(command.BannerFile, ImagePath);
+            var imageFileName = _fileUploader.Upload(command.Image, ImagePath).savePath;
+            var bannerFileName = _fileUploader.Upload(command.BannerFile, ImagePath).savePath;
 
-            ceremony.Edit(command.Title, command.CeremonyDate.ToGeorgianDateTime(), command.IsLive, bannerFileName.savePath,
-                imageFileName.savePath, command.ImageAlt, command.ImageTitle, command.Keywords, command.MetaDescription, slug);
+            ceremony.Edit(command.Title, command.CeremonyDate.ToGeorgianDateTime(), command.IsLive, bannerFileName,
+                imageFileName, command.ImageAlt, command.ImageTitle, command.Keywords, command.MetaDescription, slug);
             
             _ceremonyRepository.SaveChanges();
             CreateOperationLog(ceremony.Id, 2);

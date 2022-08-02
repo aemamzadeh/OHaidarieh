@@ -18,11 +18,11 @@
             <div class="col-md-12 col-sm-12 col-lg-12">
                 <div class="sec-title">
                     <div class="sec-title2 text-center">
-                        <h1>مراسم<span> @Model.ceremony.Title</span></h1>
-                        <h3><span>@Model.ceremony.CeremonyDateFa </span></h3>
+                        <h3>مراسم<span> @Model.ceremony.Title</span></h3>
+                        <h5><span>@Model.ceremony.CeremonyDateFa </span></h5>
                         @foreach (var itm in Model.ceremony.CeremonyGuests)
                         {
-            <h3>@itm.GuestType:<span> @itm.Guest </span></h3>}
+            <h6>@itm.GuestType:<span> @itm.Guest </span></h6>}
                     </div>
                 </div>
                 <ul style="list-style:none;" class="row">

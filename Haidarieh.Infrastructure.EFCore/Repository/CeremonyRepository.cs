@@ -4,6 +4,7 @@ using AccountManagement.Infrastructure.EFCore;
 using Haidarieh.Application.Contracts.Ceremony;
 using Haidarieh.Domain.CeremonyAgg;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -27,7 +28,8 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 Title = x.Title,
-                CeremonyDate=x.CeremonyDate.ToFarsi(),
+                CeremonyDate=x.CeremonyDate,
+                CeremonyDateFA = x.CeremonyDate.ToFarsi(),
                 Image = x.Image,
                 IsLive = x.IsLive   
             }).ToList();
@@ -39,7 +41,8 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 Title = x.Title,
-                CeremonyDate = x.CeremonyDate.ToFarsi(),
+                CeremonyDate = x.CeremonyDate,
+                CeremonyDateFA = x.CeremonyDate.ToFarsi(),
                 CeremonyOperations = GetCeremonyOperationsLog(x.CeremonyOperations)
             }).AsNoTracking().ToList();
         }
@@ -119,20 +122,22 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
 
         public List<CeremonyViewModel> Search(CeremonySearchModel searchModel)
         {
-            var query = _hContext.Ceremonies.Include(x => x.CeremonyGuests).ThenInclude(x => x.Guest).Select(x => new CeremonyViewModel
+            var query = _hContext.Ceremonies.Where(x=>x.CeremonyDate>=DateTime.Today).Include(x => x.CeremonyGuests).ThenInclude(x => x.Guest)
+                .Select(x => new CeremonyViewModel
             {
                 Id = x.Id,
                 Title = x.Title,
-                CeremonyDate = x.CeremonyDate.ToFarsi(),
+                CeremonyDateFA = x.CeremonyDate.ToFarsi(),
+                CeremonyDate=x.CeremonyDate,
                 IsLive = x.IsLive,
                 Image = x.Image,
 
-            });
+            }).OrderByDescending(x => x.CeremonyDate).ToList();
 
             if (!string.IsNullOrWhiteSpace(searchModel.Title))
-                query = query.Where(x => x.Title.Contains(searchModel.Title));
+                query = query.Where(x => x.Title.Contains(searchModel.Title)).ToList();
 
-            return query.OrderByDescending(x => x.Id).ToList();
+            return query;
         }
 
         public List<CeremonyViewModel> GetUpcommingCeremonies()
@@ -141,7 +146,8 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 Title = x.Title,
-                CeremonyDate = x.CeremonyDate.ToFarsi(),
+                CeremonyDate = x.CeremonyDate,
+                CeremonyDateFA = x.CeremonyDate.ToFarsi(),
                 Image = x.Image,
                 IsLive = x.IsLive
             }).ToList();

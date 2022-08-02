@@ -66,7 +66,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             if (!string.IsNullOrWhiteSpace(searchModel.FullName))
                 query = query.Where(x => x.FullName.Contains(searchModel.FullName));
 
-            return query.OrderByDescending(x => x.Id).ToList();
+            return query.ToList(); //OrderByDescending(x => x.Id)
         }
     }
 }

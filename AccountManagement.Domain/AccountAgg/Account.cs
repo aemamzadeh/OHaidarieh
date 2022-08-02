@@ -29,7 +29,9 @@ namespace AccountManagement.Domain.AccountAgg
             Password = password;
             Mobile = mobile;
             if (roleId == 0)
-                RoleId = 1;
+            { RoleId = 1; }
+            else
+            { RoleId = roleId; }
             ProfilePhoto = profilePhoto;
         }
         public void Edit(string fname, string lanme, string username, string mobile, long roleId, string profilePhoto)

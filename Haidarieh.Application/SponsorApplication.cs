@@ -25,9 +25,9 @@ namespace Haidarieh.Application
 
             var ImageFolderName = Tools.ToFolderName(this.GetType().Name);
             var ImagePath = $"{ImageFolderName}/{command.Name}";
-            var imageFileName = _fileUploader.Upload(command.Image, ImagePath);
+            var imageFileName = _fileUploader.Upload(command.Image, ImagePath).savePath;
 
-            var sponsor = new Sponsor(command.Name, command.Tel, imageFileName.savePath, command.ImageAlt, 
+            var sponsor = new Sponsor(command.Name, command.Tel, imageFileName, command.ImageAlt, 
                 command.ImageTitle, command.IsVisible, command.Bio);
             _sponsorRepository.Create(sponsor);
             _sponsorRepository.SaveChanges();
@@ -46,9 +46,9 @@ namespace Haidarieh.Application
 
             var ImageFolderName = Tools.ToFolderName(this.GetType().Name);
             var ImagePath = $"{ImageFolderName}/{command.Name}";
-            var imageFileName = _fileUploader.Upload(command.Image, ImagePath);
+            var imageFileName = _fileUploader.Upload(command.Image, ImagePath).savePath;
 
-            editItem.Edit(command.Name, command.Tel, imageFileName.savePath, command.ImageAlt, command.ImageTitle, command.IsVisible, command.Bio);
+            editItem.Edit(command.Name, command.Tel, imageFileName, command.ImageAlt, command.ImageTitle, command.IsVisible, command.Bio);
             _sponsorRepository.SaveChanges();
             return operation.Succedded();
         }

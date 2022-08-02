@@ -2492,7 +2492,11 @@ body.fixed-left .side-menu.left {
 
 /********** 14. TABLES **************/
 
-.table { margin-bottom: 10px; }
+.table {
+    margin-bottom: 10px;
+    border-collapse: separate;
+    
+}
 
 tbody { color: #000; }
 

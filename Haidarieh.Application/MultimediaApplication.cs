@@ -13,6 +13,7 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Drawing.Drawing2D;
 using Org.BouncyCastle.Asn1.Ocsp;
 using System.Drawing.Imaging;
+using Image = System.Drawing.Image;
 
 namespace Haidarieh.Application
 {
@@ -67,9 +68,13 @@ namespace Haidarieh.Application
                 var ImageFolderName = Tools.ToFolderName(this.GetType().Name);
                 var ImagePath = $"{ImageFolderName}/{ceremony.Slug}";
                 var imageFileName = _fileUploader.Upload(item, ImagePath);
+                var filePath = _fileUploader.Upload(item, ImagePath).filePath;
+
                 if (item.ContentType.StartsWith("image/"))
                 {
-                    _imageCompression.ImageOptimize(item, ImagePath);
+                    _imageCompression.ImageOptimize(item, filePath);
+                    if (Image.FromFile(filePath).Width > 800 && Image.FromFile(filePath).Height > 600)
+                        File.Delete(filePath);
                 }
                 //var imageFileName = _fileUploader.Upload(item, ImagePath);
                 //editItem.EditAlbum(imageFileName, command.CeremonyId);

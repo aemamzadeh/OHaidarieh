@@ -8,7 +8,8 @@ namespace Haidarieh.Application.Contracts.Ceremony
     {
         public long Id { get; set; }
         public string Title { get; set; }
-        public string CeremonyDate { get; set; }
+        public DateTime CeremonyDate { get; set; }
+        public string CeremonyDateFA { get; set; }
         public bool IsLive { get; set; }
         public string Image { get; set; }
         public string Slug { get; set; }

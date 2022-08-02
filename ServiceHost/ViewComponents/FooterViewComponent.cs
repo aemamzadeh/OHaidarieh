@@ -8,7 +8,6 @@ namespace ServiceHost.ViewComponents
 {
     public class FooterViewComponent:ViewComponent
     {
-        //private readonly  
         public IViewComponentResult Invoke()
         {
             return View();

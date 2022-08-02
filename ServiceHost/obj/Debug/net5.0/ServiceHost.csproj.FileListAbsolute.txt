@@ -613,3 +613,5 @@ D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\bin\Debug\net5.0\runtimes
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\MultimediaDetail\GalleryArchive.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\Membership.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Report\Report.cshtml.g.cs
