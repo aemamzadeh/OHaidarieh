@@ -31,6 +31,7 @@ namespace ServiceHost
         {
 
             services.AddHttpContextAccessor();
+            services.AddCors();
 
             var connectionString = Configuration.GetConnectionString("OHaidariehDb");
             HaidariehBootstrapper.Configure(services, connectionString);
@@ -117,6 +118,14 @@ namespace ServiceHost
             endpoints.MapRazorPages();
             endpoints.MapControllers();
         });
-    }
+
+        app.UseCors(builder =>
+        {
+            builder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+        });
+        }
 }
 }

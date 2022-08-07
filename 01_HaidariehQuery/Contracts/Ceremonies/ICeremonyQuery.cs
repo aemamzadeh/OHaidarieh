@@ -8,6 +8,7 @@ namespace _01_HaidariehQuery.Contracts.Ceremonies
     {
         List<CeremonyQueryModel> GetCeremonies();
         List<CeremonyQueryModel> GetComing();
+        List<CeremonyQueryModel> GetComingBanner();
         List<CeremonyQueryModel> GetPast();
         List<CeremonyQueryModel> GetAll();
         List<CeremonyQueryModel> GetCeremonyWithMultimedias();

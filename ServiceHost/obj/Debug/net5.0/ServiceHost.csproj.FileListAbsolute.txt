@@ -312,7 +312,6 @@ D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\bin\Debug\net5.0\ServiceH
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\bin\Debug\net5.0\ServiceHost.runtimeconfig.json
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\bin\Debug\net5.0\ServiceHost.runtimeconfig.dev.json
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\bin\Debug\net5.0\ServiceHost.dll
-D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\bin\Debug\net5.0\ref\ServiceHost.dll
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\bin\Debug\net5.0\ServiceHost.pdb
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\bin\Debug\net5.0\ServiceHost.Views.dll
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\bin\Debug\net5.0\ServiceHost.Views.pdb
@@ -530,7 +529,6 @@ D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\ServiceH
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\ServiceHost.RazorAssemblyInfo.cache
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\ServiceHost.RazorAssemblyInfo.cs
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\staticwebassets\ServiceHost.StaticWebAssets.Manifest.cache
-D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\staticwebassets\ServiceHost.StaticWebAssets.xml
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\scopedcss\bundle\ServiceHost.styles.css
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\ServiceHost.TagHelpers.input.cache
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\ServiceHost.TagHelpers.output.cache
@@ -615,3 +613,5 @@ D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\bin\Debug\net5.0\runtimes
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\MultimediaDetail\GalleryArchive.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Pages\Membership.cshtml.g.cs
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Report\Report.cshtml.g.cs
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\bin\Debug\net5.0\ref\ServiceHost.dll
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Debug\net5.0\staticwebassets\ServiceHost.StaticWebAssets.xml

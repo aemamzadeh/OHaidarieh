@@ -1,6 +1,5 @@
 ﻿@model Haidarieh.Application.Contracts.Multimedia.EditMultimedia
-@{
-}
+@{ }
 
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -25,19 +24,35 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label asp-for="FileAddress" class="control-label">فایل</label>
-                    <input type="file" multiple="multiple" class="form-control" asp-for="FileAddress">
+                    <input type="file" multiple="multiple" class="form-control" asp-for="FileAddress" id="Files">
                     <span asp-validation-for="FileAddress" class="error"></span>
                 </div>
             </div>
         </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                @*<progress class="progress-bar progress-bar-warning progress-bar-striped active" id="fileProgress" style="display: none"></progress>*@
+                
+                                <div class="progress" id="progress" style="display: none">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div> 
+                 
+            </div>
+        </div>
         <input type="hidden" asp-for="CeremonyId" value="@Model.CeremonyId">
-
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
         <button type="submit" class="btn btn-info waves-effect waves-light">ایجاد</button>
+        @*<input type="button"  id="btnUpload" value="Upload" />*@
+        @*<td colspan="2">*@
+        @*</td>*@
     </div>
 </form>
+
+
+
+
 
 
 

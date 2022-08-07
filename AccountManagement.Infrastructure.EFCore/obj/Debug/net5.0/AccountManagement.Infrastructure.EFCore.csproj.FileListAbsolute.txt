@@ -24,7 +24,6 @@ D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Infrastructure.EFCo
 D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.runtimeconfig.json
 D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.runtimeconfig.dev.json
 D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.dll
-D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Infrastructure.EFCore\bin\Debug\net5.0\ref\AccountManagement.Infrastructure.EFCore.dll
 D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.pdb
 D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Infrastructure.EFCore\bin\Debug\net5.0\0_Framework.dll
 D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
@@ -42,3 +41,4 @@ D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Infrastructure.EFCo
 D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Infrastructure.EFCore\obj\Debug\net5.0\ref\AccountManagement.Infrastructure.EFCore.dll
 D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Infrastructure.EFCore\obj\Debug\net5.0\AccountManagement.Infrastructure.EFCore.pdb
 D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Infrastructure.EFCore\obj\Debug\net5.0\AccountManagement.Infrastructure.EFCore.genruntimeconfig.cache
+D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Infrastructure.EFCore\bin\Debug\net5.0\ref\AccountManagement.Infrastructure.EFCore.dll

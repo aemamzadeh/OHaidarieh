@@ -70,6 +70,26 @@ $(document).ready(function () {
                     success: function (data) {
                         CallBackHandler(data, action, form);
                     },
+                    xhr: function () {
+                        var fileXhr = $.ajaxSettings.xhr();
+                        //var progressnum = (100.0 * file.Data.Position / file.Size).ToString("0");
+                        if (fileXhr.upload) {
+                            $("#progress").show();
+                            fileXhr.upload.addEventListener("progress", function (e) {
+                                if (e.lengthComputable) {
+                                    //$("#fileProgress").attr('aria-valuemax', e.total);
+                                    //$("#fileProgress").attr('aria-valuenow', e.loaded);
+                                    //$("#fileProgress").css('width', e.loaded);
+                                    var percentComplete = e.loaded / e.total;
+                                    percentComplete = parseInt(percentComplete * 100);
+                                    $("#progress").height(20);
+                                    $('.progress-bar').width(percentComplete + '%');
+                                    $('.progress-bar').html(percentComplete + '%');
+                                }
+                            }, false);
+                        }
+                        return fileXhr;
+                    },
                     error: function (data) {
                         alert("خطایی رخ داده است. لطفا با مدیر سیستم تماس بگیرید.");
                     }
@@ -188,7 +208,7 @@ function handleAjaxCall(method, url, data) {
 jQuery.validator.addMethod("maxFileSize",
     function (value, element, params) {
         var size = element.files[0].size;
-        var maxSize = 3 * 1024 * 1024;
+        var maxSize = 300 * 1024 * 1024;
         if (size > maxSize)
             return false;
         else {

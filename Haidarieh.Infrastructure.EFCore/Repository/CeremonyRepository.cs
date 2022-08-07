@@ -24,7 +24,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
 
         public List<CeremonyViewModel> GetCeremonies()
         {
-            return _hContext.Ceremonies.Where(x=>x.Status).Select(x => new CeremonyViewModel
+            return _hContext.Ceremonies.Where(x=>x.Status && x.CeremonyGuests.Count()>0 && x.Multimedias.Count()<=0).Select(x => new CeremonyViewModel
             {
                 Id = x.Id,
                 Title = x.Title,

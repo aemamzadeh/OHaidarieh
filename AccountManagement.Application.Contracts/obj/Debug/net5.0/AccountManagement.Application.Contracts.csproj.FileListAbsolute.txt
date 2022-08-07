@@ -15,7 +15,6 @@ C:\Users\USER\Downloads\65e9150c-d1c2-47c4-b270-33f2dd043879_OHaidarieh\OHaidari
 C:\Users\USER\Downloads\65e9150c-d1c2-47c4-b270-33f2dd043879_OHaidarieh\OHaidarieh\AccountManagement.Application.Contracts\obj\Debug\net5.0\AccountManagement.Application.Contracts.pdb
 D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Application.Contracts\bin\Debug\net5.0\AccountManagement.Application.Contracts.deps.json
 D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Application.Contracts\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
-D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Application.Contracts\bin\Debug\net5.0\ref\AccountManagement.Application.Contracts.dll
 D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Application.Contracts\bin\Debug\net5.0\AccountManagement.Application.Contracts.pdb
 D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Application.Contracts\bin\Debug\net5.0\0_Framework.dll
 D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Application.Contracts\bin\Debug\net5.0\0_Framework.pdb
@@ -28,3 +27,4 @@ D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Application.Contrac
 D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Application.Contracts\obj\Debug\net5.0\AccountManagement.Application.Contracts.dll
 D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Application.Contracts\obj\Debug\net5.0\ref\AccountManagement.Application.Contracts.dll
 D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Application.Contracts\obj\Debug\net5.0\AccountManagement.Application.Contracts.pdb
+D:\NetCoreProjects\repos\OHaidariehProject\AccountManagement.Application.Contracts\bin\Debug\net5.0\ref\AccountManagement.Application.Contracts.dll

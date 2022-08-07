@@ -1,6 +1,7 @@
 ﻿using _0_Framework.Infrastructure;
 using Haidarieh.Application.Contracts.Multimedia;
 using Haidarieh.Domain.MultimediaAgg;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
         {
 
             var query = _hContext.Ceremonies.Include(x => x.Multimedias)
-                .Where(x => x.Multimedias.Count() > 0)
+                .Where(x => x.CeremonyGuests.Count()>0 && x.Multimedias.Count()>0)
                 .Select(g => new MultimediaViewModel
             {
                 Id = g.Id,
@@ -223,7 +224,8 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
 
             public List<MultimediaViewModel> GetMultimediasWithCeremony(long id)
             {
-                return _hContext.Multimedias.Where(x => x.CeremonyId == id && x.Status)
+            string contentType;
+            var medias = _hContext.Multimedias.Where(x => x.CeremonyId == id && x.Status)
                     .Select(x => new MultimediaViewModel
                     {
                         Id = x.Id,
@@ -233,7 +235,14 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                         CeremonyId = x.CeremonyId
 
                     }).ToList();
+            foreach (var item in medias)
+            {
+                new FileExtensionContentTypeProvider().TryGetContentType(item.FileAddress, out contentType);
+                var x = contentType;
+                item.ContentType = x;
             }
+            return medias;
+        }
 
         public List<Multimedia> GetList(long id)
         {

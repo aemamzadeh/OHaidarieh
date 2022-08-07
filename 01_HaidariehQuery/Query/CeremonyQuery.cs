@@ -62,34 +62,56 @@ namespace _01_HaidariehQuery.Query
                                         Slug = x.Slug,
                                         Keywords = x.Keywords,
                                         MetaDescription = x.MetaDescription
-                                    }).AsNoTracking().Take(3).Distinct().ToList();
-
-
-
-            //return _hContext.CeremonyGuests.Include(x => x.Ceremony)
-            //                                    .Where(x => x.Ceremony.Status == true &&
-            //                                    DateTime.Now.Date <= x.Ceremony.CeremonyDate.Date &&
-            //                                    DateTime.Compare(x.Ceremony.CeremonyDate.AddHours(10), DateTime.Now) > 0)
-            //                                    .Select(x => new CeremonyQueryModel
-            //                                    {
-            //                                        Id = x.Ceremony.Id,
-            //                                        Title = x.Ceremony.Title,
-            //                                        CeremonyDateFa = x.Ceremony.CeremonyDate.ToFarsi(),
-            //                                        CeremonyTime = x.Ceremony.CeremonyDate.ToString("HH:mm"),
-            //                                        CeremonyDate = x.Ceremony.CeremonyDate,
-            //                                        Image = x.Ceremony.Image,
-            //                                        ImageAlt = x.Ceremony.ImageAlt,
-            //                                        ImageTitle = x.Ceremony.ImageTitle,
-            //                                        IsLive = x.Ceremony.IsLive,
-            //                                        BannerFile = x.Ceremony.BannerFile,
-            //                                        Slug = x.Ceremony.Slug,
-            //                                        Keywords = x.Ceremony.Keywords,
-            //                                        MetaDescription = x.Ceremony.MetaDescription
-            //                                    }).AsNoTracking().Take(3).Distinct().ToList();
-            //query = query.Include(x => x.CeremonyGuests.Where(z => z.CeremonyId == x.Id));
-            //return query.ToList();
-
+                                    }).AsNoTracking().OrderBy(x => x.CeremonyDate).Take(4).Distinct().ToList();
         }
+        public List<CeremonyQueryModel> GetComingBanner()
+            {
+
+                return _hContext.Ceremonies.Include(x => x.CeremonyGuests)
+                                        .Where(x => x.Status == true &&
+                                        DateTime.Now.Date <= x.CeremonyDate.Date &&
+                                        DateTime.Compare(x.CeremonyDate.AddHours(5), DateTime.Now) > 0)
+                                        .Select(x => new CeremonyQueryModel
+                                        {
+                                            Id = x.Id,
+                                            Title = x.Title,
+                                            CeremonyDateFa = x.CeremonyDate.ToFarsi(),
+                                            CeremonyTime = x.CeremonyDate.ToString("HH:mm"),
+                                            CeremonyDate = x.CeremonyDate,
+                                            Image = x.Image,
+                                            ImageAlt = x.ImageAlt,
+                                            ImageTitle = x.ImageTitle,
+                                            IsLive = x.IsLive,
+                                            BannerFile = x.BannerFile,
+                                            Slug = x.Slug,
+                                            Keywords = x.Keywords,
+                                            MetaDescription = x.MetaDescription
+                                        }).AsNoTracking().OrderBy(x => x.CeremonyDate).Take(3).Distinct().ToList();
+
+                //return _hContext.CeremonyGuests.Include(x => x.Ceremony)
+                //                                    .Where(x => x.Ceremony.Status == true &&
+                //                                    DateTime.Now.Date <= x.Ceremony.CeremonyDate.Date &&
+                //                                    DateTime.Compare(x.Ceremony.CeremonyDate.AddHours(10), DateTime.Now) > 0)
+                //                                    .Select(x => new CeremonyQueryModel
+                //                                    {
+                //                                        Id = x.Ceremony.Id,
+                //                                        Title = x.Ceremony.Title,
+                //                                        CeremonyDateFa = x.Ceremony.CeremonyDate.ToFarsi(),
+                //                                        CeremonyTime = x.Ceremony.CeremonyDate.ToString("HH:mm"),
+                //                                        CeremonyDate = x.Ceremony.CeremonyDate,
+                //                                        Image = x.Ceremony.Image,
+                //                                        ImageAlt = x.Ceremony.ImageAlt,
+                //                                        ImageTitle = x.Ceremony.ImageTitle,
+                //                                        IsLive = x.Ceremony.IsLive,
+                //                                        BannerFile = x.Ceremony.BannerFile,
+                //                                        Slug = x.Ceremony.Slug,
+                //                                        Keywords = x.Ceremony.Keywords,
+                //                                        MetaDescription = x.Ceremony.MetaDescription
+                //                                    }).AsNoTracking().Take(3).Distinct().ToList();
+                //query = query.Include(x => x.CeremonyGuests.Where(z => z.CeremonyId == x.Id));
+                //return query.ToList();
+
+            }
         public List<CeremonyQueryModel> GetPast()
         {
             var pastlist = _hContext.CeremonyGuests.Include(x => x.Ceremony).
@@ -268,7 +290,7 @@ namespace _01_HaidariehQuery.Query
         {
             var ceremonies = _hContext.Ceremonies.Include(x => x.CeremonyGuests).
                                             ThenInclude(x => x.Guest).
-                                            Where(x => x.Slug !=null && x.CeremonyGuests != null && x.Status == true).Select(x => new CeremonyQueryModel
+                                            Where(x => x.Slug !=null && x.CeremonyGuests.Count()>0 && x.Status == true && x.Multimedias.Count() >0 && x.CeremonyDate>DateTime.Now).Select(x => new CeremonyQueryModel
                                             {
                                                 Id = x.Id,
                                                 Title = x.Title,

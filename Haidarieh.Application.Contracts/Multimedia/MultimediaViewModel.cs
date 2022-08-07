@@ -9,5 +9,6 @@ namespace Haidarieh.Application.Contracts.Multimedia
         public string FileAddress { get;  set; }
         public long CeremonyId { get;  set; }
         public string Ceremony { get; set; }
+        public string ContentType { get; set; }
     }
 }

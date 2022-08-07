@@ -14,7 +14,7 @@ namespace ServiceHost.ViewComponents
 
         public IViewComponentResult Invoke()
         {
-            var banner = _ceremonyQuery.GetComing();
+            var banner = _ceremonyQuery.GetComingBanner();
             return View(banner);
         }
 

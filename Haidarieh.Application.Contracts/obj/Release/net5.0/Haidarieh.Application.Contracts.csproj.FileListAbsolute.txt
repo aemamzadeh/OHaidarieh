@@ -1,0 +1,15 @@
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Application.Contracts\bin\Release\net5.0\Haidarieh.Application.Contracts.deps.json
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Application.Contracts\bin\Release\net5.0\Haidarieh.Application.Contracts.dll
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Application.Contracts\bin\Release\net5.0\ref\Haidarieh.Application.Contracts.dll
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Application.Contracts\bin\Release\net5.0\Haidarieh.Application.Contracts.pdb
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Application.Contracts\bin\Release\net5.0\0_Framework.dll
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Application.Contracts\bin\Release\net5.0\0_Framework.pdb
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Application.Contracts\obj\Release\net5.0\Haidarieh.Application.Contracts.csproj.AssemblyReference.cache
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Application.Contracts\obj\Release\net5.0\Haidarieh.Application.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Application.Contracts\obj\Release\net5.0\Haidarieh.Application.Contracts.AssemblyInfoInputs.cache
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Application.Contracts\obj\Release\net5.0\Haidarieh.Application.Contracts.AssemblyInfo.cs
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Application.Contracts\obj\Release\net5.0\Haidarieh.Application.Contracts.csproj.CoreCompileInputs.cache
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Application.Contracts\obj\Release\net5.0\Haidarieh.Application.Contracts.csproj.CopyComplete
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Application.Contracts\obj\Release\net5.0\Haidarieh.Application.Contracts.dll
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Application.Contracts\obj\Release\net5.0\ref\Haidarieh.Application.Contracts.dll
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Application.Contracts\obj\Release\net5.0\Haidarieh.Application.Contracts.pdb

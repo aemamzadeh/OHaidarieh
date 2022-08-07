@@ -42,7 +42,14 @@ namespace Haidarieh.Application
                 var ImageFolderName = Tools.ToFolderName(this.GetType().Name);
                 var ImagePath = $"{ImageFolderName}/{ceremony.Slug}";
                 var imageFileName = _fileUploader.Upload(item, ImagePath);
-                _imageCompression.ImageOptimize(item,imageFileName.filePath);
+                var filePath = _fileUploader.Upload(item, ImagePath).filePath;
+
+                if (item.ContentType.StartsWith("image/"))
+                {
+                    _imageCompression.ImageOptimize(item,imageFileName.filePath);
+                    if (Image.FromFile(filePath).Width > 800 && Image.FromFile(filePath).Height > 600)
+                        File.Delete(filePath);
+                }
                 var multimedia = new Multimedia(ceremony.Title, imageFileName.savePath, command.FileTitle, command.FileAlt, command.CeremonyId);
                 _multimediaRepository.Create(multimedia);
             }

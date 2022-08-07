@@ -17,7 +17,7 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">ویرایش فایلهای آلبوم </h3>
+                <h3 class="panel-title"> ویرایش فایلهای آلبوم </h3>
             </div>
             <div class="panel-body">
                 <form method="get" enctype="multipart/form-data">
@@ -33,6 +33,7 @@
                                     @{ int m = Model.Command.Count % 4;}
                                     @{ int k = Model.Command.Count - 1;}
                                     @{ int t = 0;}
+
                                     @if (m == 0)
                                     {
                                         @for (int i = 0; i < Model.Command.Count / 4; i++)
@@ -41,14 +42,36 @@
                                                 @for (int j = 0; j < 4; j++)
                                                 {
                                                     <td>
-                                                        <img src="~/@Model.Command[j].FileAddress" style="width: 70px; height: 70px" />
+
+                                                        @if (Model.Command[t].ContentType.StartsWith("audio/"))
+                                                        {
+
+                                                            <a data-fancybox="gallery" data-caption="@Model.Command[t].Title" href="~/@Model.Command[t].FileAddress" data-type="video" style="width: 70px; height: 70px;">
+                                                                <img src="~/Theme/assets/images/video__player__movie.jpg" style="width: 70px; height: 70px;" />
+
+                                                            </a>
+                                                        }
+                                                        else if (Model.Command[t].ContentType.StartsWith("video/"))
+                                                        {
+                                                            <a data-fancybox="gallery" data-caption="@Model.Command[t].Title" href="~/@Model.Command[t].FileAddress">
+                                                                <img src="~/Theme/assets/images/film.png" style="width: 70px; height: 70px" />
+                                                            </a>
+                                                        }
+                                                        else if (Model.Command[t].ContentType.StartsWith("image/"))
+                                                        {
+                                                            <a data-fancybox="gallery" data-caption="@Model.Command[t].Title" href="~/@Model.Command[t].FileAddress">
+                                                                <img src="~/@Model.Command[t].FileAddress" style="width: 70px; height: 70px" />
+                                                            </a>
+                                                        }
+
                                                     </td>
                                                     <td>
-                                                        <a class="btn btn-warning pull-right m-rl-5" asp-page="./EditAlbum" asp-page-handler="Remove" asp-route-id="@Model.Command[j].Id" asp-route-ceremonyId="@Model.Command[j].CeremonyId">
+                                                        <a class="btn btn-warning pull-right m-rl-5" asp-page="./EditAlbum" asp-page-handler="Remove" asp-route-id="@Model.Command[t].Id" asp-route-ceremonyId="@Model.Command[j].CeremonyId">
                                                             <i class="fa fa-edit"></i>حذف
                                                         </a>
-                                                        <input type="hidden" asp-for="@Model.Command[j].CeremonyId" value="@Model.Command[j].CeremonyId">
+                                                        <input type="hidden" asp-for="@Model.Command[t].CeremonyId" value="@Model.Command[t].CeremonyId">
                                                     </td>
+                                                    t += 1;
                                                 }
                                             </tr>
                                         }
@@ -62,7 +85,25 @@
                                                 @while (t < 4 && k >= 0)
                                                 {
                                                     <td>
-                                                        <img src="~/@Model.Command[k].FileAddress" style="width: 70px; height: 70px" />
+                                                        @if (Model.Command[k].ContentType.StartsWith("audio/"))
+                                                        {
+
+                                                            <a data-fancybox="gallery" data-caption="@Model.Command[k].Title" href="~/@Model.Command[k].FileAddress" data-type="video" style="width: 70px; height: 70px;">
+                                                                <img src="~/Theme/assets/images/video__player__movie.jpg" style="width: 70px; height: 70px;" />
+                                                            </a>
+                                                        }
+                                                        else if (Model.Command[k].ContentType.StartsWith("video/"))
+                                                        {
+                                                            <a data-fancybox="gallery" data-caption="@Model.Command[k].Title" href="~/@Model.Command[k].FileAddress">
+                                                                <img src="~/Theme/assets/images/film.png" style="width: 70px; height: 70px" />
+                                                            </a>
+                                                        }
+                                                        else if (Model.Command[k].ContentType.StartsWith("image/"))
+                                                        {
+                                                            <a data-fancybox="gallery" data-caption="@Model.Command[k].Title" href="~/@Model.Command[k].FileAddress">
+                                                                <img src="~/@Model.Command[k].FileAddress" style="width: 70px; height: 70px" />
+                                                            </a>
+                                                        }
                                                     </td>
                                                     <td>
                                                         <a class="btn btn-warning pull-right m-rl-5" asp-page="EditAlbum" asp-page-handler="Remove" asp-route-id="@Model.Command[k].Id" asp-route-ceremonyId="@Model.Command[k].CeremonyId">
@@ -87,4 +128,3 @@
         </div>
     </div>
 </div>
-
