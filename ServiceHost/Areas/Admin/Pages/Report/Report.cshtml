@@ -1,7 +1,7 @@
 ﻿@page
 @model ServiceHost.Areas.Admin.Pages.Report.ReportModel
 @{Layout = "Shared/_AdminLayout";
-    ViewData["title"] = "تقویم مراسمات";
+    ViewData["title"] = "گزارش مراسمات";
 }
 
 <div class="row">
@@ -26,6 +26,8 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @if (Model.ceremonies.Count()>0)
+                                {
                                 @foreach (var item in Model.ceremonies)
                                 {
                                 <tr>
@@ -33,12 +35,15 @@
                                     <td>
                                         <img src="~/@item.Image" width="100" />
                                     </td>
-                                    <td>@item.CeremonyDateFa</td>
+                                    <td>@item.CeremonyDateFA</td>
                                     <td>@item.Title</td>
                                     <td>
+                                        @if (item.CeremonyGuests.Count() > 0)
+                                        {
                                         @foreach (var guest in item.CeremonyGuests)
                                         {
                                             <p>@guest.GuestType:@guest.Guest</p><br />
+                                        }
                                         }
                                     </td>
                                     <td class="text-center">
@@ -64,6 +69,7 @@
                                         }
                                     </td>
                                 </tr>
+                                }
                                 }
                             </tbody>
                         </table>

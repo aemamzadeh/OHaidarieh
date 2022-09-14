@@ -43,7 +43,7 @@ header.style1 .logo,
 .logo + nav,
 nav > div > a,
 .bottom-bar > p + .scl,
-.page-title-wrap > h2 + .breadcrumbs {float: left;}
+.page-title-wrap > h2 + .breadcrumbs {padding-right:100px;}
 .float-right {float: left !important;}
 nav > div > ul,
 .hstry-desc,

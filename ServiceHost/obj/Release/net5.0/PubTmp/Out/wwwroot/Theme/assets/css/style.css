@@ -1571,7 +1571,7 @@ footer {
   line-height: 32px;
 }
 .scl {display: inline-block;}
-.bottom-bar > p + .scl {float: right;}
+.bottom-bar > p + .scl {float: left;}
 .scl > a {
   line-height: 32px;
   width: 32px;
@@ -4356,5 +4356,101 @@ header.sticky-active{
 }
 .owl-curve-green .featured-area2 .owl-nav{
 	top:50%;
+}
+
+/*----------------------*/
+
+.bsplayer {
+    margin: 10px 0;
+}
+
+    .bsplayer div {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+
+.bsplayerz {
+    display: none
+}
+
+.bsplayer .amazingaudioplayer-text-clear {
+    clear: both;
+    height: 8px;
+}
+
+.bsplayer .amazingaudioplayer-bar {
+    background: #ffffff
+}
+
+.bsplayer .amazingaudioplayer-bar-buttons-clear {
+    clear: both;
+}
+
+.bsplayer .amazingaudioplayer-playpause {
+    position: relative;
+    float: left;
+}
+
+.bsplayer .amazingaudioplayer-play {
+    background: #007f3f url(Images/play.png) no-repeat center center !important;
+}
+
+.bsplayer .amazingaudioplayer-pause {
+    background: #fb413f url(Images/stop.png) no-repeat center center !important;
+}
+
+.bsplayer .amazingaudioplayer-play:hover {
+    background: #006633 url(Images/play.png) no-repeat center center !important;
+}
+
+.bsplayer .amazingaudioplayer-pause:hover {
+    background: #da1c1a url(Images/stop.png) no-repeat center center !important;
+}
+
+.bsplayer .amazingaudioplayer-progress {
+    position: relative;
+    background-color: #ababab;
+    margin: 8px 0px;
+    width: 100%;
+}
+
+.bsplayer .amazingaudioplayer-progress-loaded {
+    background-color: #959595;
+}
+
+.bsplayer .amazingaudioplayer-progress-played {
+    background-color: #007f3f;
+}
+
+.bsplayer .amazingaudioplayer-time {
+    float: left;
+    color: #777777;
+    font-size: 15px;
+    margin: -5px 10px;
+}
+
+.bsplayer .alink {
+    float: right;
+    font-size: 15px;
+    margin: 0 10px;
+    height: 50px;
+    overflow: hidden;
+    line-height: 30px;
+    color: #111111
+}
+
+.bsplayer a {
+    color: #111111
+}
+
+.bsplayer span a {
+    font-size: 13px;
+    color: #888888;
+    line-height: 15px;
+}
+
+.bsplayer a:hover {
+    color: #007f3f
 }
 

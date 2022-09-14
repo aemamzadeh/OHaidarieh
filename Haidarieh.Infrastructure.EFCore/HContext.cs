@@ -1,4 +1,5 @@
-﻿using Haidarieh.Domain.CeremonyAgg;
+﻿using Haidarieh.Domain.CalendarAgg;
+using Haidarieh.Domain.CeremonyAgg;
 using Haidarieh.Domain.CeremonyGuestAgg;
 using Haidarieh.Domain.GuestAgg;
 using Haidarieh.Domain.MemberAgg;
@@ -18,6 +19,8 @@ namespace Haidarieh.Infrastructure.EFCore
         public DbSet<Multimedia> Multimedias { get; set; }
         public DbSet<Member> Members { get; set; }
         public DbSet<Sponsor> Sponsors { get; set; }
+        public DbSet<Calendar> Calendars { get; set; }
+
 
         public HContext(DbContextOptions<HContext> options): base (options)
         {

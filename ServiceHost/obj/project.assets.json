@@ -144,6 +144,28 @@
           }
         }
       },
+      "LinqKit/1.2.2": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.3.0",
+          "LinqKit.Core": "1.2.2"
+        },
+        "compile": {
+          "lib/netstandard2.1/LinqKit.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/LinqKit.dll": {}
+        }
+      },
+      "LinqKit.Core/1.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/LinqKit.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/LinqKit.Core.dll": {}
+        }
+      },
       "MailKit/2.6.0": {
         "type": "package",
         "dependencies": {
@@ -4111,6 +4133,7 @@
         "dependencies": {
           "Haidarieh.Infrastructure.EFCore": "1.0.0",
           "Kendo.for.AspNet.Core": "2019.1.115",
+          "LinqKit": "1.2.2",
           "Microsoft.AspNetCore.StaticFiles": "2.2.0",
           "SolrNet.Core": "1.1.1",
           "System.Linq": "4.3.0"
@@ -4528,6 +4551,51 @@
         "lib/netstandard2.0/tr-TR/Kendo.Mvc.resources.dll",
         "lib/netstandard2.0/uk-UA/Kendo.Mvc.resources.dll",
         "lib/netstandard2.0/zh-CN/Kendo.Mvc.resources.dll"
+      ]
+    },
+    "LinqKit/1.2.2": {
+      "sha512": "W7StCkp27bQvr/RCzEXFGbZL491xm2uetr/xs8T3skDocna6Pi2eLazQ8TQozSkSTZwY0hSgM++bR43dLxZTuQ==",
+      "type": "package",
+      "path": "linqkit/1.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/LinqKit.dll",
+        "lib/net45/LinqKit.xml",
+        "lib/netstandard2.1/LinqKit.dll",
+        "lib/netstandard2.1/LinqKit.xml",
+        "linqkit.1.2.2.nupkg.sha512",
+        "linqkit.nuspec"
+      ]
+    },
+    "LinqKit.Core/1.2.2": {
+      "sha512": "ORnvvVKcuAak657JmRTRw4CGjo/1Aba/dMDYUlSrT9Gv2/LBKusR+IQrGR3sOLdGVQLyHvLlCUsptqWQ/XIT1Q==",
+      "type": "package",
+      "path": "linqkit.core/1.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/LinqKit.Core.dll",
+        "lib/net35/LinqKit.Core.xml",
+        "lib/net40/LinqKit.Core.dll",
+        "lib/net40/LinqKit.Core.xml",
+        "lib/net45/LinqKit.Core.dll",
+        "lib/net45/LinqKit.Core.xml",
+        "lib/netstandard1.3/LinqKit.Core.dll",
+        "lib/netstandard1.3/LinqKit.Core.xml",
+        "lib/netstandard2.0/LinqKit.Core.dll",
+        "lib/netstandard2.0/LinqKit.Core.xml",
+        "lib/netstandard2.1/LinqKit.Core.dll",
+        "lib/netstandard2.1/LinqKit.Core.xml",
+        "lib/portable40-net40+sl5+win8+wp8+wpa81/LinqKit.Core.dll",
+        "lib/portable40-net40+sl5+win8+wp8+wpa81/LinqKit.Core.xml",
+        "lib/portable45-net45+win8+wp8+wpa81/LinqKit.Core.dll",
+        "lib/portable45-net45+win8+wp8+wpa81/LinqKit.Core.xml",
+        "lib/uap10.0.10240/LinqKit.Core.dll",
+        "lib/uap10.0.10240/LinqKit.Core.pri",
+        "lib/uap10.0.10240/LinqKit.Core.xml",
+        "linqkit.core.1.2.2.nupkg.sha512",
+        "linqkit.core.nuspec"
       ]
     },
     "MailKit/2.6.0": {

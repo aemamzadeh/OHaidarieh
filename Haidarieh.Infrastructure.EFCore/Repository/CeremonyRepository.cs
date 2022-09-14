@@ -2,7 +2,10 @@
 using _0_Framework.Infrastructure;
 using AccountManagement.Infrastructure.EFCore;
 using Haidarieh.Application.Contracts.Ceremony;
+using Haidarieh.Application.Contracts.CeremonyGuest;
+using Haidarieh.Application.Contracts.Guest;
 using Haidarieh.Domain.CeremonyAgg;
+using Haidarieh.Domain.CeremonyGuestAgg;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -31,9 +34,48 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 CeremonyDate=x.CeremonyDate,
                 CeremonyDateFA = x.CeremonyDate.ToFarsi(),
                 Image = x.Image,
-                IsLive = x.IsLive   
+                IsLive = x.IsLive
             }).ToList();
         }
+
+
+        public List<CeremonyViewModel> GetCeremonieswithGuests()
+        {
+            return _hContext.Ceremonies.Include(x => x.CeremonyGuests).ThenInclude(x => x.Guest).Where(x => x.Status)
+                .Select(x => new CeremonyViewModel
+                {
+                    Id = x.Id,
+                    Title = x.Title,
+                    CeremonyDate = x.CeremonyDate,
+                    CeremonyDateFA = x.CeremonyDate.ToFarsi(),
+                    Image = x.Image,
+                    IsLive = x.IsLive,
+                    CeremonyGuests = MapGuests(x.CeremonyGuests)
+                }).ToList();
+        }
+
+        private static List<CeremonyGuestViewModel> MapGuests(List<CeremonyGuest> ceremonyGuests)
+        {
+            var guests = new List<CeremonyGuestViewModel>();
+            foreach (var item in ceremonyGuests)
+            {
+                var gst = new CeremonyGuestViewModel
+                {
+                    Id = item.Id,
+                    CeremonyId = item.CeremonyId,
+                    GuestId = item.GuestId,
+                    GuestType = GuestTypes.GetGuestType(item.Guest.GuestType),
+                    Guest = item.Guest.FullName,
+                    GuestPic = item.Guest.Image,
+                    Satisfication = (item.Satisfication).ToPersianNumber()
+                };
+                guests.Add(gst);
+            }
+            return guests;
+        }
+
+
+
 
         public List<CeremonyViewModel> GetCeremonyWithOperationsLog2()
         {

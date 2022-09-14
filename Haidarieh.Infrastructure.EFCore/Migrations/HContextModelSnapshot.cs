@@ -19,6 +19,27 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
+            modelBuilder.Entity("Haidarieh.Domain.CalendarAgg.Calendar", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tbl_Calendar");
+                });
+
             modelBuilder.Entity("Haidarieh.Domain.CeremonyAgg.Ceremony", b =>
                 {
                     b.Property<long>("Id")
@@ -28,6 +49,9 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
 
                     b.Property<string>("BannerFile")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("CalendarId")
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime>("CeremonyDate")
                         .HasColumnType("datetime2");
@@ -60,6 +84,8 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CalendarId");
 
                     b.ToTable("Tbl_Ceremony");
                 });
@@ -171,6 +197,9 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                     b.Property<string>("FileTitle")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<long?>("GuestId")
+                        .HasColumnType("bigint");
+
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
@@ -179,9 +208,14 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
+                    b.Property<int>("VisitCount")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CeremonyId");
+
+                    b.HasIndex("GuestId");
 
                     b.ToTable("Tbl_Multimedia");
                 });
@@ -225,6 +259,12 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
 
             modelBuilder.Entity("Haidarieh.Domain.CeremonyAgg.Ceremony", b =>
                 {
+                    b.HasOne("Haidarieh.Domain.CalendarAgg.Calendar", "Calendar")
+                        .WithMany("Ceremonies")
+                        .HasForeignKey("CalendarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.OwnsMany("Haidarieh.Domain.CeremonyAgg.CeremonyOperation", "CeremonyOperations", b1 =>
                         {
                             b1.Property<long>("Id")
@@ -259,6 +299,8 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                             b1.Navigation("Ceremony");
                         });
 
+                    b.Navigation("Calendar");
+
                     b.Navigation("CeremonyOperations");
                 });
 
@@ -289,7 +331,18 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Haidarieh.Domain.GuestAgg.Guest", "Guest")
+                        .WithMany("Multimedias")
+                        .HasForeignKey("GuestId");
+
                     b.Navigation("Ceremony");
+
+                    b.Navigation("Guest");
+                });
+
+            modelBuilder.Entity("Haidarieh.Domain.CalendarAgg.Calendar", b =>
+                {
+                    b.Navigation("Ceremonies");
                 });
 
             modelBuilder.Entity("Haidarieh.Domain.CeremonyAgg.Ceremony", b =>
@@ -302,6 +355,8 @@ namespace Haidarieh.Infrastructure.EFCore.Migrations
             modelBuilder.Entity("Haidarieh.Domain.GuestAgg.Guest", b =>
                 {
                     b.Navigation("CeremonyGuests");
+
+                    b.Navigation("Multimedias");
                 });
 #pragma warning restore 612, 618
         }

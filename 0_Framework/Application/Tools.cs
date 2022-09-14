@@ -30,7 +30,7 @@ namespace _0_Framework.Application
         {
             if (date == new DateTime()) return "";
             var pc = new PersianCalendar();
-            return $"{pc.GetYear(date)}/{pc.GetMonth(date):00}/{pc.GetDayOfMonth(date):00}";
+            return $"{pc.GetYear(date).ToPersianNumber()}/{pc.GetMonth(date).ToPersianNumber():00}/{pc.GetDayOfMonth(date).ToPersianNumber():00}";
         }
         
         public static string ToDiscountFormat(this DateTime date)
@@ -48,7 +48,7 @@ namespace _0_Framework.Application
         {
             var pc = new PersianCalendar();
             return
-                $"{pc.GetYear(date)}/{pc.GetMonth(date):00}/{pc.GetDayOfMonth(date):00} {date.Hour:00}:{date.Minute:00}:{date.Second:00}";
+                $"{pc.GetYear(date)}/{pc.GetMonth(date).ToPersianNumber():00}/{pc.GetDayOfMonth(date).ToPersianNumber():00} {date.Hour.ToPersianNumber():00}:{date.Minute.ToPersianNumber():00}:{date.Second.ToPersianNumber():00}";
         }
 
         private static readonly string[] Pn = {"۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"};
@@ -63,6 +63,13 @@ namespace _0_Framework.Application
         }
 
         public static string ToPersianNumber(this int intNum)
+        {
+            var chash = intNum.ToString();
+            for (var i = 0; i < 10; i++)
+                chash = chash.Replace(En[i], Pn[i]);
+            return chash;
+        }
+        public static string ToPersianNumber(this long intNum)
         {
             var chash = intNum.ToString();
             for (var i = 0; i < 10; i++)

@@ -1,17 +1,38 @@
 ﻿@page
 @model SearchModel
 
-@{
-    //Layout = "_Layout2";
-    ViewData["title"] = "جستجو";
-}
+@{ //Layout = "_Layout2";
+    ViewData["title"] = "جستجو"; }
 
 <div class="gap remove-gap">
-    <div class="page-title-wrap">
+    <div class="gap thm-layer opc9">
+        <div class="fixed-bg" style="background-image: url(Theme/assets/css/Images/parallax2.png);"></div>
+        <div class="container">
+            <div class="nwsltr-wrp text-center">
+                <div class="nwsltr-innr">
+                    <div class="nwsltr-title">
+                        <h3>جستجو</h3>
+                    </div>
+                    <form method="post">
+                        <div>
+                            <input type="text" placeholder="جستجو" asp-for="searchModel.Title">
+                        </div>
+                        <div style="padding-top:20px">
+                            <button type="submit" asp-page-handler="Search"><i class="md-search"></i>جستجو</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@if (Model.ceremony != null)
+{
+<div class="gap remove-gap">
+    <div class="page-title-wrap" style="padding-top:0px">
         <h2>نتایج جستجو </h2>
     </div>
     <div class="container">
-
         <div class="row">
             <div class="col-md-12 col-sm-12 col-lg-12">
                 <div class="sec-title">
@@ -23,37 +44,41 @@
                 </div>
                 <div class="evnt-wrap remove-ext5">
                     <div class="row mrg20">
+
                         @foreach (var item in Model.ceremony)
                         {
-                            <div class="col-md-4 col-sm-4 col-lg-4">
-                                @*<div class="evnt-box">*@
-                                <a asp-page="/MultimediaDetail/Detail" asp-route-Id=@item.Slug>
-                                    <img src="@item.Image" title="@item.ImageTitle" alt="@item.ImageAlt">
-                                </a>
-                                <div class="evnt-info">
-                                    <h4>@item.Title</h4>
-                                    <ul class="pst-mta">
-                                        <li class="thm-clr">@item.CeremonyDateFa</li>
-                                        @*<li class="thm-clr">12:00 صبح تا 2:00 ظهر</li>*@
-                                    </ul>
-                                    @*@foreach (var ite in Model.ceremony)
-                                    {
-                                        <p>@ite.Guest</p>
-                                    }*@
-                                </div>
-                                @*</div>*@
-                            </div>
-                        }
+        <div class="col-md-4 col-sm-4 col-lg-4">
+
+            @if (item.ContentType.StartsWith("image/"))
+            {
+<a data-fancybox="gallery" data-caption="@item.Title" href="~/@item.FileAddress">
+    <img src="~/@item.FileAddress" class="img" style="width: 100%; height: 180px;" />
+</a>
+                        <h6>@item.Ceremony</h6>
+                                                <h6>@item.CeremonyDateFA</h6> }
+                                            else if (item.ContentType.StartsWith("audio/"))
+                                            {
+                        <a data-fancybox="gallery" data-caption="@item.Title" href="~/@item.FileAddress" data-type="video" style="width: 70px; height: 70px;">
+                            <img src="~/Theme/assets/images/video__player__movie.jpg" style="width: 70px; height: 70px;" />
+                            <h6>@item.GuestName</h6>
+                            <h6>@item.Ceremony</h6>
+                            <h6>@item.CeremonyDateFA</h6>
+
+                        </a> }
+                    else if (item.ContentType.StartsWith("video/"))
+                    {
+<a data-fancybox="gallery" data-caption="@item.Title" href="~/@item.FileAddress">
+    <img src="~/Theme/assets/images/film.png" style="width:100%;height:180px;" />
+</a>
+                        <h6>@item.Ceremony</h6>
+                                                <h6>@item.CeremonyDateFA</h6>}
+        </div>}
 
                     </div>
-                </div><!-- Events Wrap -->
+                </div>
             </div>
-            @* </div> *@
-        </div><!-- Events & Prayer Wrap -->
+        </div>
     </div>
+</div>}
+<div class="gap remove-gap">
 </div>
-
-
-
-
-

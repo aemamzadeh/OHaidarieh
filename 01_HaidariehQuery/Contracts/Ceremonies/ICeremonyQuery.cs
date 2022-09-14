@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _01_HaidariehQuery.Contracts.Multimedias;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,8 +14,12 @@ namespace _01_HaidariehQuery.Contracts.Ceremonies
         List<CeremonyQueryModel> GetAll();
         List<CeremonyQueryModel> GetCeremonyWithMultimedias();
         CeremonyQueryModel GetCeremonyWithMultimedias(string id=null,int typeId=0);
-        List<CeremonyQueryModel> Search(string phrase);
+        //List<CeremonyQueryModel> Search(string phrase);
+        List<MultimediaQueryModel> Search(string phrase);
         List<CeremonyQueryModel> GetAllCeremonyWithMultimedias();
+        List<CeremonyQueryModel> GetAllArchiveCeremonyWithMultimedias();
+
+
 
     }
 }

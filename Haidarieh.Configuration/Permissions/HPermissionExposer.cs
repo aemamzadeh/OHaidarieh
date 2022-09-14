@@ -14,6 +14,16 @@ namespace Haidarieh.Configuration.Permissions
             return new Dictionary<string, List<PermissionDto>>
             {
                 {
+                    "Calendar", new List<PermissionDto>
+                    {
+                        new PermissionDto(HPermissions.ListCalendar,"ListCalendar"),
+                        new PermissionDto(HPermissions.SearchCalendar,"SearchCalendar"),
+                        new PermissionDto(HPermissions.CreateCalendar,"CreateCalendar"),
+                        new PermissionDto(HPermissions.EditCalendar,"EditCalendar"),
+
+                    }
+                },
+                {
                     "Ceremony", new List<PermissionDto>
                     {
                         new PermissionDto(HPermissions.ListCeremony,"ListCeremony"),

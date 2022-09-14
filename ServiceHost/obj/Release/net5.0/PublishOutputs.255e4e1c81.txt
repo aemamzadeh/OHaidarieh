@@ -478,8 +478,12 @@ D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\تستس\2020-11-12-23-19-42-12.jpg
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\تستس\2020-11-12-23-23-32-1429890417-newyork.jpg
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\تستس\2020-11-12-23-28-12-19.jpg
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\شب-ششم-محرم-1400\2022-08-07-11-44-00-14010507-155034-134859.jpg
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\شب-ششم-محرم-1400\2022-08-07-11-44-00-20fdc611-ed78-4501-a516-4c68c9ac4397.jfif
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\شب-پنجم-محرم-1400\2022-08-05-11-56-52-018cc9d7-690c-4cb8-8072-412c18f96a0c.jfif
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\شب-پنجم-محرم-1400\2022-08-05-11-56-52-20fdc611-ed78-4501-a516-4c68c9ac4397.jfif
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\شب-پنجم-محرم-1400\2022-08-15-14-41-00-2.jpg
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\شب-پنجم-محرم-1400\2022-08-15-14-41-15-14010507-155034-134859.jpg
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\شهادت-امام-جواد\2022-07-20-13-10-20-country_image_Canada.jpg
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\شهادت-امام-جواد\2022-07-20-13-10-20-NEBSOH PSM.jpg
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\عید-قربان-1401\2022-06-28-10-49-54-IECCORPORATEMEETINROOM.bmp
@@ -490,6 +494,14 @@ D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\فاطمیه\2021-01-02-09-05-44-8.jpg
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\محرم-1444\2022-08-01-18-23-48-AmirkabirUni.png
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\محرم-1444\2022-08-01-18-23-48-refaat.jpg
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\محرم-1444\2022-08-29-16-11-33-14010507-155034-134859.jpg
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\محرم-1444\2022-08-29-16-11-33-342fcd68-f6c0-4a0c-8dbb-940041489e95.jfif
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\محرم-1444\2022-08-29-16-26-26-14010507-155034-134859.jpg
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\محرم-1444\2022-08-29-16-26-27-342fcd68-f6c0-4a0c-8dbb-940041489e95.jfif
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\محرم-1444\2022-08-29-16-37-05-342fcd68-f6c0-4a0c-8dbb-940041489e95.jfif
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\محرم-1444\2022-08-29-16-37-06-14010507-155034-134859.jpg
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\محرم-1444\2022-08-30-10-08-09-14010507-155034-134859.jpg
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\محرم-1444\2022-08-30-10-08-09-20fdc611-ed78-4501-a516-4c68c9ac4397.jfif
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\ندارد\2022-05-30-16-51-20-17.jpg
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\ندارد\2022-05-30-16-51-20-7.jpg
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\CeremonyImages\ندارد\2022-07-20-13-58-54-refaat.jpg
@@ -625,7 +637,37 @@ D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-05-14-29-50-10moharam1443-torfi4.mp3
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-05-14-29-50-a8754cb4-0b6d-4a31-b180-38bf59b30bf5.jfif
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-05-14-29-50-e7958578-3ee8-4981-ac86-975e2dcf6f93.jfif
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-12-37-09-male_avatar-512.png
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-12-38-06-1075638.mp3
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-12-40-43-p585kx.jpg
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-14-17-24-p585kx.jpg
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-14-17-28-p585kx.jpg
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-15-19-37-p585kx.jpg
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-16-16-49-p585kx.jpg
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-16-17-10-p585kx.jpg
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-16-20-32-p585kx.jpg
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-17-57-18-p585kx.jpg
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-18-46-09-00-section intro.mp4
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-18-47-29-Accommodations Buildings.bmp
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-18-47-30-Accommodations rooms 2.bmp
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-18-47-30-CrossFit Urban Gym.bmp
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-18-47-31-DFAC.bmp
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-18-47-31-IEC CLASSROOM 1.bmp
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-18-47-32-IEC CORPORATE MEETIN ROOM.bmp
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-18-47-32-IEC MEETING ROOM 2.bmp
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-18-47-32-IEC MEETING ROOM.bmp
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-18-47-33-Indoor Football.bmp
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-06-18-53-58-IEC MEETING ROOM.bmp
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-سوم-محرم-1400\2022-08-23-19-21-49-10moharam1443-torfi4.mp3
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-پنجم-محرم-1400\2022-08-27-16-34-57-10moharam1443-torfi4.mp3
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-پنجم-محرم-1400\2022-09-03-15-29-44-1075638.mp3
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-چهارم-محرم-1400\2022-08-05-14-23-05-10moharam1443-torfi4.mp3
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-چهارم-محرم-1400\2022-08-27-14-35-29-WhatsApp Video 2022-08-02 at 5.31.35 PM.mp4
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-چهارم-محرم-1400\2022-08-27-14-39-54-10moharam1443-torfi4.mp3
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-چهارم-محرم-1400\2022-08-27-14-39-55-10moharam1443-torfi4.mp3
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-چهارم-محرم-1400\2022-08-27-16-11-34-WhatsApp Video 2022-08-02 at 5.31.35 PM.mp4
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-چهارم-محرم-1400\2022-08-27-16-26-58-WhatsApp Video 2022-08-02 at 5.31.35 PM.mp4
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شب-چهارم-محرم-1400\2022-08-27-16-30-36-10moharam1443-torfi4.mp3
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شهادت-امام-جواد\2022-07-30-10-32-12-DFAC.bmp
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شهادت-امام-جواد\2022-07-30-10-42-27-DFAC.bmp
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\MultimediaImages\شهادت-امام-جواد\2022-07-30-11-02-01-Power Plant.bmp
@@ -676,6 +718,10 @@ D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\css\fancybox.min.css
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\css\font-awesome.min.css
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\css\icons.min.css
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\css\Images\parallax2.png
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\css\Images\pause.png
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\css\Images\play.png
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\css\Images\stop.png
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\css\jquery.circliful.css
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\css\jquery.fancybox.min.css
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\css\owl.carousel.min.css
@@ -683,6 +729,7 @@ D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\css\rtl.css
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\css\shabnam.css
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\css\slick.css
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\css\style-Kheimegah.css
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\css\style.css
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\fonts\Flaticon.eot
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\fonts\Flaticon.svg
@@ -850,6 +897,9 @@ D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\images\Sponsors\hrsharifi.jpg
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\images\theme-preview.__large_preview.jpg
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\images\video__player__movie.jpg
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\js\active.js
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\js\ajax-mail.js
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\js\audioplayer.js
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\js\bootstrap.min.js
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\js\custom-scripts.js
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\js\downCount.js
@@ -859,10 +909,18 @@ D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\js\jquery-3.1.1.min.js
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\js\jquery.circliful.min.js
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\js\jquery.min.js
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\js\jw.js
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\js\jwplayer.core.controls.js
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\js\jwpsrv.js
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\js\owl.carousel.min.js
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\js\perfectscrollbar.min.js
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\js\provider.hlsjs.js
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\js\util.js
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\js\vendors.js
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\assets\js\wow.min.js
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\blogAmin.html
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\images\IEC MEETING ROOM.bmp
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\wwwroot\Theme\images\IECROOM2.jpg
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\appsettings.json
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\ServiceHost.dll
@@ -874,6 +932,8 @@ D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\Humanizer.dll
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\Kavenegar.dll
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\Kendo.Mvc.dll
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\LinqKit.dll
+D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\LinqKit.Core.dll
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\MailKit.dll
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.JsonPatch.dll
 D:\NetCoreProjects\repos\OHaidariehProject\ServiceHost\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Mvc.Razor.Host.dll

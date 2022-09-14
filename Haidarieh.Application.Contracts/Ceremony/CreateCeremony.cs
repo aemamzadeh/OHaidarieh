@@ -1,4 +1,5 @@
 ﻿using _0_Framework.Application;
+using Haidarieh.Application.Contracts.Calendar;
 using Haidarieh.Application.Contracts.CeremonyGuest;
 using Haidarieh.Application.Contracts.Multimedia;
 using Microsoft.AspNetCore.Http;
@@ -33,6 +34,8 @@ namespace Haidarieh.Application.Contracts.Ceremony
         public string Slug { get; set; }
         public List<CeremonyGuestViewModel> CeremonyGuests { get;  set; }
         public List<MultimediaViewModel> Multimedias { get;  set; }
+        public long CalendarId { get; set; }
+        public List<CalendarViewModel> Calendars { get; set; }
 
     }
 }

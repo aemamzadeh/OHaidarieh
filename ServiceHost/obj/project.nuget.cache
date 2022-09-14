@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EpuB0MhBEuSKWUHo5OZwlx5gyyvv1l8cv6QTOqSOPGWWV0YcjzS509kgiV56oEi7uUMyMzUMb8Lwnj3IuA6BDQ==",
+  "dgSpecHash": "XxM3ttfJepLAQjgGnN0l8mkN0SPhNIAi0JxeYpe756E5HCkIZBqNRgSi3b5cdO8K79xV0M/Ta+dBg5kmOsq9mw==",
   "success": true,
   "projectFilePath": "D:\\NetCoreProjects\\repos\\OHaidariehProject\\ServiceHost\\ServiceHost.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,8 @@
     "C:\\Users\\USER\\.nuget\\packages\\jquery\\1.9.0\\jquery.1.9.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\kavenegar\\1.2.4\\kavenegar.1.2.4.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\kendo.for.aspnet.core\\2019.1.115\\kendo.for.aspnet.core.2019.1.115.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\linqkit\\1.2.2\\linqkit.1.2.2.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\linqkit.core\\1.2.2\\linqkit.core.1.2.2.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\mailkit\\2.6.0\\mailkit.2.6.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\md.bootstrappersiandatetimepicker\\2.3.0\\md.bootstrappersiandatetimepicker.2.3.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",

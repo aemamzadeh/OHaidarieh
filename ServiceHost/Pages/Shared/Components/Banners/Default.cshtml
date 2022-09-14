@@ -4,33 +4,42 @@
     <img class="botm-shp shp-img" src="theme/assets/images/shp2-1.png" alt="shp2-1.png">
     <div class="featured-area-wrap text-center">
         <div class="featured-area2 owl-carousel">
-
-            @foreach (var item in Model)
+            @if (Model.Count() > 0)
             {
-                    <div class="featured-item style2" style="background-image: url(@item.Image)">
-                        <div class="featured-cap">
-                            <img src="~/theme/assets/images/resources/bsml-txt.png" alt="bsml-txt.png">
-                            @*<h1><img src="theme/assets/images/resources/ayat-txt2-1.png" alt="ayat-txt2-1.png"></h1>*@
-                            <h3>@item.Title</h3>
-                            <h4 class="text-white">@item.CeremonyDateFa</h4>
-                            <h4 class="text-white">ساعت:<span>@item.CeremonyTime</span></h4>
+        @foreach (var item in Model)
+        {
+        <div class="featured-item style2" style="background-image: url(@item.Image)">
+            <div class="featured-cap">
+                <img src="~/theme/assets/images/resources/bsml-txt.png" alt="bsml-txt.png">
+                @*<h1><img src="theme/assets/images/resources/ayat-txt2-1.png" alt="ayat-txt2-1.png"></h1>*@
+                <h3>@item.Title</h3>
+                <h4 class="text-white">@item.CeremonyDateFa</h4>
+                <h4 class="text-white">ساعت:<span>@item.CeremonyTime</span></h4>
 
-                            @if (!System.Convert.IsDBNull(item.CeremonyDate))
-                            {
-                                @if (item.IsLive && (DateTime.Compare(item.CeremonyDate, DateTime.Now) < 0))
-                                {
-                                    <a class="btn btn-danger brd-rd5" href="http://www.aparat.com" title="">پخش زنده</a>
-                                }
-                                else if (item.IsLive && (DateTime.Compare(item.CeremonyDate, DateTime.Now) > 0))
-                                {
-                                    <a class="btn btn-success brd-rd5" title="">پخش زنده</a>
-                                }
-                            }
-                            @*&& (item.CeremonyDate.AddHours(4) > DateTime.Now) && (DateTime.Compare(item.CeremonyDate, DateTime.Now) < 0))*@
-                        </div>
-                    </div>
-            }
+                @if (!System.Convert.IsDBNull(item.CeremonyDate))
+                {
+        @if (item.IsLive && (DateTime.Compare(item.CeremonyDate, DateTime.Now) < 0))
+        {
+        <a class="btn btn-danger brd-rd5" href="http://www.aparat.com" title="">پخش زنده</a> }
+        else if (item.IsLive && (DateTime.Compare(item.CeremonyDate, DateTime.Now) > 0))
+        {
+        <a class="btn btn-success brd-rd5" title="">پخش زنده</a>} } @*&& (item.CeremonyDate.AddHours(4) > DateTime.Now) && (DateTime.Compare(item.CeremonyDate, DateTime.Now) < 0))*@
+            </div>
+        </div>} }
+            else
+            {
+        @foreach (var itm in (List<string>)ViewData["ImageList"])
+        {
+            var iPhotoUrl = "Theme/images/" + itm;
+
+        <div class="featured-item style2" style="background-image: url(@iPhotoUrl)">
+            @*<div class="featured-cap">
+                <img src="~/theme/assets/images/resources/bsml-txt.png" alt="bsml-txt.png">
+            </div>*@
         </div>
+        }
+            }
+                    </div>
     </div><!-- Featured Area Wrap -->
 </div>
 

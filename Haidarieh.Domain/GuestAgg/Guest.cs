@@ -1,5 +1,6 @@
 ﻿using _0_Framework.Domain;
 using Haidarieh.Domain.CeremonyGuestAgg;
+using Haidarieh.Domain.MultimediaAgg;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,8 @@ namespace Haidarieh.Domain.GuestAgg
         public string Coordinator { get; private set; }
         public bool Status { get; private set; }
         public List<CeremonyGuest> CeremonyGuests { get; private set; }
+        public List<Multimedia> Multimedias { get; private set; }
+
 
         public Guest(string fullName, string tel, string email, string image, string imageAlt, 
             string imageTitle, long guestType, string coordinator)
@@ -33,6 +36,7 @@ namespace Haidarieh.Domain.GuestAgg
             GuestType = guestType;
             Coordinator = coordinator;
             CeremonyGuests = new List<CeremonyGuest>();
+            Multimedias= new List<Multimedia>();
         }
         public void Edit(string fullName, string tel, string email, string image, string imageAlt,
             string imageTitle, long guestType, string coordinator)
@@ -47,6 +51,7 @@ namespace Haidarieh.Domain.GuestAgg
             GuestType = guestType;
             Coordinator = coordinator;
             CeremonyGuests = new List<CeremonyGuest>();
+            Multimedias = new List<Multimedia>();
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Haidarieh.Application.Contracts.Ceremony
         List<CeremonyViewModel> GetCeremonies();
         List<CeremonyOperationViewModel> GetCeremonyWithOperationsLog();
         List<CeremonyViewModel> GetUpcommingCeremonies();
+        List<CeremonyViewModel> GetCeremonieswithGuests();
 
     }
 }

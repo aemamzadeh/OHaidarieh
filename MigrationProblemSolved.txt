@@ -1,0 +1,2 @@
+EntityFrameworkCore\Add-Migration imageAdded -Context HContext
+EntityFrameworkCore\Update-Database -Context HContext

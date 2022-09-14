@@ -8,6 +8,14 @@ namespace Haidarieh.Configuration.Permissions
 {
     public static class HPermissions
     {
+
+        //CalendarGuest
+        public const int ListCalendar = 70;
+        public const int SearchCalendar = 71;
+        public const int CreateCalendar = 72;
+        public const int EditCalendar = 73;
+
+
         //Ceremony
         public const int ListCeremony = 10;
         public const int SearchCeremony = 11;

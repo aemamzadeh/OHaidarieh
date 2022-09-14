@@ -25,6 +25,10 @@ namespace _01_HaidariehQuery.Contracts.Ceremonies
         public List<MultimediaQueryModel> Multimedias { get; set; }
         public List<CeremonyGuestQueryModel> CeremonyGuests { get; set; }
         public int RowNo { get; set; }
+        public int VisitCount { get; set; }
+        public string Guest { get; set; }
+
+
 
     }
 }

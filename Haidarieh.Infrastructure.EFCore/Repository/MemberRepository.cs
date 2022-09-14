@@ -1,4 +1,5 @@
-﻿using _0_Framework.Infrastructure;
+﻿using _0_Framework.Application;
+using _0_Framework.Infrastructure;
 using Haidarieh.Application.Contracts.Member;
 using Haidarieh.Domain.MemberAgg;
 using System;
@@ -21,7 +22,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 FullName = x.FullName,
-                Mobile = x.Mobile
+                Mobile = Int32.Parse(x.Mobile).ToPersianNumber()
             }).FirstOrDefault(x => x.Id == id);
         }
 
@@ -31,7 +32,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 FullName = x.FullName,
-                Mobile = x.Mobile
+                Mobile = Int64.Parse(x.Mobile).ToPersianNumber()
             });
 
             if (!string.IsNullOrWhiteSpace(searchModel.FullName))

@@ -1,4 +1,5 @@
 ﻿using _0_Framework.Domain;
+using Haidarieh.Domain.CalendarAgg;
 using Haidarieh.Domain.CeremonyGuestAgg;
 using Haidarieh.Domain.MultimediaAgg;
 using System;
@@ -22,9 +23,13 @@ namespace Haidarieh.Domain.CeremonyAgg
         public List<CeremonyGuest> CeremonyGuests { get; private set; }
         public List<CeremonyOperation> CeremonyOperations { get; private set; }
         public List<Multimedia> Multimedias { get; private set; }
+        public long CalendarId { get; private set; }
+        public Calendar Calendar { get; private set; }
 
-        public Ceremony(string title, DateTime ceremonyDate, bool isLive, string bannerFile, string image, string imageAlt, 
-            string imageTitle, string keywords, string metaDescription, string slug)
+
+
+        public Ceremony(string title, DateTime ceremonyDate, bool isLive, string bannerFile, string image, string imageAlt,
+            string imageTitle, string keywords, string metaDescription, string slug, long calendarId)
         {
             Title = title;
             CeremonyDate = ceremonyDate;
@@ -40,10 +45,11 @@ namespace Haidarieh.Domain.CeremonyAgg
             CeremonyGuests = new List<CeremonyGuest>();
             CeremonyOperations = new List<CeremonyOperation>();
             Multimedias = new List<Multimedia>();
+            CalendarId = calendarId;
         }
 
         public void Edit(string title, DateTime ceremonyDate, bool isLive, string bannerFile, string image, string imageAlt,
-            string imageTitle, string keywords, string metaDescription, string slug)
+            string imageTitle, string keywords, string metaDescription, string slug, long calendarId)
         {
             Title = title;
             CeremonyDate = ceremonyDate;
@@ -60,6 +66,8 @@ namespace Haidarieh.Domain.CeremonyAgg
             CeremonyGuests = new List<CeremonyGuest>();
             CeremonyOperations = new List<CeremonyOperation>();
             Multimedias = new List<Multimedia>();
+            CalendarId = calendarId;
+
         }
         public void CreateOperationLog(int operation, long operatorId, string description, long ceremonyId)
         {

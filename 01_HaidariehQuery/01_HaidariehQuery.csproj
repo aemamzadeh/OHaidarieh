@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Kendo.for.AspNet.Core" Version="2019.1.115" />
+    <PackageReference Include="LinqKit" Version="1.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
     <PackageReference Include="SolrNet.Core" Version="1.1.1" />
     <PackageReference Include="System.Linq" Version="4.3.0" />

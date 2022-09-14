@@ -1,6 +1,7 @@
 ﻿using _0_Framework.Application;
 using Haidarieh.Application.Contracts.Ceremony;
 using Haidarieh.Application.Contracts.CeremonyGuest;
+using Haidarieh.Application.Contracts.Guest;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -21,5 +22,12 @@ namespace Haidarieh.Application.Contracts.Multimedia
         public long CeremonyId { get;  set; }
         public string Slug { get; set; }
         public List<CeremonyViewModel> Ceremonies { get; set; }
+        public int VisitCount { get; set; }
+        public string ContentType { get; set; }
+        public long GuestId { get; set; }
+        public List<GuestViewModel> Guests { get; set; }
+
+
+
     }
 }

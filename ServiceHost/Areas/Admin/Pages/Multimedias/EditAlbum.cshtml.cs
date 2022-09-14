@@ -9,6 +9,7 @@ using Haidarieh.Configuration.Permissions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ServiceHost.Areas.Admin.Pages.Multimedias
 {
@@ -16,6 +17,7 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
     {
         public List<MultimediaViewModel> Command { get; set; }
         public object ViewBag { get; private set; }
+        public SelectList Guests;
 
         //public MultimediaViewModel MVM { get; set; }
         private readonly ICeremonyGuestApplication _ceremonyGuestApplication;
@@ -47,8 +49,9 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
         }
         public IActionResult OnGetAdd(long id)
         {
-             var command = _multimediaApplication.GetDetail(id);
-             return Partial("./Add", command);
+            var command = _multimediaApplication.GetDetail(id);
+            command.Guests = _ceremonyGuestApplication.GetCeremonyGuestsVM(id); //new SelectList(_ceremonyGuestApplication.GetCeremonyGuestsVM(id), "Id", "Title");
+            return Partial("./Add", command);
 
 
         }

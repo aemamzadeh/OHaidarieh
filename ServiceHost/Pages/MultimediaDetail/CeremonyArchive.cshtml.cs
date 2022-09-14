@@ -20,12 +20,12 @@ namespace ServiceHost.Pages.MultimediaDetail
 
         public void OnGet(int pageId=1)
         {
-            var ceremoniesCount = _ceremonyQuery.GetAllCeremonyWithMultimedias().Count();
+            var ceremoniesCount = _ceremonyQuery.GetAllArchiveCeremonyWithMultimedias().Count();
             var skip = (pageId - 1) * 10;
             int pageCount = ceremoniesCount / 10;
             ViewData["pageId"] = pageId;
             ViewData["pageCount"] = pageCount;
-            ceremonies = _ceremonyQuery.GetAllCeremonyWithMultimedias().Skip(skip).Take(10).ToList();
+            ceremonies = _ceremonyQuery.GetAllArchiveCeremonyWithMultimedias().Skip(skip).Take(10).ToList();
         }
     }
 }

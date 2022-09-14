@@ -21,9 +21,13 @@ namespace Haidarieh.Infrastructure.EFCore.Mapping
             builder.Property(x => x.MetaDescription);
             builder.Property(x => x.Status);
             builder.Property(x => x.Slug);
+            builder.Property(x => x.CalendarId);
+
 
             builder.HasMany(x => x.CeremonyGuests).WithOne(x => x.Ceremony).HasForeignKey(x => x.CeremonyId);
             builder.HasMany(x => x.Multimedias).WithOne(x => x.Ceremony).HasForeignKey(x => x.CeremonyId);
+            builder.HasOne(x => x.Calendar).WithMany(x => x.Ceremonies).HasForeignKey(x => x.CalendarId);
+
 
 
             builder.OwnsMany(x => x.CeremonyOperations, modelBuilder =>

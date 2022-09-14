@@ -1,6 +1,7 @@
 ﻿using _01_HaidariehQuery.Contracts.CeremonyGuests;
 using _01_HaidariehQuery.Contracts.Multimedias;
 using Haidarieh.Infrastructure.EFCore;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -19,22 +20,44 @@ namespace _01_HaidariehQuery.Query
             _hContext = hContext;
         }
 
-        //public List<MultimediaQueryModel> GetDetail(string Id)
-        //{
-        //    return _hContext.Multimedias.Where(x=>x.CeremonyGuest.Slug==Id).Select(x => new MultimediaQueryModel
-        //    {
-        //        Id=x.Id,
-        //        Title=x.Title,
-        //        CeremonyGuest=x.CeremonyGuest.Ceremony.Title,
-        //        CeremonyGuestId=x.CeremonyGuestId,
-        //        CeremonyDate=x.CeremonyGuest.CeremonyDate,
-        //        FileAddress=x.FileAddress,
-        //        FileAlt=x.FileAlt,
-        //        FileTitle=x.FileTitle,
-        //        Slug=x.CeremonyGuest.Slug,
-        //        Status=x.Status
+        public List<MultimediaQueryModel> GetMultimediasWithCeremony(long typeId)
+        {
+            string contentType;
+            var medias = _hContext.Multimedias.Where(x => x.Status)
+                    .Select(x => new MultimediaQueryModel
+                    {
+                        Id = x.Id,
+                        Title = x.Ceremony.Title,
+                        FileAddress = x.FileAddress,
+                        VisitCount = x.VisitCount,
+                        CeremonyDate=x.Ceremony.CeremonyDate
+                       
+                        
 
-        //    }).ToList();
-        //}
+                    }).ToList();
+            foreach (var item in medias)
+            {
+                new FileExtensionContentTypeProvider().TryGetContentType(item.FileAddress, out contentType);
+                var x = contentType;
+                item.ContentType = x;
+            }
+            if (typeId == 1)
+            {
+
+                medias = medias.Where(x => x.ContentType != null && x.ContentType.StartsWith("image/")).OrderByDescending(x => x.VisitCount).ToList();
+            }
+            else if (typeId == 2)
+            {
+
+                medias = medias.Where(x => x.ContentType.StartsWith("audio/")).OrderByDescending(x => x.VisitCount).ToList();
+            }
+            else if (typeId == 3)
+            {
+
+                medias = medias.Where(x => x.ContentType.StartsWith("video/")).OrderByDescending(x => x.VisitCount).ToList();
+            }
+            return medias;
+
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using _0_Framework.Infrastructure;
+﻿using _0_Framework.Application;
+using _0_Framework.Infrastructure;
 using Haidarieh.Application.Contracts.Sponsor;
 using Haidarieh.Domain.SponsorAgg;
 using System;
@@ -22,7 +23,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 Name = x.Name,
-                Tel = x.Tel,
+                Tel = Int32.Parse(x.Tel).ToPersianNumber(),
                 Bio = x.Bio,
                 IsVisible = x.IsVisible,
                 //Image = x.Image,
@@ -37,7 +38,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 Name = x.Name,
-                Tel = x.Tel,
+                Tel = Int64.Parse(x.Tel).ToPersianNumber().ToString(),
                 Bio = x.Bio,
                 IsVisible = x.IsVisible,
                 Image = x.Image

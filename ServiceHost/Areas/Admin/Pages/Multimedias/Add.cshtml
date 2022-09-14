@@ -23,6 +23,16 @@
             </div>
             <div class="col-md-12">
                 <div class="form-group">
+                    <label asp-for="GuestId" class="control-label">میهمان</label>
+                    <select type="text" class="form-control" id="gstList" asp-for="GuestId" asp-items='new SelectList(Model.Guests,"Id","FullName")'>  @*onchange="FillSerializeDropdown('CeremonyId','FillCeremonyGuests','GuestId')">*@
+                    @*<select class="form-control" asp-for="GuestId">*@
+                        <option value="0">انتخاب میهمان</option>
+                    </select>
+                    <span asp-validation-for="GuestId" class="error"></span>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
                     <label asp-for="FileAddress" class="control-label">فایل</label>
                     <input type="file" multiple="multiple" class="form-control" asp-for="FileAddress" id="Files">
                     <span asp-validation-for="FileAddress" class="error"></span>

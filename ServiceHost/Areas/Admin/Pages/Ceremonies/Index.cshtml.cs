@@ -4,22 +4,27 @@ using System.Linq;
 using System.Threading.Tasks;
 using _0_Framework.Infrastructure;
 using _01_HaidariehQuery.Contracts.Ceremonies;
+using Haidarieh.Application.Contracts.Calendar;
 using Haidarieh.Application.Contracts.Ceremony;
 using Haidarieh.Configuration.Permissions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ServiceHost.Areas.Admin.Pages.Ceremonies
 {
     public class IndexModel : PageModel
     {
         private readonly ICeremonyApplication _ceremonyApplication;
+        private readonly ICalendarApplication _calendarApplication;
+
         public List<CeremonyViewModel> Ceremonies;
         public CeremonySearchModel SearchModel;
 
-        public IndexModel(ICeremonyApplication ceremonyApplication)
+        public IndexModel(ICeremonyApplication ceremonyApplication, ICalendarApplication calendarApplication)
         {
             _ceremonyApplication = ceremonyApplication;
+            _calendarApplication = calendarApplication;
         }
 
         [NeedPermission(HPermissions.ListCeremony)]
@@ -28,9 +33,14 @@ namespace ServiceHost.Areas.Admin.Pages.Ceremonies
             Ceremonies=_ceremonyApplication.Search(searchModel);
         }
 
+        [NeedPermission(HPermissions.ListCalendar)]
         public IActionResult OnGetCreate()
         {
-            return Partial("./Create", new CreateCeremony());
+            var command = new CreateCeremony()
+            {
+                Calendars = _calendarApplication.GetCalendars()
+            };
+            return Partial("Create", command);
         }
 
         [NeedPermission(HPermissions.CreateCeremony)]

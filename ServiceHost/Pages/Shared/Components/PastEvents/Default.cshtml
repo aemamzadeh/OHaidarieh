@@ -1,40 +1,42 @@
 ﻿@model List<_01_HaidariehQuery.Contracts.Ceremonies.CeremonyQueryModel>
 
-<div class="gap remove-gap">
+<div class="gap">
     <div class="container">
         <div class="evnt-pry-wrap">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-lg-12">
                     <div class="sec-title">
                         <div class="sec-title2 text-center">
-                            <h3>مجالس اخیر</h3>
+                            <h4>مجالس اخیر</h4>
                         </div>
-                        <p>حیدریة النجف الاشرف حیدریة النجف الاشرف مجالس مختلفی در طول سال برگزار میکند.</p>
                     </div>
                     <div class="evnt-wrap remove-ext5">
                         <div class="row mrg40">
 
                             @foreach (var item in Model)
                             {
-                        <div class="col-md-4 col-sm-4 col-lg-4">
-                            <div class="evnt-box">
+                    <div class="col-md-4 col-sm-4 col-lg-4">
+                        <div class="evnt-box">
 
-                                <div class="evnt-thmb">
-                                    <a asp-page="/MultimediaDetail/Detail" asp-route-Id=@item.Slug>
-                                        <img src="~/@item.Image" title="@item.ImageTitle" alt="@item.ImageAlt">
-                                    </a>
-                                </div>
-                                <div class="evnt-info">
-                                    <h5>@item.Title</h5>
-                                    <ul class="pst-mta">
-                                        <li class="thm-clr">@item.CeremonyDateFa</li>
-                                    </ul>
-                                </div>
+                            <div class="evnt-thmb">
+                                <a asp-page="/MultimediaDetail/Detail" asp-route-Id=@item.Slug>
+                                    <img src="~/@item.Image" title="@item.ImageTitle" alt="@item.ImageAlt">
+                                </a>
                             </div>
-                        </div>}
+                            <div class="evnt-info">
+                                <h5>@item.Title</h5>
+                                <ul class="pst-mta">
+                                    <li class="thm-clr">@item.CeremonyDateFa</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div><!-- Events Wrap -->
-                </div>
+                    </div>}
+                        </div>
+                            <div class="abot-sec" style="text-align:center">
+                                <a class="thm-btn brd-rd40" asp-page="./Search" title="">جستجو در مجالس گذشته</a>
+                            </div>
+                        </div><!-- Events Wrap -->
+                 </div>   
             </div>
         </div>
     </div>

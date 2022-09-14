@@ -6,13 +6,20 @@
 
 @await Component.InvokeAsync("Banners")
 
-<partial name="About" />
+@*<partial name="About" />*@
 
-@await Component.InvokeAsync("UpComming")
+<div id="ReloadMostVisitedCeremonies">
+    @await Component.InvokeAsync("MostVisitedCeremonies")
+</div>
 
-<partial name="Services" />
+@*<partial name="Services" />*@
 
 @await Component.InvokeAsync("PastEvents")
+
+<div id="ReloadPastAudios">
+    @await Component.InvokeAsync("PastAudios")
+</div>
+
 
 @await Component.InvokeAsync("Sponsors")
 
@@ -26,8 +33,8 @@
             <div class="nwsltr-wrp text-center">
                 <div class="nwsltr-innr">
                     <div class="nwsltr-title">
-                        <h3>عضویت در خبرنامه</h3>
-                        <span>دریافت آخرین اخبار، رویداد ها و مراسمات</span>
+                        <h3>عضویت بانک اعضای حیدریه</h3>
+                        <span>دریافت آخرین اخبار و مجالس حیدریه</span>
                     </div>
                     <form method="post">
                         @if (!string.IsNullOrWhiteSpace(Model.SuccessMessage))

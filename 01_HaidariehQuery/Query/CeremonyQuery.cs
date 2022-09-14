@@ -3,10 +3,12 @@ using _01_HaidariehQuery.Contracts.Ceremonies;
 using _01_HaidariehQuery.Contracts.CeremonyGuests;
 using _01_HaidariehQuery.Contracts.Multimedias;
 using Haidarieh.Application.Contracts.Guest;
+using Haidarieh.Domain.CeremonyAgg;
 using Haidarieh.Domain.CeremonyGuestAgg;
 using Haidarieh.Domain.GuestAgg;
 using Haidarieh.Domain.MultimediaAgg;
 using Haidarieh.Infrastructure.EFCore;
+using LinqKit;
 using Microsoft.AspNetCore.Razor.CodeGenerators;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
@@ -36,6 +38,7 @@ namespace _01_HaidariehQuery.Query
                 Id = x.Id,
                 Title = x.Title,
                 CeremonyDateFa = x.CeremonyDate.ToFarsi(),
+                CeremonyDate=x.CeremonyDate,
                 Status = x.Status
             }).ToList();
         }
@@ -157,9 +160,9 @@ namespace _01_HaidariehQuery.Query
 
         public List<CeremonyQueryModel> GetCeremonyWithMultimedias()
         {
-            return _hContext.Ceremonies.Include(x => x.Multimedias).
+            return _hContext.Ceremonies.
                                             Include(x => x.CeremonyGuests).
-                                            ThenInclude(x => x.Guest).
+                                            ThenInclude(x => x.Guest).ThenInclude(x => x.Multimedias).
                                             Where(x => x.Status == true).Select(x => new CeremonyQueryModel
                                             {
                                                 Id = x.Id,
@@ -175,51 +178,201 @@ namespace _01_HaidariehQuery.Query
                                                 Keywords = x.Keywords,
                                                 MetaDescription = x.MetaDescription,
                                                 CeremonyGuests = MapCeremonyGuests(x.CeremonyGuests),
-                                                Multimedias = MapMultimedias(x.Multimedias, 0)
+                                                Multimedias = MapMultimedias(x.Multimedias, 0,null,0)
 
                                             }).AsNoTracking().ToList();
         }
 
-        private static List<MultimediaQueryModel> MapMultimedias(List<Multimedia> multimedias, int typeId)
+        public List<MultimediaQueryModel> Search(string phrase)
+        {
+            var query = _hContext.Ceremonies.Include(x => x.CeremonyGuests).ThenInclude(x => x.Guest).Include(x => x.Multimedias)
+                .Where(x => x.Status == true).Select(x => new CeremonyQueryModel
+                {
+                    Id = x.Id,
+                    Title = x.Title,
+                    CeremonyDateFa = x.CeremonyDate.ToFarsi(),
+                    CeremonyDate = x.CeremonyDate,
+                    Image = x.Image,
+                    ImageAlt = x.ImageAlt,
+                    ImageTitle = x.ImageTitle,
+                    IsLive = x.IsLive,
+                    BannerFile = x.BannerFile,
+                    Slug = x.Slug,
+                    Keywords = x.Keywords,
+                    MetaDescription = x.MetaDescription,
+                    CeremonyGuests = MapCeremonyGuests(x.CeremonyGuests),
+                    Multimedias = MapMultimedias(x.Multimedias, 0, null, x.Id)
+                }).ToList();
+
+
+            foreach (var qu in query)
+            {
+                foreach (var item in qu.Multimedias)
+                {
+                    if (item.GuestId != null)
+                    {
+                        item.GuestName = _hContext.Guests.Where(x => x.Id == item.GuestId).FirstOrDefault().FullName;
+                    }
+                    else
+                    {
+                        item.GuestName = "";
+                    }
+                    item.Ceremony = qu.Title;
+                    item.CeremonyDateFA = qu.CeremonyDateFa;
+                    item.CeremonyDate = qu.CeremonyDate;
+                }
+
+            }
+
+
+            //foreach (var ceremony in query)
+            //{
+            //    ceremony.Multimedias = _hContext.Multimedias.Include(x => x.Guest).Include(x => x.Ceremony).Where(x => x.Status == true).Select(x => new MultimediaQueryModel
+            //    {
+            //        Id = x.Id,
+            //        Title = x.Title,
+            //        FileAddress = x.FileAddress,
+            //        FileAlt = x.FileAlt,
+            //        GuestId = x.GuestId,
+            //        Guest = x.Guest.FullName,
+            //        FileTitle = x.FileTitle
+            //    }).ToList();
+
+            //}
+
+
+            //if (!string.IsNullOrWhiteSpace(phrase))
+
+
+
+
+            //var queryCer = query.AsEnumerable().Where(x => x.Title.Contains(phrase) || x.CeremonyDateFa.Contains(phrase) || x.ImageTitle.Contains(phrase) || x.Keywords.Contains(phrase) || x.MetaDescription.Contains(phrase) || x.CeremonyGuests.Any(a => a.Guest.Contains(phrase)));
+
+            var queryMul = query.AsEnumerable().Where(x => x.Multimedias.Any(a => a.Title.Contains(phrase)) || x.Multimedias.Any(a => a.FileTitle != null && a.FileTitle.Contains(phrase)) || x.Multimedias.Any(a => a.GuestName.Contains(phrase))); //    (a => a.Guest?.ToLower().Contains(phrase) ?? false)
+
+            var mediaList = new List<MultimediaQueryModel>();
+            foreach (var qu in queryMul)
+            {
+                foreach (var item in qu.Multimedias)
+                {
+                    var mItem = new MultimediaQueryModel
+                    {
+
+                        Id = item.Id,
+                        Title = item.Title,
+                        FileAddress = item.FileAddress,
+                        FileAlt = item.FileAlt,
+                        FileTitle = item.FileTitle,
+                        VisitCount = item.VisitCount,
+                        GuestId = item.GuestId,
+                        GuestName = item.GuestName,
+                        Ceremony=item.Ceremony,
+                        CeremonyId=item.CeremonyId,
+                        CeremonyDate=item.CeremonyDate,
+                        ContentType=item.ContentType
+                        
+                    };
+                    mediaList.Add(mItem);
+
+                }
+
+            }
+
+
+            var queryMulList = mediaList.AsEnumerable().Where(x => x.Title.Contains(phrase) || (x.FileTitle != null && x.FileTitle.Contains(phrase)) || x.GuestName.Contains(phrase));
+
+
+            var res = queryMulList.ToList();
+            return res;
+        }
+
+        private static List<MultimediaQueryModel> MapMultimedias(List<Multimedia> multimedias, int typeId, List<Ceremony> medias=null, long ceremonyId=0)
         {
             string contentType;
-            
-            //var x = contentType;
-            var medias = multimedias.Where(x => x.Status == true).Select(x => new MultimediaQueryModel
 
-            {
+            var res = multimedias.Select(x => new MultimediaQueryModel {
                 Id = x.Id,
                 Title = x.Title,
                 FileAddress = x.FileAddress,
                 FileAlt = x.FileAlt,
-                FileTitle = x.FileTitle
+                FileTitle = x.FileTitle,
+                VisitCount = x.VisitCount,
+                GuestId = x.GuestId,
+                CeremonyId=x.CeremonyId
+            }).ToList();
 
-        }).ToList();
-            foreach (var item in medias)
+
+            //var res = new List<MultimediaQueryModel>();
+            //foreach (var item in multimedias)
+            //{
+
+            //        var mItem = new MultimediaQueryModel
+            //        {
+
+            //            Id = item.Id,
+            //            Title = item.Title,
+            //            FileAddress = item.FileAddress,
+            //            FileAlt = item.FileAlt,
+            //            FileTitle = item.FileTitle,
+            //            VisitCount = item.VisitCount,
+            //            GuestId = item.GuestId,
+            //            Guest = item.Guest.FullName
+            //        };
+            //        res.Add(mItem);
+
+            //        new FileExtensionContentTypeProvider().TryGetContentType(item.FileAddress, out contentType);
+            //        var ct = contentType;
+            //        mItem.ContentType = ct;
+            //}
+
+            foreach (var item in res)
             {
                 new FileExtensionContentTypeProvider().TryGetContentType(item.FileAddress, out contentType);
-                var x = contentType;
-                item.ContentType = x;
+                var ct = contentType;
+                item.ContentType = ct;
+                //if (item.GuestId != null)
+                //{
+                //    item.Guest = medias.Where(x => x.GuestId == item.GuestId).Select(x => x.Guest.FullName).FirstOrDefault();
+                //}
             }
 
             if (typeId == 1)
             {
 
-                medias = medias.Where(x=>x.ContentType !=null && x.ContentType.StartsWith("image/")).ToList();
+                res = res.AsEnumerable().Where(x=>x.ContentType !=null && x.ContentType.StartsWith("image/")).ToList();
             }
             else if (typeId == 2)
             {
 
-                medias = medias.Where(x => x.ContentType.StartsWith("audio/")).ToList();
+                res = res.AsEnumerable().Where(x => x.ContentType.StartsWith("audio/")).ToList();
             }
             else if (typeId == 3)
             {
 
-                medias = medias.Where(x => x.ContentType.StartsWith("video/")).ToList();
+                res = res.AsEnumerable().Where(x => x.ContentType.StartsWith("video/")).ToList();
             }
 
-            return medias.ToList();
+            return res.ToList();
         }
+
+        //private static string MapMultimediasToGuest(List<Multimedia> multimedias, long id)
+        //{
+        //    string GuestName = "";
+        //    foreach (var item in multimedias)
+        //    {
+        //        if (item.GuestId!=null)
+        //        {
+        //            GuestName = multimedias.Where(x => x.GuestId == item.GuestId).Select(x=>x.Guest.FullName).FirstOrDefault();
+        //        }
+        //        else
+        //        {
+        //            GuestName = "";
+        //        }
+        //    }
+
+        //    return GuestName;
+
+        //}
 
         private static List<CeremonyGuestQueryModel> MapCeremonyGuests(List<CeremonyGuest> ceremonyGuests)
         {
@@ -238,7 +391,7 @@ namespace _01_HaidariehQuery.Query
         public CeremonyQueryModel GetCeremonyWithMultimedias(string id=null, int typeId = 0)
         {
             var ceremonies = _hContext.Ceremonies.Include(x => x.CeremonyGuests).
-                                            ThenInclude(x => x.Guest).
+                                            ThenInclude(x => x.Guest).Include(x=>x.Multimedias).
                                             Where(x => x.Status == true && x.Slug !=null).Select(x => new CeremonyQueryModel
                                             {
                                                 Id = x.Id,
@@ -254,43 +407,32 @@ namespace _01_HaidariehQuery.Query
                                                 Keywords = x.Keywords,
                                                 MetaDescription = x.MetaDescription,
                                                 CeremonyGuests = MapCeremonyGuests(x.CeremonyGuests),
-                                                Multimedias = MapMultimedias(x.Multimedias, typeId)
+                                                Multimedias = MapMultimedias(x.Multimedias, typeId,null,0)
                                             }).AsNoTracking().FirstOrDefault(x => x.Slug == id);
+
+            foreach (var multimedia in ceremonies.Multimedias)
+            {
+                if (multimedia.GuestId != null)
+                {
+                    multimedia.GuestName = _hContext.Guests.Where(x => x.Id == multimedia.GuestId).FirstOrDefault().FullName;
+
+                }
+                else
+                {
+                    multimedia.GuestName = "";
+                }
+            }
 
             return ceremonies;
         }
 
-        public List<CeremonyQueryModel> Search(string phrase)
-        {
-            var query = _hContext.Ceremonies.Where(x => x.Status == true).Select(x => new CeremonyQueryModel
-            {
-                Id = x.Id,
-                Title = x.Title,
-                CeremonyDateFa = x.CeremonyDate.ToFarsi(),
-                CeremonyDate = x.CeremonyDate,
-                Image = x.Image,
-                ImageAlt = x.ImageAlt,
-                ImageTitle = x.ImageTitle,
-                IsLive = x.IsLive,
-                BannerFile = x.BannerFile,
-                Slug = x.Slug,
-                Keywords = x.Keywords,
-                MetaDescription = x.MetaDescription,
-                CeremonyGuests = MapCeremonyGuests(x.CeremonyGuests),
-                Multimedias = MapMultimedias(x.Multimedias, 0)
-            }).AsNoTracking();
-            if (!string.IsNullOrWhiteSpace(phrase))
-                query = query.Where(x => x.Title.Contains(phrase));
-            var result = query.OrderByDescending(x => x.Id).ToList();
-            return result;
-        }
 
 
         public List<CeremonyQueryModel> GetAllCeremonyWithMultimedias()
         {
             var ceremonies = _hContext.Ceremonies.Include(x => x.CeremonyGuests).
                                             ThenInclude(x => x.Guest).
-                                            Where(x => x.Slug !=null && x.CeremonyGuests.Count()>0 && x.Status == true && x.Multimedias.Count() >0 && x.CeremonyDate>DateTime.Now).Select(x => new CeremonyQueryModel
+                                            Where(x => x.Slug !=null && x.CeremonyGuests.Count()>0 && x.Status == true && x.Multimedias.Count()>0).Select(x => new CeremonyQueryModel
                                             {
                                                 Id = x.Id,
                                                 Title = x.Title,
@@ -305,14 +447,37 @@ namespace _01_HaidariehQuery.Query
                                                 Keywords = x.Keywords,
                                                 MetaDescription = x.MetaDescription,
                                                 CeremonyGuests = MapCeremonyGuests(x.CeremonyGuests),
-                                                Multimedias = MapMultimedias(x.Multimedias, 0)
+                                                Multimedias = MapMultimedias(x.Multimedias, 0,null,0)
                                             }).AsNoTracking().OrderByDescending(x=>x.CeremonyDate).ToList();
 
             return ceremonies.ToList();
         }
 
 
+        public List<CeremonyQueryModel> GetAllArchiveCeremonyWithMultimedias()
+        {
+            var ceremonies = _hContext.Ceremonies.Include(x => x.CeremonyGuests).
+                                ThenInclude(x => x.Guest).
+                                Where(x => x.Slug != null && x.CeremonyGuests.Count() > 0 && x.Status == true && x.CeremonyDate < DateTime.Now).Select(x => new CeremonyQueryModel
+                                {
+                                    Id = x.Id,
+                                    Title = x.Title,
+                                    CeremonyDateFa = x.CeremonyDate.ToFarsi(),
+                                    CeremonyDate = x.CeremonyDate,
+                                    Image = x.Image,
+                                    ImageAlt = x.ImageAlt,
+                                    ImageTitle = x.ImageTitle,
+                                    IsLive = x.IsLive,
+                                    BannerFile = x.BannerFile,
+                                    Slug = x.Slug,
+                                    Keywords = x.Keywords,
+                                    MetaDescription = x.MetaDescription,
+                                    CeremonyGuests = MapCeremonyGuests(x.CeremonyGuests),
+                                    Multimedias = MapMultimedias(x.Multimedias, 0,null,0)
+                                }).AsNoTracking().OrderByDescending(x => x.CeremonyDate).ToList();
 
+            return ceremonies.ToList();
+        }
 
         //---------------------
         //public List<CeremonyGuestQueryModel> GetCeremonyGuestWithMultimedias2(string id)

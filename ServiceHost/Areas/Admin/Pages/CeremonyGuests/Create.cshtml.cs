@@ -49,7 +49,7 @@ namespace ServiceHost.Areas.Admin.Pages.CeremonyGuests
         {
 
             _ceremonyGuestApplication.Edit(command, chk);
-            //return new JsonResult(result);
+            //return new ation(result);
             return RedirectToPage("./Index");
 
 

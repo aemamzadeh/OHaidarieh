@@ -50,7 +50,7 @@ namespace Haidarieh.Application
                     if (Image.FromFile(filePath).Width > 800 && Image.FromFile(filePath).Height > 600)
                         File.Delete(filePath);
                 }
-                var multimedia = new Multimedia(ceremony.Title, imageFileName.savePath, command.FileTitle, command.FileAlt, command.CeremonyId);
+                var multimedia = new Multimedia(ceremony.Title, imageFileName.savePath, command.FileTitle, command.FileAlt, command.CeremonyId,command.VisitCount,command.GuestId);
                 _multimediaRepository.Create(multimedia);
             }
 
@@ -84,8 +84,8 @@ namespace Haidarieh.Application
                         File.Delete(filePath);
                 }
                 //var imageFileName = _fileUploader.Upload(item, ImagePath);
-                //editItem.EditAlbum(imageFileName, command.CeremonyId);
-                var multimedia = new Multimedia(ceremony.Title, imageFileName.savePath, command.FileTitle, command.FileAlt, command.CeremonyId);
+                //editItem.EditAlbum(imageFileName.savePath, command.CeremonyId,command.GuestId,editItem.FileTitle,editItem.FileAlt);
+                var multimedia = new Multimedia(ceremony.Title, imageFileName.savePath, editItem.FileTitle, editItem.FileAlt, command.CeremonyId, command.VisitCount,command.GuestId);
                 _multimediaRepository.Create(multimedia);
 
             }
@@ -96,6 +96,10 @@ namespace Haidarieh.Application
         public EditMultimedia GetDetail(long Id)
         {
             return _multimediaRepository.GetDetail(Id);
+        }
+        public EditMultimedia GetDetailMultimedia(long Id)
+        {
+            return _multimediaRepository.GetDetailMultimedia(Id);
         }
 
         public OperationResult EditMetadata(EditMultimedia command)
@@ -137,5 +141,13 @@ namespace Haidarieh.Application
             return operation.Succedded();
         }
 
+        public long AddVisitCount(long Id)
+        {
+            var editItem = _multimediaRepository.Get(Id);
+            editItem.Edit(editItem.Title, editItem.FileAddress,editItem.FileTitle, editItem.FileAlt, editItem.CeremonyId, editItem.VisitCount+1,editItem.GuestId);
+            _multimediaRepository.SaveChanges();
+            var ret = editItem.VisitCount;
+            return ret;
+        }
     }
 }

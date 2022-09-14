@@ -20,7 +20,7 @@ namespace Haidarieh.Application.Contracts.Guest
                 case 1:
                     return "قاری";
                 case 2:
-                    return "خطیب";
+                    return "سخنران";
                 case 3:
                     return "مداح";
                 case 4:

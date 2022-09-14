@@ -31,7 +31,15 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 GuestId = x.GuestId,
                 Guest=x.Guest.FullName,
                 CeremonyId = x.CeremonyId,
-                Satisfication = x.Satisfication
+                Satisfication = x.Satisfication.ToPersianNumber()
+            }).ToList();
+        }
+        public List<GuestViewModel> GetCeremonyGuestsVM(long id = 0)
+        {
+            return _hContext.CeremonyGuests.Where(x => x.CeremonyId == id).Include(x => x.Guest).Select(x => new GuestViewModel
+            {
+                Id = x.GuestId,
+                FullName = x.Guest.FullName
             }).ToList();
         }
 
@@ -103,7 +111,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                     GuestType = GuestTypes.GetGuestType(item.Guest.GuestType),
                     Guest = item.Guest.FullName,
                     GuestPic = item.Guest.Image,
-                    Satisfication = item.Satisfication
+                    Satisfication = (item.Satisfication).ToPersianNumber()
                 };
                 guests.Add(gst);
             }
@@ -121,6 +129,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 CeremonyDate = x.CeremonyDate,
                 CeremonyDateFA = x.CeremonyDate.ToFarsi(),
                 CeremonyGuests = MapGuests(x.CeremonyGuests)
+                
             });
 
             //if (searchModel.GuestId != 0)

@@ -8,6 +8,7 @@ using _01_HaidariehQuery.Contracts.Multimedias;
 using _01_HaidariehQuery.Contracts.Sponsers;
 using _01_HaidariehQuery.Query;
 using Haidarieh.Application;
+using Haidarieh.Application.Contracts.Calendar;
 using Haidarieh.Application.Contracts.Ceremony;
 using Haidarieh.Application.Contracts.CeremonyGuest;
 using Haidarieh.Application.Contracts.Guest;
@@ -15,6 +16,7 @@ using Haidarieh.Application.Contracts.Member;
 using Haidarieh.Application.Contracts.Multimedia;
 using Haidarieh.Application.Contracts.Sponsor;
 using Haidarieh.Configuration.Permissions;
+using Haidarieh.Domain.CalendarAgg;
 using Haidarieh.Domain.CeremonyAgg;
 using Haidarieh.Domain.CeremonyGuestAgg;
 using Haidarieh.Domain.GuestAgg;
@@ -51,12 +53,17 @@ namespace Haidarieh.Configuration
             services.AddTransient<IMultimediaApplication, MultimediaApplication>();
             services.AddTransient<IMultimediaRepository, MultimediaRepository>();
 
+            services.AddTransient<ICalendarApplication, CalendarApplication>();
+            services.AddTransient<ICalendarRepository, CalendarRepository>();
+
             services.AddTransient<ICeremonyGuestQuery, CeremonyGuestQuery>();
             services.AddTransient<ICeremonyQuery, CeremonyQuery>();
             services.AddTransient<IGuestQuery, GuestQuery>();
             services.AddTransient<IMemberQuery, MemberQuery>();
             services.AddTransient<IMultimediaQuery, MultimediaQuery>();
             services.AddTransient<ISponsorQuery, SponsorQuery>();
+            //services.AddTransient<ICalendarQuery, CalendarQuery>();
+
 
             services.AddTransient<IPermissionExposer, HPermissionExposer>();
 

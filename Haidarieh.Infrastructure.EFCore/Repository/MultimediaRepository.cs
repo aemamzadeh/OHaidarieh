@@ -1,6 +1,7 @@
 ﻿using _0_Framework.Infrastructure;
 using Haidarieh.Application.Contracts.Multimedia;
 using Haidarieh.Domain.MultimediaAgg;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -20,7 +21,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
         }
         public EditMultimedia GetDetail(long id)
         {
-            return _hContext.Multimedias.Where(x => x.CeremonyId == id).Select(x => new EditMultimedia()
+            var item= _hContext.Multimedias.Where(x => x.CeremonyId == id).Select(x => new EditMultimedia()
             {
                 //Id = x.Id,
                 Title = x.Title,
@@ -28,7 +29,10 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                 FileAlt = x.FileAlt,
                 FileTitle = x.FileTitle
             }).FirstOrDefault();
+            return item;
         }
+
+
         public List<MultimediaViewModel> Search(MultimediaSearchModel searchModel)
         {
 
@@ -232,7 +236,9 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
                         Title = x.Title,
                         FileAddress = x.FileAddress,
                         Ceremony = x.Ceremony.Title,
-                        CeremonyId = x.CeremonyId
+                        CeremonyId = x.CeremonyId,
+                        VisitCount=x.VisitCount,
+                        Guest=x.Guest.FullName
 
                     }).ToList();
             foreach (var item in medias)
@@ -252,6 +258,27 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
         public Multimedia GetFirst(long id)
         {
             return _hContext.Multimedias.FirstOrDefault(x => x.CeremonyId == id);
+        }
+
+        public EditMultimedia GetDetailMultimedia(long id)
+        {
+            string contentType;
+            var item = _hContext.Multimedias.Where(x => x.Id == id).Select(x => new EditMultimedia()
+            {
+                //Id = x.Id,
+                Title = x.Title,
+                CeremonyId = id,
+                FileAlt = x.FileAlt,
+                FileTitle = x.FileTitle,
+                temp = x.FileAddress
+            }).FirstOrDefault();
+
+            {
+                new FileExtensionContentTypeProvider().TryGetContentType(item.temp, out contentType);
+                var x = contentType;
+                item.ContentType = x;
+            }
+            return item;
         }
     }
     }

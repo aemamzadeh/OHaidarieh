@@ -1,0 +1,63 @@
+﻿@model IEnumerable<_01_HaidariehQuery.Contracts.Multimedias.MultimediaQueryModel>
+<div class="gap thm-layer opc95">
+    <div class="fixed-bg ptrn-bg" style="background-image: url(theme/assets/images/pattern-bg.jpg);"></div>
+    <div class="container">
+        <div class="nwsltr-title text-center">
+            <h4>کلیپ های پربازدید</h4>
+        </div>
+        <div class="gap evnt-wrap remove-ext5">
+            <div class="row mrg40">
+
+                @foreach (var item in Model)
+                {
+
+    <div class="col-md-4 col-sm-4 col-lg-4">
+        <div class="evnt-box">
+            <div class="evnt-thmb">
+                <span style="color:white">@item.Title</span>
+                    <span style="color:white" class="counter" data-videoid="@item.Id"><span class="fa fa-eye" aria-hidden="true"></span> @item.VisitCount</span>
+                <video class="img-rounded" width="350" height="200" id="vid" controls="controls" preload="metadata" onplay="AddCount('@item.Id', 'ReloadMostVisitedCeremonies')">
+                    <source src="~/@item.FileAddress#t=0.8">
+                </video>
+            </div>
+        </div>
+    </div>}
+            </div>
+        </div><!-- Events Wrap -->
+    </div>
+</div>
+
+@*<script type="text/javascript">
+        $(document).ready(function () {
+            $("vid").click(function AddCount(id) {
+                $.ajax({
+                    url: someRootPath + 'MostVisitedCeremoniesViewComponent/AddVisitCount',
+                    success: function (data) {
+                        $('#pValue').html(data.someValue);
+                    }
+                });
+            }
+    </script>*@
+
+@*<script type="text/javascript">
+                $(function () {
+                    $("#vid").click(function AddCount(id) () {
+                        $.ajax({
+                            type: "POST",
+                            url: "MostVisitedCeremoniesViewComponent/AddVisitCount",
+                            data: '{id: "' + $("#vid").val() + '" }',
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (response) {
+                                alert("Hello: " + response.Name + " .\nCurrent Date and Time: " + response.DateTime);
+                            },
+                            failure: function (response) {
+                                alert(response.responseText);
+                            },
+                            error: function (response) {
+                                alert(response.responseText);
+                            }
+                        });
+                    });
+                });
+    </script>*@

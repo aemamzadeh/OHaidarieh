@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using _01_HaidariehQuery.Contracts.Ceremonies;
+using _01_HaidariehQuery.Contracts.Multimedias;
 using Haidarieh.Application.Contracts.Member;
+using Haidarieh.Application.Contracts.Multimedia;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 
 namespace ServiceHost.Pages
 {
@@ -14,11 +13,21 @@ namespace ServiceHost.Pages
         public CreateMember Member { get; set; }
         public string ErrorMessage { get; set; }
         public string SuccessMessage { get; set; }
-        private readonly IMemberApplication _memberApplication;
+        public List<MultimediaQueryModel> ceremony { get; set; }
+        public CeremonyQueryModel searchModel { get; set; }
 
-        public IndexModel(IMemberApplication memberApplication)
+        private readonly IMemberApplication _memberApplication;
+        private readonly IMultimediaApplication _multimediaApplication;
+        private readonly ICeremonyQuery _ceremonyQuery;
+        
+
+
+
+        public IndexModel(IMemberApplication memberApplication, IMultimediaApplication multimediaApplication, ICeremonyQuery ceremonyQuery)
         {
             _memberApplication = memberApplication;
+            _multimediaApplication = multimediaApplication;
+            _ceremonyQuery = ceremonyQuery;
         }
 
         public void OnGet()
@@ -32,12 +41,21 @@ namespace ServiceHost.Pages
             {
                 ErrorMessage = "اطلاعات ثبت نگردید. لطفاً مجدداً تلاش نمائید.";
             }
-            else 
-            { 
+            else
+            {
                 _memberApplication.Create(Member);
                 SuccessMessage = "اطلاعات با موفقیت ثبت گردید. با تشکر.";
                 ModelState.Clear();
             }
-}
+        }
+        public JsonResult OnGetAddVisitCount(long id)
+        {
+            var newnumber = _multimediaApplication.AddVisitCount(id);
+            return new JsonResult(newnumber);
+        }
+        public RedirectToPageResult OnGetSearch(string search)
+        {
+            return RedirectToPage("/Search?search=", search);
+        }
     }
 }

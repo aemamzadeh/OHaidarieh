@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FU8OkImAThrUQN19+YN9EORN/b93fIb4ZSvgbAkNey/9VSANiJjH0LejRpAf6QsuRQ/C6uuc9wK6qjL/aZbgaA==",
+  "dgSpecHash": "ZnTZe0059raLW8X3AnstLeqvqFdgNg6Jt7hlkgVXbvkkL4+4vDuQrtX3XLpjDNPazB8TstCGE16whfkX0EqFQw==",
   "success": true,
   "projectFilePath": "D:\\NetCoreProjects\\repos\\OHaidariehProject\\Haidarieh.Configuration\\Haidarieh.Configuration.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "C:\\Users\\USER\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\kavenegar\\1.2.4\\kavenegar.1.2.4.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\kendo.for.aspnet.core\\2019.1.115\\kendo.for.aspnet.core.2019.1.115.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\linqkit\\1.2.2\\linqkit.1.2.2.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\linqkit.core\\1.2.2\\linqkit.core.1.2.2.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\mailkit\\2.6.0\\mailkit.2.6.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

@@ -7,6 +7,6 @@ namespace _01_HaidariehQuery.Contracts.Multimedias
 {
     public interface IMultimediaQuery
     {
-        //List<MultimediaQueryModel> GetDetail(string Id);
+        List<MultimediaQueryModel> GetMultimediasWithCeremony(long typeId=0);
     }
 }

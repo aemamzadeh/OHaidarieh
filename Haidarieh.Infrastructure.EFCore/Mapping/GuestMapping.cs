@@ -21,6 +21,8 @@ namespace Haidarieh.Infrastructure.EFCore.Mapping
             builder.Property(x => x.ImageTitle);
 
             builder.HasMany(x => x.CeremonyGuests).WithOne(x => x.Guest).HasForeignKey(x => x.GuestId);
+            builder.HasMany(x => x.Multimedias).WithOne(x => x.Guest).HasForeignKey(x => x.GuestId);
+
 
         }
     }

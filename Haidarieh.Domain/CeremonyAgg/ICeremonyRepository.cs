@@ -14,6 +14,7 @@ namespace Haidarieh.Domain.CeremonyAgg
         List<CeremonyViewModel> Search(CeremonySearchModel searchModel);
         List<CeremonyOperationViewModel> GetCeremonyWithOperationsLog();
         List<CeremonyViewModel> GetUpcommingCeremonies();
+        List<CeremonyViewModel> GetCeremonieswithGuests();
 
     }
 }

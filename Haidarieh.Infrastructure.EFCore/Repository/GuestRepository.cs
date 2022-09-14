@@ -1,4 +1,5 @@
-﻿using _0_Framework.Infrastructure;
+﻿using _0_Framework.Application;
+using _0_Framework.Infrastructure;
 using Haidarieh.Application.Contracts.CeremonyGuest;
 using Haidarieh.Application.Contracts.Guest;
 using Haidarieh.Domain.GuestAgg;
@@ -22,7 +23,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 FullName = x.FullName,
-                Tel = x.Tel,
+                Tel = Int32.Parse(x.Tel).ToPersianNumber(),
                 Email=x.Email,
                 GuestType = x.GuestType,
                 //Image = x.Image,
@@ -57,7 +58,7 @@ namespace Haidarieh.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 FullName = x.FullName,
-                Tel = x.Tel,
+                Tel = Int64.Parse(x.Tel).ToPersianNumber(),
                 GuestType = GuestTypes.GetGuestType(x.GuestType),
                 Image = x.Image,
                 Coordinator = x.Coordinator

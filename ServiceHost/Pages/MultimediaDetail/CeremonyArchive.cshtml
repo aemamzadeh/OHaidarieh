@@ -22,12 +22,17 @@
                                             <li><span style="color:green">@item.Title</span></li>
                                         </ul>
                                         @*typeId specify the type of files that should be listed in detail page.(gallery=1,audio=2,video=3)*@
-                                        <ul class="pst-mta2">
-                                            <li>@item.CeremonyDateFa</li>
-                                            <a asp-page="/MultimediaDetail/Detail" asp-route-Id="@item.Slug" asp-route-typeId="1"><img src="~/Theme/assets/images/gallery.png" style="margin-right: 20px" width="40" height="40"></a>
-                                            <a asp-page="/MultimediaDetail/Detail" asp-route-Id="@item.Slug" asp-route-typeId="2"><img src="~/Theme/assets/images/multimedia.png" style="margin-right: 20px" width="40" height="40"></a>
-                                            <a asp-page="/MultimediaDetail/Detail" asp-route-Id="@item.Slug" asp-route-typeId="3"><img src="~/Theme/assets/images/film.png" style="margin-right: 20px" width="40" height="40"></a>
-                                        </ul>
+                                        <div class="pst-mta2 pagination">
+                                            <span class="col-md-6 col-sm-6 col-lg-6">
+                                                <span>@item.CeremonyDateFa</span>
+                                            </span>
+                                            <span class="col-md-6 col-sm-6 col-lg-6" style="float:left; max-width: 35%">
+                                                <a asp-page="/MultimediaDetail/Detail" asp-route-Id="@item.Slug" asp-route-typeId="1"><img src="~/Theme/assets/images/gallery.png" style="margin-right: 20px" width="40" height="40"></a>
+                                                <a asp-page="/MultimediaDetail/Detail" asp-route-Id="@item.Slug" asp-route-typeId="2"><img src="~/Theme/assets/images/multimedia.png" style="margin-right: 20px" width="40" height="40"></a>
+                                                <a asp-page="/MultimediaDetail/Detail" asp-route-Id="@item.Slug" asp-route-typeId="3"><img src="~/Theme/assets/images/film.png" style="margin-right: 20px" width="40" height="40"></a>
+                                            </span>
+                                            <div style="clear: both;"></div>
+                                        </div>
                                         <ul class="pst-mta2">
 
                                             @foreach (var itm in item.CeremonyGuests)
@@ -50,7 +55,7 @@
                     </div><!-- Pagination Wrap (ViewData["pageId"]=i)? active:":" -->
                 </div>
             </div>
-            </div>
         </div>
     </div>
+</div>
 

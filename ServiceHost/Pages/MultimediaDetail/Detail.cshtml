@@ -39,17 +39,19 @@
             else if (item.ContentType.StartsWith("audio/"))
             {
 
-                    <a data-fancybox="gallery" data-caption="@item.Title" href="~/@item.FileAddress" data-type="video" style="width: 70px; height: 70px;">
-                        <img src="~/Theme/assets/images/video__player__movie.jpg" style="width: 70px; height: 70px;" />
-                        @item.Title
-                        @*<audio controls id="MyAudio1" style="display:none;">
-                                <source src="~/@item.FileAddress" type="@item.ContentType" />
-                            </audio>*@
-                    </a> }
+        <a data-fancybox="gallery" data-caption="@item.Title" href="~/@item.FileAddress" data-type="video" style="width: 70px; height: 70px;">
+            <img src="~/Theme/assets/images/video__player__movie.jpg" style="width: 70px; height: 70px;" />
+            <h6>@item.Title</h6>
+            <h6>@item.GuestName</h6>
+
+            @*<audio controls id="MyAudio1" style="display:none;">
+            <source src="~/@item.FileAddress" type="@item.ContentType" />
+        </audio>*@
+        </a> }
             else if (item.ContentType.StartsWith("video/"))
             {
                     <a data-fancybox="gallery" data-caption="@item.Title" href="~/@item.FileAddress">
-                        <video src="~/@item.FileAddress" style="width:100%;height:180px;" />
+                        <img src="~/Theme/assets/images/film.png" style="width:100%;height:180px;" />
                     </a>}
             <br />
 

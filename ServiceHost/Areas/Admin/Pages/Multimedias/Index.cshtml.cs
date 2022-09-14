@@ -4,6 +4,7 @@ using _0_Framework.Infrastructure;
 using _01_HaidariehQuery.Contracts.Ceremonies;
 using _01_HaidariehQuery.Query;
 using Haidarieh.Application.Contracts.Ceremony;
+using Haidarieh.Application.Contracts.CeremonyGuest;
 using Haidarieh.Application.Contracts.Multimedia;
 using Haidarieh.Configuration.Permissions;
 using Microsoft.AspNetCore.Http;
@@ -19,13 +20,17 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
         //public IEnumerable<IGrouping<long, MultimediaViewModel>> Multimedias;
         public List<MultimediaViewModel> Multimedias { get; set; }
         public SelectList Ceremonies;
+        public SelectList Guests;
         private readonly IMultimediaApplication _multimediaApplication;
         private readonly ICeremonyApplication _ceremonyApplication;
+        private readonly ICeremonyGuestApplication _ceremonyGuestApplication;
 
-        public IndexModel(IMultimediaApplication multimediaApplication, ICeremonyApplication ceremonyApplication)
+
+        public IndexModel(IMultimediaApplication multimediaApplication, ICeremonyApplication ceremonyApplication, ICeremonyGuestApplication ceremonyGuestApplication)
         {
             _multimediaApplication = multimediaApplication;
             _ceremonyApplication = ceremonyApplication;
+            _ceremonyGuestApplication = ceremonyGuestApplication;
         }
 
         [NeedPermission(HPermissions.ListMultimedia)]
@@ -33,6 +38,7 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
         {
             Multimedias=_multimediaApplication.Search(searchModel);
             Ceremonies = new SelectList(_ceremonyApplication.GetCeremonies(),"Id","Title");
+
         }
         public IActionResult OnGetCreate()
         {
@@ -81,6 +87,10 @@ namespace ServiceHost.Areas.Admin.Pages.Multimedias
             var multimedias = _multimediaApplication.GetMultimediasWithCeremony(ceremonyid);
             return Partial("Show", multimedias);
         }
-
+        public JsonResult OnGetFillCeremonyGuests(long Id)
+        {
+            var guestList = _ceremonyGuestApplication.GetGuests(Id);
+            return new JsonResult(guestList);
+        }
     }
 }

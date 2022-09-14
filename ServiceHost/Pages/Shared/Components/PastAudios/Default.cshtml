@@ -1,0 +1,71 @@
+﻿@model IEnumerable<_01_HaidariehQuery.Contracts.Multimedias.MultimediaQueryModel>
+
+
+    <div class="gap thm-layer opc95">
+        <div class="fixed-bg ptrn-bg" style="background-image: url(theme/assets/images/pattern-bg.jpg);"></div>
+        <div class="container">
+            <div class="evnt-pry-wrap">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-lg-6">
+                        <div class="sec-title">
+                            <div class="sec-title-inner">
+                                <h4>آخرین صوت ها</h4>
+                            </div>
+                        </div>
+                        <div class="evnt-wrap remove-ext5">
+                            <div class="row mrg20">
+                                @foreach (var item in Model.OrderByDescending(m => m.CeremonyDate))
+                                {
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div>
+                            <span style="color:white">@item.Title</span>
+                            <div>
+                                <audio data-fancybox="gallery" class="img-rounded" controls="controls" style="width:100%" preload="metadata" onplay="AddCount('@item.Id', 'ReloadPastAudios')">
+                                    <source src="~/@item.FileAddress">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>}
+                            </div>
+                        </div><!-- Events Wrap -->
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-lg-6">
+                        <div class="sec-title">
+                            <div class="sec-title-inner">
+                                <h4> صوت های پربازدید</h4>
+                            </div>
+                        </div>
+                        <div class="evnt-wrap remove-ext5">
+                            <div class="row mrg20">
+                                @foreach (var item in Model.OrderByDescending(m => m.VisitCount))
+                                {
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div>
+                            <span style="color:white">@item.Title</span>
+                            <span style="color:white" class="counter" data-videoid="@item.Id"><span class="fa fa-eye" aria-hidden="true"></span> @item.VisitCount</span>
+                            <div>
+                                <audio data-fancybox="gallery" class="img-rounded" controls="controls" id="aud" style="width:100%" preload="metadata" onplay="AddCount('@item.Id', 'ReloadPastAudios')">
+                                    <source src="~/@item.FileAddress">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>}
+                            </div>
+                        </div>
+                    </div><!-- Events & Prayer Wrap -->
+                </div>
+            </div>
+
+                    <div class="view-all text-center" style="text-align:center">
+                        <a class="thm-btn brd-rd40" style="background-color:black" asp-page="./Search" title="">جستجوی صوت</a>
+                    </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+

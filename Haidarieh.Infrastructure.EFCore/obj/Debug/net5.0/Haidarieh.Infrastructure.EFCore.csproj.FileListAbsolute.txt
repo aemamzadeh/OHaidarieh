@@ -26,10 +26,16 @@ D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\D
 D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\Haidarieh.Infrastructure.EFCore.dll
 D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\Haidarieh.Infrastructure.EFCore.pdb
 D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\0_Framework.dll
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Domain.dll
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.dll
 D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\Haidarieh.Application.Contracts.dll
 D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\Haidarieh.Domain.dll
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Domain.pdb
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.pdb
 D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\Haidarieh.Domain.pdb
 D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\0_Framework.pdb
+D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Application.Contracts.pdb
 D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\Haidarieh.Application.Contracts.pdb
 D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\obj\Debug\net5.0\Haidarieh.Infrastructure.EFCore.csproj.AssemblyReference.cache
 D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\obj\Debug\net5.0\Haidarieh.Infrastructure.EFCore.GeneratedMSBuildEditorConfig.editorconfig
@@ -41,10 +47,4 @@ D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\obj\D
 D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\obj\Debug\net5.0\ref\Haidarieh.Infrastructure.EFCore.dll
 D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\obj\Debug\net5.0\Haidarieh.Infrastructure.EFCore.pdb
 D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\obj\Debug\net5.0\Haidarieh.Infrastructure.EFCore.genruntimeconfig.cache
-D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
-D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Domain.dll
-D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.dll
-D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Domain.pdb
-D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Infrastructure.EFCore.pdb
-D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\AccountManagement.Application.Contracts.pdb
 D:\NetCoreProjects\repos\OHaidariehProject\Haidarieh.Infrastructure.EFCore\bin\Debug\net5.0\ref\Haidarieh.Infrastructure.EFCore.dll

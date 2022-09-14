@@ -16,6 +16,8 @@ namespace Haidarieh.Domain.MultimediaAgg
         //IEnumerable<IGrouping<long, MultimediaViewModel>> Search(MultimediaSearchModel searchModel);
         //Dictionary<long, List<MultimediaViewModel>> Search(MultimediaSearchModel searchModel);
         List<MultimediaViewModel> GetMultimediasWithCeremony(long id);
+        EditMultimedia GetDetailMultimedia(long Id);
+
 
     }
 }

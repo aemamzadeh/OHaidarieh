@@ -1,6 +1,5 @@
 ﻿using _01_HaidariehQuery.Contracts.Ceremonies;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace ServiceHost.ViewComponents
 {

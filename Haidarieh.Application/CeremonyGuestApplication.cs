@@ -1,6 +1,7 @@
 ﻿using _0_Framework.Application;
 using Haidarieh.Application.Contracts.Ceremony;
 using Haidarieh.Application.Contracts.CeremonyGuest;
+using Haidarieh.Application.Contracts.Guest;
 using Haidarieh.Domain.CeremonyGuestAgg;
 using System;
 using System.Collections.Generic;
@@ -59,6 +60,10 @@ namespace Haidarieh.Application
         public List<CeremonyGuestViewModel> GetCeremonyGuests(long id=0)
         {
             return _ceremonyGuestRepository.GetCeremonyGuests(id);
+        }
+        public List<GuestViewModel> GetCeremonyGuestsVM(long id = 0)
+        {
+            return _ceremonyGuestRepository.GetCeremonyGuestsVM(id);
         }
 
         public EditCeremonyGuest GetDetail(long Id) //Dictionary<long, List<CeremonyGuestViewModel>> GetDetail(long Id) 

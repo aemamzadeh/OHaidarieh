@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using _0_Framework.Infrastructure;
 using _0_Framework.Application.Email;
 using _0_Framework.Application.Sms;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ServiceHost
 {
@@ -72,7 +73,7 @@ namespace ServiceHost
             });
 
             services.AddRazorPages()
-                    .AddMvcOptions(options=>options.Filters.Add<SecurityPageFilter>())
+                    .AddMvcOptions(options => options.Filters.Add<SecurityPageFilter>())
                     .AddRazorPagesOptions(options =>
             {
                 options.Conventions.AuthorizeAreaFolder("Admin", "/", "AdminArea");
@@ -87,45 +88,49 @@ namespace ServiceHost
 
         }
 
-    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-    {
-        if (env.IsDevelopment())
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseDeveloperExceptionPage();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
+
+
+            app.UseAuthentication();
+
+            app.UseHttpsRedirection();
+
+            app.UseStaticFiles();
+
+            app.UseCookiePolicy();
+
+            app.UseRouting();
+
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapRazorPages();
+                endpoints.MapControllers();
+            });
+
+            app.UseCors(builder =>
+            {
+                builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            });
+
+
         }
-        else
-        {
-            app.UseExceptionHandler("/Error");
-            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-            app.UseHsts();
-        }
-
-        app.UseAuthentication();
-
-        app.UseHttpsRedirection();
-
-        app.UseStaticFiles();
-
-        app.UseCookiePolicy();
-
-        app.UseRouting();
-
-        app.UseAuthorization();
-
-        app.UseEndpoints(endpoints =>
-        {
-            endpoints.MapRazorPages();
-            endpoints.MapControllers();
-        });
-
-        app.UseCors(builder =>
-        {
-            builder
-            .AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader();
-        });
-        }
-}
+    }
 }

@@ -17,8 +17,13 @@ namespace Haidarieh.Infrastructure.EFCore.Mapping
             builder.Property(x => x.FileAlt);
             builder.Property(x => x.CeremonyId).IsRequired();
             builder.Property(x => x.Status).IsRequired();
+            builder.Property(x => x.VisitCount);
+            builder.Property(x => x.GuestId).IsRequired(false);
+
 
             builder.HasOne(x => x.Ceremony).WithMany(x => x.Multimedias).HasForeignKey(x => x.CeremonyId);
+            builder.HasOne(x => x.Guest).WithMany(x => x.Multimedias).HasForeignKey(x => x.GuestId);
+
         }
     }
 }

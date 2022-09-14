@@ -1,16 +1,20 @@
-﻿@inject _0_Framework.Application.IAuthHelper AuthHelper
+﻿@*@inject _0_Framework.Application.IAuthHelper AuthHelper*@
+@*@model ServiceHost.Pages.IndexModel*@
+@*@model _01_HaidariehQuery.Contracts.Ceremonies.CeremonyQueryModel*@
+
+
 <header class="style2">
     <div class="container">
         <div class="logo"><a asp-page="/Index" title="لوگو"><img src="~/Theme/assets/images/logo.png" alt="لوگو حیدریة النجف الاشرف"></a></div>
         <nav>
             <div>
-                <a class="srch-btn" asp-page="/Search" title="جستجو"><i class="fa fa-search"></i></a>
-                @if (AuthHelper.IsAuthenticated())
-                {
-                    <a asp-page="/Account" asp-page-handler="Logout" class="thm-btn brd-rd5" title="خروج">خروج</a> }
-                else
-                {
-                    <a asp-page="/Account" class="thm-btn brd-rd5" title="ورود کاربران">ورود کاربران</a>}
+
+                @*@if (AuthHelper.IsAuthenticated())
+                    {
+                        <a asp-page="/Account" asp-page-handler="Logout" class="thm-btn brd-rd5" title="خروج">خروج</a> }
+                    else
+                    {
+                        <a asp-page="/Account" class="thm-btn brd-rd5" title="ورود کاربران">ورود کاربران</a>}*@
                 <ul>
                     <li><a asp-page="/Index" title="">صفحه اصلی</a></li>
                     <li class="menu-item-has-children">
@@ -20,12 +24,20 @@
                             <li><a asp-page="/MultimediaDetail/CeremonyArchive" title="">آرشیو مجالس </a></li>
                         </ul>
                     </li>
-                    <li><a asp-page="/Support" title="">کمک مالی </a></li>
+                    @*<li><a asp-page="/Support" title="">کمک مالی </a></li>*@
                     <li><a asp-page="/MultimediaDetail/GalleryArchive" title="">آلبوم تصاویر </a></li>
                     <li><a asp-page="/Index" asp-fragment="Sponsor" title="">خادمین اهل بیت ع</a></li>
-                    <li><a asp-page="/Index" asp-fragment="About" title="">درباره ما</a></li>
+                    <li><a asp-page="/About" title="">درباره ما</a></li>
                     <li><a asp-page="/ContactInfo">تماس با ما</a></li>
 
+                    <li>
+                        <form method="get" asp-page="/Search" asp-page-handler="Search" class="navbar-form pull-left">
+                            <div class="form-group" style="margin-top:15px">
+                                <input name="search" type="text" asp-route-search="value" class="form-control search-bar" placeholder="جستجو..." style="float:right; display:table-cell;width:80%; border:none">
+                                <button type="submit" style="float:left" class="btn btn-search"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -37,10 +49,10 @@
             <li><a href="https://www.aparat.com/" title="آپارات" target="_blank"><i class="fa fa-film"></i></a></li>
             <li><a href="https://www.instagram.com/accounts/login/?next=/haidarieh/" title="اینستاگرام" target="_blank"><i class="fa fa-instagram"></i></a></li>
         </ul>
-        @*<form class="rspn-srch" method="get" asp-page="/Search">
-                <input type="search" name="value" id="value" placeholder="‌‌ کلید واژه را وارد کنید ... " />
-                <button type="submit"> <i class="fa fa-search"> </i> </button>
-            </form>*@
+        <form class="rspn-srch" method="get" asp-page="/Search">
+            <input type="search" name="value" id="value" placeholder="‌‌ کلید واژه را وارد کنید ... " />
+            <button type="submit"> <i class="fa fa-search"> </i> </button>
+        </form>
     </div>
     <div class="lg-mn">
         <div class="logo"><a asp-page="/Index" title="Logo"> <img src="~/theme/assets/images/logo.png" alt="لوگو حیدریه النجف الاشرف"> </a> </div>
@@ -55,18 +67,26 @@
         <ul>
             <li><a asp-page="/Index" title="">صفحه اصلی</a></li>
             <li class="menu-item-has-children">
-                <a asp-page="/MutimediaDetail/CeremonyArchive" title="">مجالس</a>
+                <a title="">مجالس</a>
                 <ul>
                     <li><a asp-page="/Index" asp-fragment="Upcomming" title="">مجالس پیش رو</a></li>
                     <li><a asp-page="/MultimediaDetail/CeremonyArchive" title="">آرشیو مجالس </a></li>
                 </ul>
             </li>
-            <li><a asp-page="/Support" title="">کمک مالی </a></li>
-            <li><a asp-page="/MultimediaDetail/AlbumArchive" title="">آلبوم تصاویر </a></li>
+            @*<li><a asp-page="/Support" title="">کمک مالی </a></li>*@
+            <li><a asp-page="/MultimediaDetail/GalleryArchive" title="">آلبوم تصاویر </a></li>
             <li><a asp-page="/Index" asp-fragment="Sponsor" title="">خادمین اهل بیت ع</a></li>
-            <li><a asp-page="/Index" asp-fragment="About" title="">درباره ما</a></li>
+            <li><a asp-page="/About" title="">درباره ما</a></li>
             <li><a asp-page="/ContactInfo">تماس با ما</a></li>
 
+            <li>
+                <form method="get" asp-page="/Search" asp-page-handler="Search" class="navbar-form pull-left">
+                    <div class="form-group" style="margin-top:15px">
+                        <input type="text" asp-route-value="value" class="form-control search-bar" placeholder="جستجو..." style="float:right; display:table-cell;width:80%; border:none">
+                        <button type="submit" style="float:left" class="btn btn-search"><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
+            </li>
         </ul>
     </div><!-- Responsive Menu -->
 </div><!-- Responsive Header -->

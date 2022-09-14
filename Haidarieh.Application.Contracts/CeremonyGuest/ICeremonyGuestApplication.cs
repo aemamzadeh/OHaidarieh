@@ -1,5 +1,6 @@
 ﻿using _0_Framework.Application;
 using Haidarieh.Application.Contracts.Ceremony;
+using Haidarieh.Application.Contracts.Guest;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,6 +19,7 @@ namespace Haidarieh.Application.Contracts.CeremonyGuest
         OperationResult Delete(long Id);
         List<CeremonyGuestViewModel> GetGuests(long id = 0);
         List<CeremonyGuestViewModel> GetRestGuests(List<CeremonyGuestViewModel> restList);
+        List<GuestViewModel> GetCeremonyGuestsVM(long id = 0);
 
 
 
