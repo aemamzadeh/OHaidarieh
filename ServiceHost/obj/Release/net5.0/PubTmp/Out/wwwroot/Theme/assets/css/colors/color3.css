@@ -38,7 +38,7 @@
 .team-box2:hover,
 .model-close:hover
 {
-	background-color: #38ab1e;
+	background-color: #114505;
 }
 
 /*===== Text Color =====*/
@@ -116,7 +116,7 @@ nav div > ul li a:focus:before,
 .fea-car > .row > div:nth-child(2) .fea-info2 > a:hover,
 .fea-car > .row > div:nth-child(2) .fea-info2 > a:focus
 {
-	color: #38ab1e;
+	color: #114505;
 }
 
 /*===== Border Color =====*/
@@ -128,7 +128,7 @@ nav div > ul li a:focus:before,
 .plr-box:hover > i,
 .srv-box2:hover
 {
-	border-color: #38ab1e;
+	border-color: #114505;
 }
 
 

@@ -20,8 +20,10 @@ namespace ServiceHost.Pages
         }
         public void OnGet(string search)
         {
+            var searchmodel = new CeremonyQueryModel();
             if (!string.IsNullOrWhiteSpace(search))
             {
+                searchmodel.Title = search;
                 ceremony = _ceremonyQuery.Search(search);
             }
             else

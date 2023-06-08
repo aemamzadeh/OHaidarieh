@@ -75,12 +75,14 @@ namespace Haidarieh.Application
                 var ImageFolderName = Tools.ToFolderName(this.GetType().Name);
                 var ImagePath = $"{ImageFolderName}/{ceremony.Slug}";
                 var imageFileName = _fileUploader.Upload(item, ImagePath);
-                var filePath = _fileUploader.Upload(item, ImagePath).filePath;
+                //var filePath = _fileUploader.Upload(item, ImagePath).filePath;
+                var filePath = imageFileName.filePath;
+
 
                 if (item.ContentType.StartsWith("image/"))
                 {
                     _imageCompression.ImageOptimize(item, filePath);
-                    if (Image.FromFile(filePath).Width > 800 && Image.FromFile(filePath).Height > 600)
+                    if (Image.FromFile(filePath).Width > 800 || Image.FromFile(filePath).Height > 600)
                         File.Delete(filePath);
                 }
                 //var imageFileName = _fileUploader.Upload(item, ImagePath);
